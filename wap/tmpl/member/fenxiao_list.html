@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="format-detection" content="telephone=no"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1" />
+<title>分销余额</title>
+<link rel="stylesheet" type="text/css" href="../../css/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/nctouch_member.css">
+</head>
+<body>
+<header id="header">
+  <div class="header-wrap">
+    <div class="header-l"><a href="member.html"><i class="back"></i></a></div>   
+    <div class="header-tab"> <a href="javascript:void(0);" class="cur">分销记录</a><a href="fenxiao_pdcash.html">提现记录</a></div>
+    <div class="header-r"> <a id="header-nav" href="javascript:void(0);"><i class="more"></i><sup></sup></a> </div>
+  </div>
+  <div class="nctouch-nav-layout">
+    <div class="nctouch-nav-menu"> <span class="arrow"></span>
+      <ul>
+        <li><a href="../../index.html"><i class="home"></i>云品</a></li>
+        <li><a href="#"><i class="search"></i>云店</a></li>
+         <li><a href="../search.html"><i class="categroy"></i>搜索</a></li>
+        <li><a href="../cart_list.html"><i class="cart"></i>我的订单<sup></sup></a></li>
+        <li><a href="../member/member.html"><i class="member"></i>我的</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+<div class="nctouch-main-layout">
+  <div id="rcb_count" class="nctouch-asset-info"></div>
+  <ul id="rcbloglist" class="nctouch-log-list">
+  </ul>
+</div>
+<div class="fix-block-r">
+    <a href="javascript:void(0);" class="gotop-btn gotop hide" id="goTopBtn"><i></i></a>
+</div>
+<footer id="footer" class="bottom"></footer>
+<script type="text/html" id="rcb_count_model">
+	<div class="container rcard">
+			<i class="icon"></i>
+		    <dl>
+				<dt>分销余额</dt>
+				<dd>￥<em><%=distributor_predeposit;%></em></dd>
+			</dl>
+		</div>
+</script> 
+<script type="text/html" id="list_model">
+        <% if(list.length >0){%>
+        <% for (var k in list) { var v = list[k]; %>
+            <li>
+                <div class="detail"><%=v.lg_desc;%></div>
+                <% if(v.lg_av_amount >0){%>
+                <div class="money add">+<%=v.lg_av_amount;%></div>
+                <%}else{%>
+                <div class="money reduce"><%=v.lg_av_amount;%></div>
+                <%}%>
+                <time class="date"><%=v.lg_add_time_text;%></time>
+            </li>
+        <%}%>
+        <li class="loading"><div class="spinner"><i></i></div>数据读取中</li>
+        <%}else {%>
+        <div class="nctouch-norecord pdre">
+            <div class="norecord-ico"><i></i></div>
+            <dl>
+                <dt>您尚无预存款收支信息</dt>
+                <dd>使用商城预存款结算更方便</dd>
+            </dl>
+        </div>
+        <%}%>
+</script> 
+<script type="text/javascript" src="../../js/config.js"></script> 
+<script type="text/javascript" src="../../js/zepto.min.js"></script> 
+<script type="text/javascript" src="../../js/template.js"></script> 
+<script type="text/javascript" src="../../js/common.js"></script> 
+<script type="text/javascript" src="../../js/ncscroll-load.js"></script> 
+<script>
+    $(function(){
+        var key = getCookie('key');
+        if (!key) {
+            window.location.href = WapSiteUrl+'/tmpl/member/login.html';
+            return;
+        }
+
+        //渲染list
+        var load_class = new ncScrollLoad();
+        load_class.loadInit({'url':ApiUrl + '/index.php?act=member_fund&op=predepositlog&lg_type=distribution','getparam':{'key':key},'tmplid':'list_model','containerobj':$("#rcbloglist"),'iIntervalId':true});
+
+        //获取分销余额
+        $.getJSON(ApiUrl + '/index.php?act=member_index&op=my_asset', {'key':key,'fields':'distributor_predeposit'}, function(result){
+            var html = template.render('rcb_count_model', result.datas);
+            $("#rcb_count").html(html);
+        });
+    });
+</script>
+</body>
+</html>

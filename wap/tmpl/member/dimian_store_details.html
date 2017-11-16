@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../../css/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/nctouch_member.css">
+<meta charset="utf-8">
+<title>店铺详细</title>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<style type="text/css">
+/*通用*/
+body{ font-size: 15px; font-family: "microsoft yahei", Arial; color: #333; margin: 0px; padding: 0px;}
+ul, ol, li, p, h1, h2, h3, h4, h5, h6, dl, dt, dd{ margin: 0px; padding: 0px; list-style: none;}
+a{ color: #333; text-decoration: none;}
+a:hover{ text-decoration: underline;}
+img{ vertical-align: middle;}
+i,em{ font-style: normal;}
+div:after{ content: ""; display: block; clear: both;}
+div:before{ content: ""; display: table;}
+.yundou h5{ width:100%; float:left; text-align:center; line-height:44px; background:#f7f7f7; font-size:1rem; border-bottom:1px solid #e7e7e7;}
+/*店铺介绍*/
+.dianpu{ width:94%; padding:3%; background:#fff;}
+.dianpu dl{ width:100%;}
+.dianpu dt{ width:20%; padding:2px; float:left; border:solid 1px #eee; border-radius: 0.2rem;}
+.dianpu dt img{ width:100%;}
+.dianpu dd{ width:74%; float:right; color:#000;}
+.dp_list{ background:#fff; border-bottom:1px solid #eee; border-top:1px solid #eee; margin-top:10px;}
+.dp_list ul{ width:94%; padding:0 3%; float:left;}
+.dp_list li{ width:100%; line-height:1rem; font-size:.6rem; color:#000; padding:3% 0; float:left; border-bottom:1px solid #eee;}
+.dp_list li em{ color:#888; padding-right:10px;}
+</style>
+</head>
+
+<body>
+<header id="header">
+  <div class="header-wrap">
+    <div class="header-l"><a href="member.html"><i class="back"></i></a></div>
+    <div class="header-tab"><a href="javascript:void(0);" style="border:0px; text-decoration:none;">店铺详细页</a></div>
+    <div class="header-r"> <a id="header-nav" href="javascript:void(0);"><i class="more"></i><sup></sup></a> </div>
+  </div>
+  <div class="nctouch-nav-layout">
+    <div class="nctouch-nav-menu"> <span class="arrow"></span>
+      <ul>
+        <li><a href="../../index.html"><i class="home"></i>云品</a></li>
+        <li><a href="#"><i class="search"></i>云店</a></li>
+         <li><a href="../search.html"><i class="categroy"></i>搜索</a></li>
+        <li><a href="../cart_list.html"><i class="cart"></i>我的订单<sup></sup></a></li>
+        <li><a href="../member/member.html"><i class="member"></i>我的</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+<div style="height:50px"></div>
+<div id='seller_body'>
+<script type="text/html" id="order-list-tmpl">
+   <% var order_group_list = datas.ishasstore; %>
+
+<div class="dianpu">
+	<dl>
+    	<dt><% if (order_group_list.store_label=='' || order_group_list.store_label==null){%>
+		<img src="../../images/nologo.jpg"/>
+		<% }else{ %>
+		<img src="/data/upload/shop/store/<%=order_group_list[i].store_label%>"/>
+		<% } %></dt>
+        <dd><%=order_group_list.name_info%></dd>
+    </dl>
+    
+</div>
+<div class="dianpu">
+	<dl>
+    	<dt><% if (order_group_list.shop_erweima=='' || order_group_list.shop_erweima==null){%>
+		<img src="../../images/nologo.jpg"/>
+		<% }else{ %>
+		<img src="/data/upload/erweima/<%=order_group_list.shop_erweima%>"/>
+		<% } %></dt>
+        <dd><%=order_group_list.name_info%>二维码</dd>
+    </dl>
+    
+</div>
+<div class="dp_list">
+	<ul>
+    	<li><em>消费比例：</em>（消费金额：<%=order_group_list.custom_money%>,平台（扣除）：<%=order_group_list.custom_point%>,商家（赠送）：<%=order_group_list.points%>）</li>
+        <li><em>距离商家：</em><%=order_group_list.distance%>km</li>
+        <li><em>商家地址：</em><%=order_group_list.baidu_province%><%=order_group_list.baidu_city%><%=order_group_list.baidu_district%><%=order_group_list.baidu_street%></li>
+		 <li><em>商家具体地址：</em><%=order_group_list.address_info%></li>
+        <li><em>实体店铺描述：</em><%=order_group_list.shop_bz%>
+		</li>
+    </ul>
+</div>
+</script>
+</div>
+</body>
+</html>
+ <script type="text/javascript" src="../../js/jquery-1.10.2.min.js"></script>
+ <script type="text/javascript" src="../../js/zepto.min.js"></script> 
+ <script type="text/javascript" src="../../js/config.js"></script>
+ <script type="text/javascript" src="../../js/common.js"></script>  
+ <script type="text/javascript" src="../../js/template.js"></script> 
+ <script type="text/javascript" src="../../js/tmpl/dimian_store_details.js"></script>
+ 

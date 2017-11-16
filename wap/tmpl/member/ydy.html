@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>引导页</title>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+<meta name="keywords" content="万店通联,PHP商城系统,万店通联商城系统,多用户商城系统,电商ERP,电商CRM,电子商务解决方案"/>
+<meta name="description" content="万店通联打造一个新经济时代的全新互联网实现共创，共赢，共享，共富。咨询电话：400-066-1366"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<link href="../../css/ionic.min.css" rel="stylesheet">
+<link href="../../css/wdbase.css" rel="stylesheet">
+<link href="../../css/style.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="scroll-content">
+  <div class="wd-guide">
+    <div class="wd-guide-a"><a href="javascript:history.go(-1)"><i class="icon ion-ios-close-empty"></i></a></div>
+    <div class="wd-guide-b"><img src="../../images/login_t.png"/></div>
+    
+    <div class="wd-guide-c" id='kk'>
+    </div> 
+   <input type="hidden" id="map_id" value="">
+  </div>
+</div>
+</body>
+</html>
+<script type="text/javascript" src="../../js/config.js"></script> 
+<script type="text/javascript" src="../../js/zepto.min.js"></script> 
+<script type="text/javascript" src="../../js/common.js"></script> 
+<script type="text/javascript" src="../../js/tmpl/footer.js"></script> 
+<script type="text/javascript" src="../../js/tmpl/member.js"></script>
+<script>
+$(function(){ 
+      var ds =$("#map_id").val();
+	  if(ds!=""){
+		  $("#kk").html('<a href="login.html?map_id='+ds+'" class="button button-block icon-center ion-ios-arrow-thin-right button-assertive">　会员登录</a>');
+		  }else{
+		   $("#kk").html('<a href="login.html" class="button button-block icon-center ion-ios-arrow-thin-right button-assertive">　会员登录</a><a href="register.html?map_id=" class="button button-block icon-center ion-ios-arrow-thin-right button-dark">注册帐号</a>');	  
+			  }
+});
+    </script>

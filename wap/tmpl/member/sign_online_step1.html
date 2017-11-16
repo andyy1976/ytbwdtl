@@ -1,0 +1,89 @@
+<!doctype html> 
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="format-detection" content="telephone=no"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1" />
+<title>提交资料</title>
+<link rel="stylesheet" type="text/css" href="../../css/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/nctouch_member.css">
+<link rel="stylesheet" type="text/css" href="../../css/nctouch_common.css">
+<link rel="stylesheet" type="text/css" href="../../css/qyht.css">
+</head>
+<body>
+<header id="header" class="fixed">
+  <div class="header-wrap">
+    <div class="header-l"><a href="member.html"><i class="back"></i></a></div>
+    <div class="header-title">
+      <h1>提交资料</h1>
+    </div>
+    <div class="header-title">  
+    </div>
+    <div class="header-r"> <a id="header-nav" href="javascript:void(0);"><i class="more"></i><sup></sup></a> </div>
+  </div>
+  <div class="nctouch-nav-layout">
+    <div class="nctouch-nav-menu"> <span class="arrow"></span>
+      <ul>
+        <li><a href="../../index.html"><i class="home"></i>云品</a></li>
+        <li><a href="#"><i class="search"></i>云店</a></li>
+         <li><a href="../search.html"><i class="categroy"></i>搜索</a></li>
+        <li><a href="../cart_list.html"><i class="cart"></i>我的订单<sup></sup></a></li>
+        <li><a href="../member/member.html"><i class="member"></i>我的</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+<div class="nctouch-main-layout qy_list" id="member-signonline-div"></div>
+<div class="qy_btn"><a href="javascript:;">下一步</a></div>
+<script type="text/html" id="member-signonline-script">
+    <form >
+    <% if(signOnlineInfo == '初次填写且为第一步') {%>
+    <ul class="form-box">
+        <li><span>招商方姓名：</span><input type="text" class="name" id="submit_member_truename" name="submit_member_truename" placeholder="招商方姓名"/></li>
+        <li><span>加盟会员ID：</span><input type="text" class="name" id="update_member_id" name="update_member_id" placeholder="会员ID"/></li>
+        <li><span>加盟会员姓名：</span><input type="text" class="name" id="update_member_truename" name="update_member_truename" placeholder="会员真实姓名"/></li>
+        <li><span>加盟会员手机：</span><input type="text" class="name" id="update_member_mobile" name="update_member_mobile" placeholder="会员常用手机号"/></li>
+        <li><span>加盟会员证件：</span><select name="document_type" id="document_type"><option>请选择</option><option value='1'>身份证</option><option value='2'>护照</option></select></li>
+        <li><span>证件号：</span><input type="text" class="name" name="document_number" id="document_number" placeholder="会员证件号"/></li>
+        <li><span>代理级别：</span><select name="update_level" id="update_level"><option>请选择</option><option value='5'>省级代理</option><option value='4'>市级代理</option><option value='3'>区/县级代理</option><option value='2'>端口代理</option></select></li>
+        <li><span>加盟区域详情：</span><input type="text" class="name" id="update_level_detail" name="update_level_detail" placeholder="格式:省-市-区/县"/></li>
+        <li><span>加盟总费用：</span><input type="text" class="name" name="update_amount_total" id="update_amount_total" placeholder="加盟总费用"/>元</li>
+        <li><span>首期费用：</span><input type="text" class="name" name="update_amount_first" id="update_amount_first" placeholder="首期费用"/>元</li>
+        <li><span>剩余费用：</span><input type="text" class="name" name="update_amount_last" id="update_amount_last" placeholder=""/><p class="pan-test1">元</p><input type="text" class="name" name="update_amount_last_date" id="update_amount_last_date" placeholder=""/><p class="pan-test1">日内结清</p></li>
+    </ul>
+    <div class="error-tips"></div>
+    <!-- <div class="qy_btn"><a href="javascript:;">下一步</a></div>  -->
+    <% } else {%>
+    <ul class="form-box">
+        <li><span>招商方姓名：</span><input type="text" class="name" id="submit_member_truename" name="submit_member_truename" value ="<%=signOnlineInfo.submit_member_truename%>"/></li>
+        <li><span>加盟会员ID：</span><input type="text" class="name" id="update_member_id" name="update_member_id" value ="<%=signOnlineInfo.update_member_id%>"/></li>
+        <li><span>加盟会员姓名：</span><input type="text" class="name" id="update_member_truename" name="update_member_truename" value ="<%=signOnlineInfo.update_member_truename%>"/></li>
+        <li><span>加盟会员手机：</span><input type="text" class="name" id="update_member_mobile" name="update_member_mobile" value ="<%=signOnlineInfo.update_member_mobile%>"/></li>
+        <li><span>加盟会员证件：</span><select id="document_type" name="document_type"><option>请选择</option><option value='1' <% if(signOnlineInfo.document_type == 1){%>selected='selected'<%}%>>身份证</option><option value='2' <% if(signOnlineInfo.document_type == 2){%>selected='selected'<%}%>>护照</option></select></li>
+        <li><span>证件号：</span><input type="text" class="name" id="document_number" name="document_number" value ="<%=signOnlineInfo.document_number%>"/></li>
+        <li><span>代理级别：</span><select name="update_level" id="update_level"><option>请选择</option><option value='5' <% if(signOnlineInfo.update_level == 5){%>selected='selected'<%}%>>省级代理</option><option value='4' <% if(signOnlineInfo.update_level == 4){%>selected='selected'<%}%>>市级代理</option><option value='3' <% if(signOnlineInfo.update_level == 3){%>selected='selected'<%}%>>区/县级代理</option><option value='2' <% if(signOnlineInfo.update_level == 2){%>selected='selected'<%}%>>端口代理</option></select></li>
+        <li><span>加盟区域详情：</span><input type="text" class="name" id="update_level_detail" name="update_level_detail" value ="<%=signOnlineInfo.update_level_detail%>"/></li>
+        <li><span>加盟总费用：</span><input type="text" class="name" name="update_amount_total" id="update_amount_total" value ="<%=signOnlineInfo.update_amount_total%>"/>元</li>
+        <li><span>首期费用：</span><input type="text" class="name" name="update_amount_first" id="update_amount_first" value ="<%=signOnlineInfo.update_amount_first%>"/>元</li>
+        <li><span>剩余费用：</span><input type="text" class="name" name="update_amount_last" id="update_amount_last" value ="<%=signOnlineInfo.update_amount_last%>"/><p class="pan-test1">元</p><input type="text" class="name" name="update_amount_last_date" id="update_amount_last_date" value ="<%=signOnlineInfo.update_amount_last_date%>"/><p class="pan-test1">日内结清</p></li>
+    </ul>
+    <div class="error-tips"></div>
+    <!-- <div class="qy_btn"><a href="javascript:;">下一步</a></div> -->
+    <%}%>
+    </form>
+</script>
+
+<script type="text/javascript" src="../../js/zepto.min.js"></script> 
+<script type="text/javascript" src="../../js/template.js"></script> 
+<script type="text/javascript" src="../../js/config.js"></script> 
+<script type="text/javascript" src="../../js/common.js"></script> 
+<script type="text/javascript" src="../../js/simple-plugin.js"></script>
+<script type="text/javascript" src="../../js/tmpl/member_signonline.js"></script> 
+</body>
+</html>

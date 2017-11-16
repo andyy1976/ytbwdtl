@@ -1,0 +1,79 @@
+@charset "utf-8";
+/*通用*/
+body{ font-size: 14px; font-family: "microsoft yahei", Arial; color: #000; margin: 0px; padding: 0px; background:#f3f3f3;}
+ul, ol, li, p, h1, h2, h3, h4, h5, h6, dl, dt, dd{ margin: 0px; padding: 0px; list-style: none;}
+a{ color: #333; text-decoration: none;}
+a:hover{ text-decoration:none;}
+img{vertical-align: middle;}
+i,em{ font-style: normal;}
+div:after{ content: ""; display: block; clear: both;}
+div:before{ content: ""; display: table;}
+
+/*提交资料*/
+.qy_top{ width:100%; padding:8px 0; overflow:hidden; background:#aa374a;}
+.qy_top span{ width:6%; float:left; padding:0 3%;}
+.qy_top span img{ width:100%;}
+.qy_top p{ width:85%; float:left; text-align:center; color:#fff; font-size:1rem;}
+
+.qy_list { background:#fff; margin-top:2rem;}
+.qy_list ul{ width:92%; float:left; margin:0 4%;}
+.qy_list li{ width:100%; float:left; border-bottom:1px solid #dfdfdf; line-height:1.5rem; padding:4px 0;}
+.qy_list li:last-child{ border-bottom:none;}
+.qy_list li span{ width:35%; float:left; text-align:right; margin-right:5px;}
+.qy_list li .name{ width:57%; height:1.5rem; line-height:1.5rem; float:left; text-align:left; padding:0; border:0; outline:none;}
+.qy_list li:last-child .name{ width:18%; height:1.5rem; line-height:1.5rem; float:left; text-align:center; padding:0; border:0; outline:none;}
+.qy_list li select{ width:60%; height:1.5rem; float:left; border:none; outline:none;}
+.qy_list li .pan-test1{ float: left; display: block;}
+/*.qy_btn{ width:90%; margin:1rem 5% 0; position:fixed; left:0; bottom:1rem; background:#f3f3f3;}*/
+.qy_btn{ width:90%; margin:1rem 5% 0;}
+.qy_btn a{ width:100%; line-height:2.5rem; float:left; background:#aa374a; font-size:1rem; border-radius:5px; color:#fff; text-align:center;}
+.qy_btn2 a{ background:#ccc; color:#666;}
+
+/*签约须知*/
+.qy_xuzhi{ width:92%; height:400px; line-height:1.5rem; margin-top:0rem; padding:4%; background:#fff; overflow:auto;}
+.qy_xuzhi h3{text-align: center;font-weight:bolder;}
+/*.qy_yi{width:92%; margin-top:.5rem; padding:0 4%;}*/
+.qy_yi{width:92%; padding:0 4%; line-height: 2rem;}
+.qy_yi input{ width:16px; height:16px; float:left; margin-right: 4px; margin-top:.7rem;}
+
+/*在线签约*/
+.qy_sifang{ width:100%; margin-top:2rem; background:#fff;}
+.qy_sifang dl{ width:92%; float:left; margin:0 4%; border-bottom:1px solid #dfdfdf; padding:3px 0;}
+.qy_sifang dl:last-child{ border-bottom:none;}
+.qy_sifang dl dt{ width:15%; float:left; font-size:16px; line-height:1.5rem; color:#aa374a;}
+.qy_sifang dl dd{ width:85%; float:right; line-height:1.5rem;}
+.qy_sifang dl dd span{ padding-right:15px;}
+
+/*.qy_xuzhi2{ height:200px; background:none; margin-top:.5rem;}*/
+.qy_xuzhi2{ height:12.5rem; background:none; margin-top:.5rem;}
+
+/*资质提交*/
+.qy_list2 li{ line-height:2.2rem; height: 2.2rem;}
+.qy_list2 .li-title { width:55%; margin-right:0; float: left;}
+.nctouch-upload1{ width:40%; float:right; height: 100%;}
+.nctouch-upload1 a { position: relative; z-index: 1; display: block; width: 100%; height: 100%; }
+.nctouch-upload1 span { position: absolute; z-index: 3; top: 0; right: 0;}
+.nctouch-upload1 .input-file { width: 100%; height: 100%; padding: 0; margin: 0; border: none 0; opacity:0; filter: alpha(opacity=0);}
+.nctouch-upload1 p { position: absolute; z-index: 1; top: 0; right: 0; background-color: transparent; width: 40%; height: 100%;}
+.nctouch-upload1 p i { display: block; width: 100%; height: 100%; background-image: url(../images/sc.png); background-repeat: no-repeat; background-position: 50% 50%; background-size: 100%; opacity:1;}
+.nctouch-upload1 .pic-thumb { position: absolute; z-index: 2; top: 0; right: 0; background-color: #FFFFFF; border-radius: 0.1rem; width: 40%; height: 100%; padding-right:0.2rem;}
+.nctouch-upload1 .pic-thumb img { width: 100%; height: 100%; margin: 2%; border-radius: 0.2rem; }
+.nctouch-upload1 .upload-loading { position: absolute; z-index: 4; top: 0; right: 0; filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#3FFFFFFF', endColorstr='#3FFFFFFF');background:rgba(255,255,255,0.25); border-radius: 0.1rem;}
+.nctouch-upload1 .upload-loading i { display: block; width: 100%; height: 5%; margin: 93% 0 2% 0; background: #4FC0E8; animation: optionLoading 0.5s ease-in-out; -webkit-animation:optionLoading 1s ease-in-out;}
+ @keyframes optionLoading {
+from { width: 0%;}
+to { width: 100%;}
+}
+@-webkit-keyframes optionLoading {
+from { width: 0%;}
+to {  width: 100%;}
+}
+/*.qy_list2 li img{ width:16%; }*/
+/*.qy_list2 li .input-file {width: 100%;height: 100%; padding: 0; margin: 0;border: none 0;opacity:0;filter: alpha(opacity=0);}*/
+
+/*温馨提示*/
+.qy_tip{ width:100%; height:440px; margin-top:2rem; background:#fff;}
+.qy_tip dl{ width:92%; padding:4%;}
+.qy_tip dt{ text-align:center; padding:2rem 0;}
+.qy_tip dd{ line-height:2rem;}
+

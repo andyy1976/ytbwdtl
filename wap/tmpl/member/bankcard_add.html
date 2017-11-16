@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="format-detection" content="telephone=no"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1" />
+<title>添加银行卡</title>
+<link rel="stylesheet" type="text/css" href="../../css/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/nctouch_member.css">
+</head>
+<body>
+<header id="header">
+	<div class="header-wrap">
+		<!-- <div class="header-l">
+			<a href="member_account.html">
+				<i class="back"></i>
+			</a>
+		</div> -->
+		<div class="header-title">
+			<h1>添加银行卡</h1>
+		</div>
+	</div>
+</header>
+<div class="nctouch-main-layout">
+  <div class="nctouch-inp-con">
+    <form action="" method ="">
+    <ul class="form-box">
+
+      <li class="form-item">
+        <h4>银行卡号</h4>
+        <div class="input-box">
+          <input type="text" id="acc_no" name="acc_no" class="inp" value="" maxlength="21" placeholder="输入银行卡号" oninput="writeClear($(this));" onFocus="writeClear($(this));" pattern="[0-9]*" />       
+        </div>
+      </li>
+       <li class="form-item">
+        <h4>银行卡姓名</h4>
+        <div class="input-box">
+          <input type="text" id="name" name="name" class="inp" value="" maxlength="6" placeholder="输入银行卡姓名" >       
+        </div>
+      </li>
+       <li class="form-item">
+        <h4>身份证号码</h4>
+        <div class="input-box">
+          <input type="text" id="certif_id" name="certif_id" class="inp" value="" maxlength="18" placeholder="输入身份证号码" >       
+        </div>
+      </li>
+       <li class="form-item">
+        <h4>银行预留手机号</h4>
+        <div class="input-box">
+          <input type="text" id="phone" name="phone" class="inp" value="" maxlength="11" placeholder="输入银行预留手机号" oninput="writeClear($(this));" onFocus="writeClear($(this));" pattern="[0-9]*" />       
+        </div>
+      </li>
+    </ul>
+    <div class="error-tips"></div>
+    <div class="form-btn"><a href="javascript:void(0);" class="btn" id="nextform">添加</a></div>
+    </form>
+  </div>
+</div>
+<footer id="footer" class="bottom"></footer>
+<script> var navigate_id ="5";</script> 
+<script type="text/javascript" src="../../js/config.js"></script> 
+<script type="text/javascript" src="../../js/zepto.min.js"></script> 
+<script type="text/javascript" src="../../js/template.js"></script> 
+<script type="text/javascript" src="../../js/common.js"></script> 
+<script type="text/javascript" src="../../js/simple-plugin.js"></script> 
+<script type="text/javascript" src="../../js/tmpl/bankcard.js"></script> 
+<script type="text/javascript" src="../../js/tmpl/footer.js"></script>
+</body>
+</html>

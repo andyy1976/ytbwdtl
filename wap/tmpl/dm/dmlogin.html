@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>线下商城</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<link href="/wap/dmtmpl/css/style.css" rel="stylesheet" type="text/css"/>
+<style>
+.button {
+    border-color: #b2b2b2;
+    background-color: #bb8f3c;
+    color: #333;
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0 12px;
+    min-width: 52px;
+    min-height: 47px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 2px;
+    vertical-align: top;
+    text-align: center;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    line-height: 42px;
+    cursor: pointer;
+	border-radius: 15px 15px 15px 15px;
+}
+.button-block {
+    display: block;
+    clear: both;
+}
+a.button {
+    text-decoration: none;
+}
+.error-tips{
+display: none;
+    background-color: rgba(255,255,255,0.95);
+    border: solid 1px #CCC;
+    padding: 0.8rem 0.6rem;
+    text-align: center;
+    border-radius: 0.2rem;
+    position: fixed;
+    z-index: 9999;
+    top: 40%;
+    left: 25%;
+    right: 25%;
+    color: #333;
+    font-size: 0.7rem;
+    line-height: 1rem;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.15);
+}
+.pay_list_c1 {
+width: 24px;
+height: 18px;
+float: left;
+
+cursor: pointer;
+text-align: center;
+margin-top:2px;
+background-image:url('/wap/dmtmpl/img/inputradio.gif');
+background-repeat: no-repeat;
+background-position: -24px 0;
+}
+.radioclass {
+opacity: 0;
+cursor: pointer;
+-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+filter: alpha(opacity=0);
+}
+.on {
+background-position: 0 0;
+}
+</style>
+
+</head>
+
+<body>
+<form action="" method ="">
+<div class="dm_xq_top" id='dmlog'>
+  
+</div>
+<div class="dm_login">
+    <ul>
+      <li>  <input type="hidden" name="map_id"  id="map_id">
+       <input type="text" placeholder="用户名 / 手机号" class="login_text" name="username" id="username"/>
+      </li>
+      <li>
+       <input type="password" autocomplete="off" placeholder="请输入登录密码" class="login_text" name="userpwd" id="userpwd" oninput="writeClear($(this));"/>
+      
+      </li>
+      <li class="login_03">
+      <span class="pay_list_c1 on" id="ok">
+   <input type="radio"  checked class="radioclass"></span>七天自动登录
+      <a href="dmfind_password.html">忘记密码？</a></li>
+       <div class="error-tips"></div>
+      <li class="login_05"><!--<button class="denglu" onClick="javascript:void(0);" id="loginbtn">登录</button>-->
+      <a href="javascript:void(0);"  id="loginbtn">登录</a>
+  
+      </li>
+    </ul>
+  </div>
+  </form>
+</body>
+</html>
+<script type="text/javascript" src="../../js/config.js"></script> 
+<script type="text/javascript" src="../../js/zepto.min.js"></script> 
+<script type="text/javascript" src="../../js/common.js"></script> 
+<script type="text/javascript" src="../../js/simple-plugin.js"></script> 
+<script type="text/javascript" src="../../js/tmpl/footer.js"></script> 
+<script type="text/javascript" src="../../js/dm/dmlogin.js"></script>
+<script type="text/javascript">
+$(".pay_list_c1").on("click",function(){
+  $(this).toggleClass("on");
+})
+ function goBack(){
+        document.referrer === '' ? window.location.href = 'dmxxsc.html' :window.history.go(-1);
+      }
+</script>

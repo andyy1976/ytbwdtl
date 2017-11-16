@@ -1,0 +1,261 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="format-detection" content="telephone=no"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no"/>
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1" />
+<title>余额提现</title>
+<link rel="stylesheet" type="text/css" href="../../css/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/nctouch_member.css">
+<style type="text/css">
+  h3{font-size: 20px;color: red;}
+</style>
+</head>
+<body>
+<header id="header">
+  <div class="header-wrap">
+    <div class="header-l"><a href="../../index.html"><i class="home"></i></a></div>
+    <div class="header-title">
+      <h1>余额提现</h1>
+    </div>
+    <div class="header-r"> <a id="header-nav"  class="text"></a> </div>
+  </div>
+</header>
+<div class="nctouch-main-layout fixed-Width">
+  <div class="nctouch-inp-con">
+    <form action="" method ="post">
+    	<input type="hidden" name="form_submit" value="ok" />
+      <ul class="form-box">
+        <li class="form-item">
+          <h4>提现金额</h4>
+          <div class="input-box">
+            <input type="number" placeholder="请输入金额" class="inp" name="pdc_amount" id="pdc_amount" oninput="writeClear($(this));"/>
+            <span class="input-del"></span></div>
+        </li>
+        <li class="form-item">
+          <h4>提现类型</h4>
+          <div class="input-box">
+           <select id='predeposit_type' class="inp" > 
+           	<option value="2" selected="selected" >充值余额</option>
+           	<option value="1" id="point_money">云豆余额</option>           	
+           	<option value="3" >分销余额</option>
+            <option value="5" id="provice_money">省代释放余额</option>
+            <option value="6" id="agent_money">代理余额</option>
+           </select>
+        </li>  
+        <li class="form-item">
+          <h4>收款银行</h4>
+          <div class="input-box">
+            <input type="text"  class="inp" name="pdc_bank_name" disabled="disabled" value="农业银行" id="pdc_bank_name" oninput="writeClear($(this));"/>
+            <span class="input-del"></span></div>
+        </li>       
+        <!-- <li class="form-item">
+          <h4>开户姓名</h4>
+          <div class="input-box">
+            <input type="text"  class="inp" name="pdc_bank_user" id="pdc_bank_user" oninput="writeClear($(this));"/>
+            <span class="input-del"></span></div>
+        </li> -->
+        <li class="form-item">
+          <h4>安全密码</h4>
+          <div class="input-box">
+            <input type="password"  class="inp" name="password" id="password" oninput="writeClear($(this));"/>
+            <span class="input-del"></span></div>
+        </li>
+      </ul>     
+      <div class="error-tips"></div>
+      <div class="form-btn"><a href="javascript:void(0);" class="btn" id="registerbtn" style="font-size: 20px;">确定</a></div>
+<!--       <div>
+      	<p style="font-size: 0.8rem;color: #FF0000;margin-left: 10px;margin-top: 20px;">说明：<br><h3>1/云豆余额提现100起提，前期100的整数倍可以提现，手续费13%。</h3><h3>2/分销余额提现为100的倍数，手续费为1%。</h3><h3>3/充值提现到账时间为T+1。</h3><h3>4/可用余额提现到账时间为72小时。</h3><h3>5/分销奖金提现到账时间为72小时。</h3><h3>6/每笔提现金额不超过20万，且充值提现每日只能提现5次。</h3>
+        <h3>6/每天提现的时间为上午9点整之下午6点整。</h3>
+        </p>
+      </div> -->
+    </form>
+    <input type="hidden" name="referurl">
+    <div class="form-btn" style="text-align:left;font-size: 0.6rem;line-height:1.2rem;padding: 0.6rem 1rem;color: #888;">
+      说明：<br />
+      （1）“已释放云豆”提现：每月提现次数不限，超过4次，每次加收5元成本费。<br/>
+      （2）云豆提现需账户上“已释放的云豆”满100或100的倍数才可以，提现扣除13%的服务费<br/>
+      （3）分销余额提现为100的倍数，手续费为1%！<br />
+<!--       （4）充值余额提现为100的倍数。<br /> -->
+      （4）充值提现到账时间为T+1个工作日！<br />
+      （5）云豆余额提现到账时间为T+3个工作日！<br />
+      （6）分销奖金提现到账时间为T+3个工作日！<br />
+      （7）每笔提现金额不超过20万，且充值提现每日只能提现5次！</div>
+  </div>
+</div>
+<footer id="footer" class="bottom"></footer>
+<script> var navigate_id ="5";</script>
+<script type="text/javascript" src="../../js/config.js"></script> 
+<script type="text/javascript" src="../../js/zepto.min.js"></script> 
+<script type="text/javascript" src="../../js/common.js"></script> 
+<script type="text/javascript" src="../../js/simple-plugin.js"></script> 
+<script type="text/javascript" src="../../js/tmpl/footer.js"></script> 
+<script> 
+$(function(){
+    var key = getCookie('key');   
+    if (!key) {
+        window.location.href = WapSiteUrl + '/tmpl/member/login.html';
+        return;
+    }
+    $.post(ApiUrl + '/index.php?act=member_money&op=province_cash',{key:key},function(result){
+    		if(result==0){
+    			$('#point_money').remove();
+          // $('#agent_money').remove();
+    		}
+        if(result==1){
+          $('#provice_money').remove();
+
+        }
+        if(result==2){
+          $('#provice_money').remove();
+          $('#agent_money').remove();
+        }
+    })
+    $('#registerbtn').click(function(){
+    	var money=$('#pdc_amount').val();
+    	var money_type=$('#predeposit_type').val();
+    	var bank_user=$('#pdc_bank_user').val();
+    	var pwd=$('#password').val();
+      if(money>200000){alert('每笔提现金额不超过20万！');exit();}
+    	if(money < 0 || money ==0 || money ==''){alert('请输入有效金额！');exit();}   
+    	if(bank_user==''){alert('开户姓名不能为空!');exit();}
+    	if(pwd==''){alert('安全密码不能为空！');exit();}  
+    	if(money_type==1){
+    		if(money % 100 != 0){
+    			 alert('余额提现必须是100的倍数！');exit();
+    		}
+    	}
+      if(money_type==5){
+        if(money % 100 != 0){
+           alert('省代余额提现必须是100的倍数！');exit();
+        }
+      }
+      if(money_type==6){
+        if(money % 100 != 0){
+           alert('代理余额提现必须是100的倍数！');exit();
+        }
+      }
+    	if(money_type==3){
+    		if(money % 100 != 0){
+    			 alert('分销提现必须是100的倍数！');exit();
+    		}
+    	}
+    	//exit();
+    	$.post(ApiUrl + '/index.php?act=member_money&op=tixian',{money:money,money_type:money_type,bank_user:bank_user,pwd:pwd,key:key},function(result){
+    		if(result==11){alert('充值提现每日只能提现五次!');exit;}
+        if(result==10){alert('未激活会员，不予提现');exit;}
+        if(result==16){alert('该卡不是农行卡，请重新绑定农行卡！！！！');exit;}
+        if(result==6){alert('提现失败！');exit();}
+    		if(result==5){alert('安全密码错误！');exit();}
+    		if(result==4){alert('您还没绑定银行卡或者开户人姓名！');exit();}
+    		if(result==3){alert('写入提现记录失败，提现失败！');exit();}
+    		if(result==2){alert('您的余额不足！');exit();}
+    		if(result==1){alert('提现成功！');}
+        if(result==20){alert('提现异常!');}
+        if(result==12){
+          if(confirm('成为业务员可以获得奖励，请确认是否成为业务员')){
+              $.ajax({
+                  type:'post',
+                  url:ApiUrl+'/index.php?act=member_fund&op=agreement_id',
+                  data:{
+                      key:key,
+                  },
+                  dataType:'json'
+                  
+              });
+          }
+          alert('提现成功！');
+        }
+    	})
+    })
+});
+</script> 
+</body>
+</html>
+<!--
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="format-detection" content="telephone=no"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1" />
+<title>余额转云豆</title>
+<link rel="stylesheet" type="text/css" href="../../css/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/main.css">
+<link rel="stylesheet" type="text/css" href="../../css/nctouch_member.css">
+<script>
+    function setTxt(){
+　　var t=document.getElementById("myurl");
+　　t.select();
+　　window.clipboardData.setData('text',t.createTextRange().text);
+    alert("复制成功");
+　　}
+</script>
+</head>
+<body>
+<header id="header">
+  <div class="header-wrap">
+    <div class="header-l"> <a href="javascript:history.go(-1)"> <i class="back"></i> </a> </div>
+    <div class="header-title">
+      <h1>邀请返利</h1>
+    </div>
+    <div class="header-r"> <a href="javascript:void(0);" id="header-nav"><i class="more bgc-t"></i><sup></sup></a> </div>
+  </div>
+  <div class="nctouch-nav-layout">
+    <div class="nctouch-nav-menu"> <span class="arrow"></span>
+      <ul>
+        <li><a href="../../index.html"><i class="home"></i>首页</a></li>
+        <li><a href="../search.html"><i class="search"></i>搜索</a></li>
+        <li><a href="../product_first_categroy.html"><i class="categroy"></i>分类</a></li>
+        <li><a href="javascript:void(0);"><i class="message"></i>消息</a></li>
+        <li><a href="../cart_list.html"><i class="cart"></i>购物车<sup></sup></a></li>
+        <li><a href="../member/member.html"><i class="member"></i>我的商城</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+<div class="nctouch-main-layout feedback">
+<div class="nctouch-asset-info">
+    <div class="container voucher"> <i class="icon"></i>
+      <dl class="rule">
+        <dd>1.每天获得的云豆2万以下时，一元换取20云豆</dd>
+        <dd>2.当天累计获取云豆超过2万时，一元换取12.5云豆</dd>        
+      </dl>
+    </div>
+  </div>
+    <div style="font-size: 16px; padding: 10px; margin-top:10px;text-align: center;">
+    您的邀请二维码：
+    </div>
+    <div style="width:150px;margin:0 auto; padding-bottom:10px;text-align: center;">
+               	 <a href="javascript:;" id="download_url" title="保存二维码"><img id="myurl_src" src="" style="width:150px; height:150px" /></a>点击二维码可以保存哦
+				 </div>
+                 
+                 <div style="font-size: 16px; text-align: center; padding: 10px; text-align: center;">
+    您的邀请链接：
+    </div>
+    <textarea id="myurl" class="textarea" style="height: 1rem; font-size: 0.8rem;"></textarea>
+    <a href="javascript:setTxt();" class="btn-l" id="feedbackbtn">复制邀请网址</a>
+     </div>       
+      <footer id="footer" class="bottom"></footer>
+<script type="text/javascript" src="../../js/config.js"></script> 
+<script type="text/javascript" src="../../js/zepto.min.js"></script> 
+<script type="text/javascript" src="../../js/template.js"></script> 
+<script type="text/javascript" src="../../js/common.js"></script> 
+<script type="text/javascript" src="../../js/ncscroll-load.js"></script> 
+<script type="text/javascript" src="../../js/tmpl/member_invite.js"></script>
+<script type="text/javascript" src="../../js/tmpl/footer.js"></script>
+</body>
+</html>
+-->

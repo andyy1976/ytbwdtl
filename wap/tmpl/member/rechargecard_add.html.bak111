@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="format-detection" content="telephone=no"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1" />
+<title>充值</title>
+<link rel="stylesheet" type="text/css" href="../../css/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/nctouch_member.css">
+<link rel="stylesheet" type="text/css" href="../../css/nctouch_common.css">
+<style type='text/css'>
+.ncc-payment-list li:hover{ border: solid 2px #52A452; margin: 10px;}
+.ncc-payment-list li { vertical-align: top; letter-spacing: normal; word-spacing: normal; text-align: center; display: inline-block; width: 120px; padding: 10px 30px; margin: 11px; border: solid 1px #E6E6E6; border-radius: 4px; position: relative; z-index: 1;}
+.ncc-payment-list li.using { border: solid 2px #52A452; margin: 10px;}
+</style>
+
+</head>
+<body>
+<header id="header">
+  <div class="header-wrap">
+    <div class="header-l"><a href="member.html"><i class="back"></i></a></div>
+    <div class="header-tab"> <a href="rechargecardlog_list.html">充值记录</a> <a href="javascript:void(0);" class="cur">充值</a><a href="recharge_pdcash.html">提现记录</a> </div>
+    <div class="header-r"><a id="header-nav" href="javascript:void(0);"><i class="more"></i><sup></sup></a> </div>
+  </div>
+  <div class="nctouch-nav-layout">
+    <div class="nctouch-nav-menu"> <span class="arrow"></span>
+      <ul>
+        <li><a href="../../index.html"><i class="home"></i>云品</a></li>
+        <li><a href="#"><i class="search"></i>云店</a></li>
+         <li><a href="../search.html"><i class="categroy"></i>搜索</a></li>
+        <li><a href="../cart_list.html"><i class="cart"></i>我的订单<sup></sup></a></li>
+        <li><a href="../member/member.html"><i class="member"></i>我的</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+<div class="nctouch-main-layout">
+  <div class="nctouch-asset-info">
+    <div class="container rcard"> <i class="icon"></i>
+      <dl class="rule">
+        <dd></dd>
+        <dd></dd>
+      </dl>
+    </div>
+  </div>
+  <div class="nctouch-inp-con">
+  <!--  <h3  style="text-align:center;">&nbsp;由于手机支付系统升级暂时关闭手机充值系统，如需充值请登陆电脑端充值(万店通联.中国)，手机微信支付正在测试中，近期开放</h3> -->
+     <form action="" method ="">
+      <ul class="form-box">
+        <li class="form-item">
+          <h4>充值金额</h4>
+                <div class="input-box">           
+              <input type="text" id="rc_sn" name="rc_sn" class="inp" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onafterpaste="this.value=this.value.replace(/[^0-9]/g," maxlength="100" placeholder="请输入充值金额" oninput="writeClear($(this));" onfocus="writeClear($(this));"/>
+              <span class="input-del"></span> </div      
+        </li>
+      </ul>
+      <div class="error-tips"></div>
+      <div class="form-btn"><a href="javascript:void(0);" class="btn" style='background: #ed5564 none repeat scroll 0 0;
+    color: #fff !important;' id="saveform">确认提交</a></div>
+      <h3 style="text-align:left;font-size: 0.6rem;line-height:1rem;padding: 0.6rem 1rem;color: #888;">注：会员充值请尽量避开在高峰时间段进行充值（17：00-23：00）</h3>
+      <h3 style="text-align:left;font-size: 0.6rem;line-height:1rem;padding: 0.6rem 1rem;color: #888;">（1）充值说明：单笔充值不能低于1千，每日累计充值限额100万。和购买云豆同步。<br/>（2）当日账户充值和兑换消费云豆合计2万以下的（含2万）按5%收取。<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当日账户充值和兑换消费云豆合计超出2万部分按8%的服务费收取。</h3>
+        <div class="nctouch-bottom-mask">
+    <div class="nctouch-bottom-mask-bg"></div>
+    <div class="nctouch-bottom-mask-block">
+      <div class="nctouch-bottom-mask-tip"><i></i>点击此处返回</div>
+      <div class="nctouch-bottom-mask-top">
+        <p class="nctouch-cart-num">本次交易需在线支付<em id="onlineTotal">0.00</em>元</p>
+        <p style="display:none" id="isPayed"></p>
+        <a href="javascript:void(0);" class="nctouch-bottom-mask-close"><i></i></a> </div>
+      <div class="nctouch-inp-con nctouch-inp-cart">
+
+        <div class="nctouch-pay">
+          <div class="spacing-div"><span>在线支付方式</span></div>
+          <input type="hidden" name='pdr_sn' id='pdr_sn' value=''>
+          <input type="hidden" name='payment_code' id='payment_code' value=''>
+          <div class="pay-sel">
+              <ul class="ncc-payment-list">
+                <!-- <li payment_code="tlzf"  id="tlzf" style='float:left'>
+                  <label for="pay_tlzf" id='tlzf'>
+                    <i></i>
+                    <div class="logo" for="pay_7"> <img style="width: 141px;" src="/shop/templates/default/images/payment/tlzf_logo.gif"> </div>
+                    <div class="predeposit" nc_type="predeposit" style="display:none">
+                    </div>
+                  </label>
+                </li> -->
+                <li payment_code="ybzf"  id="ybzf" style='float:left'>
+                  <label for="pay_ybzf" id='ybzf'>
+                    <i></i>
+                    <div class="logo" for="pay_7"> <img style="width: 141px;" src="/shop/templates/default/images/payment/ybzf_logo.gif"> </div>
+                    <div class="predeposit" nc_type="predeposit" style="display:none">
+                    </div>
+                  </label>
+                </li>
+ <!--               <li payment_code="wxpay"  id="wxpay" style='float:left'>
+                  <label for="pay_wxpay" id='wxpay'>
+                    <i></i>
+                    <div class="logo" for="pay_7"> <img style="width: 141px;" src="/wap/images/wxpay.jpg"> </div>
+                    <div class="predeposit" nc_type="predeposit" style="display:none">
+                    </div>
+                  </label>
+                </li> 
+                -->
+              </ul>           
+          </div>
+        <div class="pay-btn"> <a href="javascript:void(0);" id="toPay" class="btn-l" >确认支付</a> </div>
+      </div>
+    </div>
+  </div>
+    </form>
+  </div>
+</div>
+<footer id="footer" class="bottom"></footer>
+
+<script type="text/javascript" src="../../js/config.js"></script> 
+<script type="text/javascript" src="../../js/zepto.min.js"></script> 
+<script type="text/javascript" src="../../js/template.js"></script> 
+<script type="text/javascript" src="../../js/common.js"></script> 
+<script type="text/javascript" src="../../js/simple-plugin.js"></script> 
+<script type="text/javascript" src="../../js/tmpl/rechargecard_add.js"></script>   
+<script type="text/javascript" src="../../js/tmpl/footer.js"></script>
+</body>
+</html>

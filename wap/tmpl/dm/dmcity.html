@@ -1,0 +1,299 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>线下商城</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<link href="/wap/dmtmpl/css/style.css" rel="stylesheet" type="text/css"/>
+<script src="/wap/dmtmpl/js/jquery-1.11.3.js"></script> 
+<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=c0rI9UXaNZ3qlZ29ZAa46GGWWYXKg19H"></script>
+</head>
+
+<body>
+<div class="yp_top">
+  <dl>
+    <dt><a href="dmxxsc.html"><img src="/wap/dmtmpl/img/yp_fh.png"/></a></dt>
+    <dd>
+      <input type="text" id="palce" class="dm_top_text yp_top_text" placeholder="城市名 / 拼音" onChange="return searchPlace()"/>
+    </dd>
+  </dl>
+</div>
+<div class="city_box">
+	<div class="city_box_l">
+    	<div id="dm_city">当前：<b id="demo"></b><input type="hidden" value="" id="provice"><input type="hidden" value="" id="city"><input type="hidden" value="" id="cityid"><!--<span>切换区县<em></em></span>
+  <div style="display:block" class="city_qie" id="city_qie">
+ 
+  </div>-->
+</div>
+<div class="city_hot">
+  <dl>
+    <dt>最近访问</dt>
+    <dd id='recentcity'></dd>
+  </dl>
+  <dl>
+    <dt>热门城市</dt>
+    <dd id='hotcity'></dd>
+  </dl>
+</div>
+<div class="city_list">
+ <dl>
+    <dt id="A">A<a onclick="return addc(106)"><dd>阿拉善盟</dd></a><a onclick="return addc(109)"><dd>鞍山市</dd></a><a onclick="return addc(193)"><dd>安庆市</dd></a><a onclick="return addc(244)"><dd>安阳市</dd></a><a onclick="return addc(403)"><dd>阿坝藏族羌族自治州</dd></a><a onclick="return addc(409)"><dd>安顺市</dd></a><a onclick="return addc(436)"><dd>阿里地区</dd></a><a onclick="return addc(446)"><dd>安康市</dd></a><a onclick="return addc(482)"><dd>阿克苏地区</dd></a><a onclick="return addc(488)"><dd>阿勒泰地区</dd></a><a onclick="return addc(490)"><dd>阿拉尔市</dd></a></dt>
+  
+  </dl>
+  <dl>
+    <dt id="B">B<a onclick="return addc(36)"><dd>北京市</dd></a><a onclick="return addc(78)"><dd>保定市</dd></a><a onclick="return addc(96)"><dd>包头市</dd></a><a onclick="return addc(102)"><dd>巴彦淖尔市</dd></a><a onclick="return addc(111)"><dd>本溪市</dd></a><a onclick="return addc(115)"><dd>阜新市</dd></a><a onclick="return addc(126)"><dd>白山市</dd></a><a onclick="return addc(128)"><dd>白城市</dd></a><a onclick="return addc(188)"><dd>蚌埠市</dd></a><a onclick="return addc(196)"><dd>阜阳市</dd></a><a onclick="return addc(238)"><dd>滨州市</dd></a><a onclick="return addc(314)"><dd>北海市</dd></a><a onclick="return addc(319)"><dd>百色市</dd></a><a onclick="return addc(340)"><dd>保亭黎族苗族自治县</dd></a><a onclick="return addc(401)"><dd>巴中市</dd></a><a onclick="return addc(412)"><dd>毕节地区</dd></a><a onclick="return addc(418)"><dd>保山市</dd></a><a onclick="return addc(440)"><dd>宝鸡市</dd></a><a onclick="return addc(451)"><dd>白银市</dd></a><a onclick="return addc(480)"><dd>博尔塔拉蒙古自治州</dd></a><a onclick="return addc(481)"><dd>巴音郭楞蒙古自治州</dd></a></dt>
+   
+  </dl>
+  <dl>
+    <dt id="C">C<a onclick="return addc(62)"><dd>重庆市</dd></a><a onclick="return addc(80)"><dd>承德市</dd></a><a onclick="return addc(83)"><dd>沧州市</dd></a><a onclick="return addc(87)"><dd>长治市</dd></a><a onclick="return addc(98)"><dd>赤峰市</dd></a><a onclick="return addc(119)"><dd>朝阳市</dd></a><a onclick="return addc(121)"><dd>长春市</dd></a><a onclick="return addc(165)"><dd>常州市</dd></a><a onclick="return addc(182)"><dd>衢州市</dd></a><a onclick="return addc(195)"><dd>滁州市</dd></a><a onclick="return addc(198)"><dd>巢湖市</dd></a><a onclick="return addc(201)"><dd>池州市</dd></a><a onclick="return addc(275)"><dd>长沙市</dd></a><a onclick="return addc(281)"><dd>常德市</dd></a><a onclick="return addc(284)"><dd>郴州市</dd></a><a onclick="return addc(307)"><dd>潮州市</dd></a><a onclick="return addc(323)"><dd>崇左市</dd></a><a onclick="return addc(385)"><dd>成都市</dd></a><a onclick="return addc(423)"><dd>楚雄彝族自治州</dd></a><a onclick="return addc(432)"><dd>昌都地区</dd></a><a onclick="return addc(479)"><dd>昌吉回族自治州</dd></a></dt>
+   
+  </dl>
+   <dl>
+    <dt id="D">D<a onclick="return addc(85)"><dd>大同市</dd></a><a onclick="return addc(108)"><dd>大连市</dd></a><a onclick="return addc(112)"><dd>丹东市</dd></a><a onclick="return addc(135)"><dd>大庆市</dd></a><a onclick="return addc(142)"><dd>大兴安岭地区</dd></a><a onclick="return addc(181)"><dd>舟山市</dd></a><a onclick="return addc(227)"><dd>东营市</dd></a><a onclick="return addc(236)"><dd>德州市</dd></a><a onclick="return addc(305)"><dd>东莞市</dd></a><a onclick="return addc(331)"><dd>东方市</dd></a><a onclick="return addc(332)"><dd>定安县</dd></a><a onclick="return addc(389)"><dd>德阳市</dd></a><a onclick="return addc(399)"><dd>达州市</dd></a><a onclick="return addc(427)"><dd>大理白族自治州</dd></a><a onclick="return addc(428)"><dd>德宏傣族景颇族自治州</dd></a><a onclick="return addc(430)"><dd>迪庆藏族自治州</dd></a><a onclick="return addc(458)"><dd>定西市</dd></a></dt>
+  
+  </dl>
+   <dl>
+    <dt id="E">E<a onclick="return addc(100)"><dd>鄂尔多斯市</dd></a><a onclick="return addc(263)"><dd>鄂州市</dd></a><a onclick="return addc(270)"><dd>恩施土家族苗族自治州</dd></a></dt>
+   
+  </dl>
+   <dl>
+    <dt id="F">F<a onclick="return addc(110)"><dd>抚顺市</dd></a><a onclick="return addc(203)"><dd>福州市</dd></a><a onclick="return addc(294)"><dd>佛山市</dd></a><a onclick="return addc(315)"><dd>防城港市</dd></a></dt>
+  
+  </dl>
+   <dl>
+    <dt id="G">G<a onclick="return addc(218)"><dd>赣州市</dd></a><a onclick="return addc(289)"><dd>广州市</dd></a><a onclick="return addc(312)"><dd>桂林市</dd></a><a onclick="return addc(317)"><dd>贵港市</dd></a><a onclick="return addc(391)"><dd>广元市</dd></a><a onclick="return addc(398)"><dd>广安市</dd></a><a onclick="return addc(404)"><dd>甘孜藏族自治州</dd></a><a onclick="return addc(406)"><dd>贵阳市</dd></a><a onclick="return addc(461)"><dd>甘南藏族自治州</dd></a><a onclick="return addc(467)"><dd>果洛藏族自治州</dd></a><a onclick="return addc(473)"><dd>固原市</dd></a><a onclick="return addc(494)"><dd>高雄市</dd></a></dt>
+   
+  </dl>
+   <dl>
+    <dt id="H">H<a onclick="return addc(76)"><dd>邯郸市</dd></a><a onclick="return addc(81)"><dd>衡水市</dd></a><a onclick="return addc(95)"><dd>呼和浩特市</dd></a><a onclick="return addc(101)"><dd>呼伦贝尔市</dd></a><a onclick="return addc(120)"><dd>葫芦岛市</dd></a><a onclick="return addc(130)"><dd>哈尔滨市</dd></a><a onclick="return addc(133)"><dd>鹤岗市</dd></a><a onclick="return addc(140)"><dd>黑河市</dd></a><a onclick="return addc(169)"><dd>淮安市</dd></a><a onclick="return addc(175)"><dd>杭州市</dd></a><a onclick="return addc(179)"><dd>湖州市</dd></a><a onclick="return addc(186)"><dd>合肥市</dd></a><a onclick="return addc(189)"><dd>淮南市</dd></a><a onclick="return addc(191)"><dd>淮北市</dd></a><a onclick="return addc(194)"><dd>黄山市</dd></a><a onclick="return addc(200)"><dd>亳州市</dd></a><a onclick="return addc(239)"><dd>菏泽市</dd></a><a onclick="return addc(245)"><dd>鹤壁市</dd></a><a onclick="return addc(259)"><dd>黄石市</dd></a><a onclick="return addc(267)"><dd>黄冈市</dd></a><a onclick="return addc(286)"><dd>怀化市</dd></a><a onclick="return addc(299)"><dd>惠州市</dd></a><a onclick="return addc(302)"><dd>河源市</dd></a><a onclick="return addc(320)"><dd>贺州市</dd></a><a onclick="return addc(321)"><dd>河池市</dd></a><a onclick="return addc(324)"><dd>海口市</dd></a><a onclick="return addc(424)"><dd>红河哈尼族彝族自治州</dd></a><a onclick="return addc(441)"><dd>咸阳市</dd></a><a onclick="return addc(444)"><dd>汉中市</dd></a><a onclick="return addc(463)"><dd>海东地区</dd></a><a onclick="return addc(464)"><dd>海北藏族自治州</dd></a><a onclick="return addc(465)"><dd>黄南藏族自治州</dd></a><a onclick="return addc(466)"><dd>海南藏族自治州</dd></a><a onclick="return addc(469)"><dd>海西蒙古族藏族自治州</dd></a><a onclick="return addc(478)"><dd>哈密地区</dd></a><a onclick="return addc(485)"><dd>和田地区</dd></a></dt>
+  
+  </dl>
+   <dl>
+    <dt id="I">I</dt>
+   
+  </dl>
+   <dl>
+    <dt id="J">J<a onclick="return addc(88)"><dd>晋城市</dd></a><a onclick="return addc(90)"><dd>晋中市</dd></a><a onclick="return addc(113)"><dd>锦州市</dd></a><a onclick="return addc(122)"><dd>吉林市</dd></a><a onclick="return addc(132)"><dd>鸡西市</dd></a><a onclick="return addc(137)"><dd>佳木斯市</dd></a><a onclick="return addc(178)"><dd>嘉兴市</dd></a><a onclick="return addc(183)"><dd>金华市</dd></a><a onclick="return addc(213)"><dd>景德镇市</dd></a><a onclick="return addc(215)"><dd>九江市</dd></a><a onclick="return addc(219)"><dd>吉安市</dd></a><a onclick="return addc(223)"><dd>济南市</dd></a><a onclick="return addc(230)"><dd>济宁市</dd></a><a onclick="return addc(257)"><dd>济源市</dd></a><a onclick="return addc(264)"><dd>荆门市</dd></a><a onclick="return addc(266)"><dd>荆州市</dd></a><a onclick="return addc(295)"><dd>江门市</dd></a><a onclick="return addc(308)"><dd>揭阳市</dd></a><a onclick="return addc(390)"><dd>绵阳市</dd></a><a onclick="return addc(449)"><dd>嘉峪关市</dd></a><a onclick="return addc(450)"><dd>金昌市</dd></a><a onclick="return addc(456)"><dd>酒泉市</dd></a><a onclick="return addc(495)"><dd>基隆市</dd></a><a onclick="return addc(499)"><dd>嘉义市</dd></a></dt>
+   
+  </dl>
+   <dl>
+    <dt id="K">K<a onclick="return addc(241)"><dd>开封市</dd></a><a onclick="return addc(415)"><dd>昆明市</dd></a><a onclick="return addc(476)"><dd>克拉玛依市</dd></a><a onclick="return addc(483)"><dd>克孜勒苏柯尔克孜自治州</dd></a><a onclick="return addc(484)"><dd>喀什地区</dd></a></dt>
+    
+  </dl>
+   <dl>
+    <dt id="L">L<a onclick="return addc(82)"><dd>廊坊市</dd></a><a onclick="return addc(93)"><dd>临汾市</dd></a><a onclick="return addc(94)"><dd>吕梁市</dd></a><a onclick="return addc(116)"><dd>辽阳市</dd></a><a onclick="return addc(124)"><dd>辽源市</dd></a><a onclick="return addc(168)"><dd>连云港市</dd></a><a onclick="return addc(185)"><dd>丽水市</dd></a><a onclick="return addc(199)"><dd>六安市</dd></a><a onclick="return addc(210)"><dd>龙岩市</dd></a><a onclick="return addc(234)"><dd>莱芜市</dd></a><a onclick="return addc(235)"><dd>临沂市</dd></a><a onclick="return addc(237)"><dd>聊城市</dd></a><a onclick="return addc(242)"><dd>洛阳市</dd></a><a onclick="return addc(250)"><dd>漯河市</dd></a><a onclick="return addc(280)"><dd>岳阳市</dd></a><a onclick="return addc(287)"><dd>娄底市</dd></a><a onclick="return addc(311)"><dd>柳州市</dd></a><a onclick="return addc(322)"><dd>来宾市</dd></a><a onclick="return addc(388)"><dd>泸州市</dd></a><a onclick="return addc(394)"><dd>乐山市</dd></a><a onclick="return addc(405)"><dd>凉山彝族自治州</dd></a><a onclick="return addc(407)"><dd>六盘水市</dd></a><a onclick="return addc(420)"><dd>丽江市</dd></a><a onclick="return addc(422)"><dd>临沧市</dd></a><a onclick="return addc(431)"><dd>拉萨市</dd></a><a onclick="return addc(437)"><dd>林芝地区</dd></a><a onclick="return addc(448)"><dd>兰州市</dd></a><a onclick="return addc(459)"><dd>陇南市</dd></a><a onclick="return addc(460)"><dd>临夏回族自治州</dd></a></dt>
+    
+  </dl>
+   <dl>
+    <dt id="M">M<a onclick="return addc(139)"><dd>牡丹江市</dd></a><a onclick="return addc(190)"><dd>马鞍山市</dd></a><a onclick="return addc(297)"><dd>茂名市</dd></a><a onclick="return addc(300)"><dd>梅州市</dd></a><a onclick="return addc(396)"><dd>眉山市</dd></a></dt>
+    
+  </dl>
+   <dl>
+    <dt id="N">N<a onclick="return addc(162)"><dd>南京市</dd></a><a onclick="return addc(167)"><dd>南通市</dd></a><a onclick="return addc(176)"><dd>宁波市</dd></a><a onclick="return addc(209)"><dd>南平市</dd></a><a onclick="return addc(211)"><dd>宁德市</dd></a><a onclick="return addc(212)"><dd>南昌市</dd></a><a onclick="return addc(252)"><dd>南阳市</dd></a><a onclick="return addc(310)"><dd>南宁市</dd></a><a onclick="return addc(343)"><dd>南沙群岛</dd></a><a onclick="return addc(393)"><dd>内江市</dd></a><a onclick="return addc(395)"><dd>南充市</dd></a><a onclick="return addc(429)"><dd>怒江傈僳族自治州</dd></a><a onclick="return addc(435)"><dd>那曲地区</dd></a></dt>
+    
+  </dl>
+   <dl>
+    <dt id="O">O</dt>
+   
+  </dl>
+   <dl>
+    <dt id="P">P<a onclick="return addc(117)"><dd>盘锦市</dd></a><a onclick="return addc(205)"><dd>莆田市</dd></a><a onclick="return addc(214)"><dd>萍乡市</dd></a><a onclick="return addc(243)"><dd>平顶山市</dd></a><a onclick="return addc(248)"><dd>濮阳市</dd></a><a onclick="return addc(387)"><dd>攀枝花市</dd></a><a onclick="return addc(455)"><dd>平凉市</dd></a></dt>
+    
+  </dl>
+   <dl>
+    <dt id="Q">Q<a onclick="return addc(75)"><dd>秦皇岛市</dd></a><a onclick="return addc(131)"><dd>齐齐哈尔市</dd></a><a onclick="return addc(138)"><dd>七台河市</dd></a><a onclick="return addc(173)"><dd>泰州市</dd></a><a onclick="return addc(207)"><dd>泉州市</dd></a><a onclick="return addc(224)"><dd>青岛市</dd></a><a onclick="return addc(272)"><dd>潜江市</dd></a><a onclick="return addc(304)"><dd>清远市</dd></a><a onclick="return addc(316)"><dd>钦州市</dd></a><a onclick="return addc(327)"><dd>琼海市</dd></a><a onclick="return addc(341)"><dd>琼中黎族苗族自治县</dd></a><a onclick="return addc(411)"><dd>黔西南布依族苗族自治州</dd></a><a onclick="return addc(413)"><dd>黔东南苗族侗族自治州</dd></a><a onclick="return addc(414)"><dd>黔南布依族苗族自治州</dd></a><a onclick="return addc(416)"><dd>曲靖市</dd></a><a onclick="return addc(457)"><dd>庆阳市</dd></a></dt>
+  
+  </dl>
+   <dl>
+    <dt id="R">R<a onclick="return addc(434)"><dd>日喀则地区</dd></a></dt>
+    
+  </dl>
+   <dl>
+    <dt id="S">S<a onclick="return addc(39)"><dd>上海市</dd></a><a onclick="return addc(73)"><dd>石家庄市</dd></a><a onclick="return addc(89)"><dd>朔州市</dd></a><a onclick="return addc(107)"><dd>沈阳市</dd></a><a onclick="return addc(123)"><dd>四平市</dd></a><a onclick="return addc(127)"><dd>松原市</dd></a><a onclick="return addc(134)"><dd>双鸭山市</dd></a><a onclick="return addc(141)"><dd>绥化市</dd></a><a onclick="return addc(166)"><dd>苏州市</dd></a><a onclick="return addc(174)"><dd>宿迁市</dd></a><a onclick="return addc(180)"><dd>绍兴市</dd></a><a onclick="return addc(197)"><dd>宿州市</dd></a><a onclick="return addc(206)"><dd>三明市</dd></a><a onclick="return addc(222)"><dd>上饶市</dd></a><a onclick="return addc(251)"><dd>三门峡市</dd></a><a onclick="return addc(253)"><dd>商丘市</dd></a><a onclick="return addc(260)"><dd>十堰市</dd></a><a onclick="return addc(262)"><dd>襄樊市</dd></a><a onclick="return addc(269)"><dd>随州市</dd></a><a onclick="return addc(274)"><dd>神农架林区</dd></a><a onclick="return addc(279)"><dd>邵阳市</dd></a><a onclick="return addc(290)"><dd>韶关市</dd></a><a onclick="return addc(291)"><dd>深圳市</dd></a><a onclick="return addc(293)"><dd>汕头市</dd></a><a onclick="return addc(301)"><dd>汕尾市</dd></a><a onclick="return addc(325)"><dd>三亚市</dd></a><a onclick="return addc(392)"><dd>遂宁市</dd></a><a onclick="return addc(421)"><dd>思茅市</dd></a><a onclick="return addc(433)"><dd>山南地区</dd></a><a onclick="return addc(447)"><dd>商洛市</dd></a><a onclick="return addc(471)"><dd>石嘴山市</dd></a><a onclick="return addc(489)"><dd>石河子市</dd></a></dt>
+    
+  </dl>
+   <dl>
+    <dt id="T">T<a onclick="return addc(40)"><dd>天津市</dd></a><a onclick="return addc(74)"><dd>唐山市</dd></a><a onclick="return addc(84)"><dd>太原市</dd></a><a onclick="return addc(99)"><dd>通辽市</dd></a><a onclick="return addc(118)"><dd>铁岭市</dd></a><a onclick="return addc(125)"><dd>通化市</dd></a><a onclick="return addc(184)"><dd>台州市</dd></a><a onclick="return addc(192)"><dd>铜陵市</dd></a><a onclick="return addc(231)"><dd>泰安市</dd></a><a onclick="return addc(273)"><dd>天门市</dd></a><a onclick="return addc(410)"><dd>铜仁地区</dd></a><a onclick="return addc(439)"><dd>铜川市</dd></a><a onclick="return addc(452)"><dd>天水市</dd></a><a onclick="return addc(477)"><dd>吐鲁番地区</dd></a><a onclick="return addc(487)"><dd>塔城地区</dd></a><a onclick="return addc(491)"><dd>图木舒克市</dd></a><a onclick="return addc(493)"><dd>台北市</dd></a><a onclick="return addc(496)"><dd>台中市</dd></a><a onclick="return addc(497)"><dd>台南市</dd></a><a onclick="return addc(500)"><dd>台北县</dd></a></dt>
+   
+  </dl>
+   <dl>
+    <dt id="U">U</dt>
+   
+  </dl>
+   <dl>
+    <dt id="V">V</dt>
+  
+  </dl>
+   <dl>
+    <dt id="W">W<a onclick="return addc(97)"><dd>乌海市</dd></a><a onclick="return addc(103)"><dd>乌兰察布市</dd></a><a onclick="return addc(163)"><dd>无锡市</dd></a><a onclick="return addc(177)"><dd>温州市</dd></a><a onclick="return addc(187)"><dd>芜湖市</dd></a><a onclick="return addc(221)"><dd>抚州市</dd></a><a onclick="return addc(229)"><dd>潍坊市</dd></a><a onclick="return addc(232)"><dd>威海市</dd></a><a onclick="return addc(233)"><dd>日照市</dd></a><a onclick="return addc(258)"><dd>武汉市</dd></a><a onclick="return addc(313)"><dd>梧州市</dd></a><a onclick="return addc(318)"><dd>玉林市</dd></a><a onclick="return addc(326)"><dd>五指山市</dd></a><a onclick="return addc(329)"><dd>文昌市</dd></a><a onclick="return addc(330)"><dd>万宁市</dd></a><a onclick="return addc(425)"><dd>文山壮族苗族自治州</dd></a><a onclick="return addc(442)"><dd>渭南市</dd></a><a onclick="return addc(453)"><dd>武威市</dd></a><a onclick="return addc(472)"><dd>吴忠市</dd></a><a onclick="return addc(475)"><dd>乌鲁木齐市</dd></a><a onclick="return addc(492)"><dd>五家渠市</dd></a></dt>
+    
+  </dl>
+   <dl>
+    <dt id="X">X<a onclick="return addc(77)"><dd>邢台市</dd></a><a onclick="return addc(92)"><dd>忻州市</dd></a><a onclick="return addc(104)"><dd>兴安盟</dd></a><a onclick="return addc(105)"><dd>锡林郭勒盟</dd></a><a onclick="return addc(164)"><dd>徐州市</dd></a><a onclick="return addc(202)"><dd>宣城市</dd></a><a onclick="return addc(204)"><dd>厦门市</dd></a><a onclick="return addc(216)"><dd>新余市</dd></a><a onclick="return addc(246)"><dd>新乡市</dd></a><a onclick="return addc(249)"><dd>许昌市</dd></a><a onclick="return addc(254)"><dd>信阳市</dd></a><a onclick="return addc(265)"><dd>孝感市</dd></a><a onclick="return addc(268)"><dd>咸宁市</dd></a><a onclick="return addc(271)"><dd>仙桃市</dd></a><a onclick="return addc(277)"><dd>湘潭市</dd></a><a onclick="return addc(278)"><dd>衡阳市</dd></a><a onclick="return addc(288)"><dd>湘西土家族苗族自治州</dd></a><a onclick="return addc(342)"><dd>西沙群岛</dd></a><a onclick="return addc(426)"><dd>西双版纳傣族自治州</dd></a><a onclick="return addc(438)"><dd>西安市</dd></a><a onclick="return addc(462)"><dd>西宁市</dd></a><a onclick="return addc(498)"><dd>新竹市</dd></a></dt>
+    
+  </dl>
+   <dl>
+    <dt id="Y">Y<a onclick="return addc(86)"><dd>阳泉市</dd></a><a onclick="return addc(91)"><dd>运城市</dd></a><a onclick="return addc(114)"><dd>营口市</dd></a><a onclick="return addc(129)"><dd>延边朝鲜族自治州</dd></a><a onclick="return addc(136)"><dd>伊春市</dd></a><a onclick="return addc(170)"><dd>盐城市</dd></a><a onclick="return addc(171)"><dd>扬州市</dd></a><a onclick="return addc(217)"><dd>鹰潭市</dd></a><a onclick="return addc(220)"><dd>宜春市</dd></a><a onclick="return addc(228)"><dd>烟台市</dd></a><a onclick="return addc(261)"><dd>宜昌市</dd></a><a onclick="return addc(283)"><dd>益阳市</dd></a><a onclick="return addc(285)"><dd>永州市</dd></a><a onclick="return addc(303)"><dd>阳江市</dd></a><a onclick="return addc(309)"><dd>云浮市</dd></a><a onclick="return addc(397)"><dd>宜宾市</dd></a><a onclick="return addc(400)"><dd>雅安市</dd></a><a onclick="return addc(417)"><dd>玉溪市</dd></a><a onclick="return addc(443)"><dd>延安市</dd></a><a onclick="return addc(445)"><dd>榆林市</dd></a><a onclick="return addc(468)"><dd>玉树藏族自治州</dd></a><a onclick="return addc(470)"><dd>银川市</dd></a><a onclick="return addc(486)"><dd>伊犁哈萨克自治州</dd></a></dt>
+  
+  </dl>
+   <dl>
+    <dt id="Z">Z<a onclick="return addc(79)"><dd>张家口市</dd></a><a onclick="return addc(172)"><dd>镇江市</dd></a><a onclick="return addc(208)"><dd>漳州市</dd></a><a onclick="return addc(225)"><dd>淄博市</dd></a><a onclick="return addc(226)"><dd>枣庄市</dd></a><a onclick="return addc(240)"><dd>郑州市</dd></a><a onclick="return addc(247)"><dd>焦作市</dd></a><a onclick="return addc(255)"><dd>周口市</dd></a><a onclick="return addc(256)"><dd>驻马店市</dd></a><a onclick="return addc(276)"><dd>株洲市</dd></a><a onclick="return addc(282)"><dd>张家界市</dd></a><a onclick="return addc(292)"><dd>珠海市</dd></a><a onclick="return addc(296)"><dd>湛江市</dd></a><a onclick="return addc(298)"><dd>肇庆市</dd></a><a onclick="return addc(306)"><dd>中山市</dd></a><a onclick="return addc(328)"><dd>儋州市</dd></a><a onclick="return addc(344)"><dd>中沙群岛的岛礁及其海域</dd></a><a onclick="return addc(386)"><dd>自贡市</dd></a><a onclick="return addc(402)"><dd>资阳市</dd></a><a onclick="return addc(408)"><dd>遵义市</dd></a><a onclick="return addc(419)"><dd>昭通市</dd></a><a onclick="return addc(454)"><dd>张掖市</dd></a><a onclick="return addc(474)"><dd>中卫市</dd></a></dt>
+    
+  </dl>
+
+<!--  <dl>
+    <dt id="A">A</dt>
+  
+  </dl>
+  <dl>
+    <dt id="B">B</dt>
+   
+  </dl>
+  <dl>
+    <dt id="C">C</dt>
+   
+  </dl>
+   <dl>
+    <dt id="D">D</dt>
+  
+  </dl>
+   <dl>
+    <dt id="E">E</dt>
+   
+  </dl>
+   <dl>
+    <dt id="F">F</dt>
+  
+  </dl>
+   <dl>
+    <dt id="G">G</dt>
+   
+  </dl>
+   <dl>
+    <dt id="H">H</dt>
+  
+  </dl>
+   <dl>
+    <dt id="I">I</dt>
+   
+  </dl>
+   <dl>
+    <dt id="J">J</dt>
+   
+  </dl>
+   <dl>
+    <dt id="K">K</dt>
+    
+  </dl>
+   <dl>
+    <dt id="L">L</dt>
+    
+  </dl>
+   <dl>
+    <dt id="M">M</dt>
+    
+  </dl>
+   <dl>
+    <dt id="N">N</dt>
+    
+  </dl>
+   <dl>
+    <dt id="O">O</dt>
+   
+  </dl>
+   <dl>
+    <dt id="P">P</dt>
+    
+  </dl>
+   <dl>
+    <dt id="Q">Q</dt>
+  
+  </dl>
+   <dl>
+    <dt id="R">R</dt>
+    
+  </dl>
+   <dl>
+    <dt id="S">S</dt>
+    
+  </dl>
+   <dl>
+    <dt id="T">T</dt>
+   
+  </dl>
+   <dl>
+    <dt id="U">U</dt>
+   
+  </dl>
+   <dl>
+    <dt id="V">V</dt>
+  
+  </dl>
+   <dl>
+    <dt id="W">W</dt>
+    
+  </dl>
+   <dl>
+    <dt id="X">X</dt>
+    
+  </dl>
+   <dl>
+    <dt id="Y">Y</dt>
+  
+  </dl>
+   <dl>
+    <dt id="Z">Z</dt>
+    
+  </dl>-->
+</div>
+    </div>
+    <div class="city_box_r">
+    	<ul>
+        	<li onClick="return Change('A')">A</li>
+            <li onClick="return Change('B')">B</li>
+            <li onClick="return Change('C')">C</li>
+            <li onClick="return Change('D')">D</li>
+            <li onClick="return Change('E')">E</li>
+            <li onClick="return Change('F')">F</li>
+            <li onClick="return Change('G')">G</li>
+            <li onClick="return Change('H')">H</li>
+            <li onClick="return Change('I')">I</li>
+            <li onClick="return Change('J')">J</li>
+            <li onClick="return Change('K')">K</li>
+            <li onClick="return Change('L')">L</li>
+            <li onClick="return Change('M')">M</li>
+            <li onClick="return Change('N')">N</li>
+            <li onClick="return Change('O')">O</li>
+            <li onClick="return Change('P')">P</li>
+            <li onClick="return Change('Q')">Q</li>
+            <li onClick="return Change('R')">R</li>
+            <li onClick="return Change('S')">S</li>
+            <li onClick="return Change('T')">T</li>
+            <li onClick="return Change('U')">U</li>
+            <li onClick="return Change('V')">V</li>
+            <li onClick="return Change('W')">W</li>
+            <li onClick="return Change('X')">X</li>
+            <li onClick="return Change('Y')">Y</li>
+            <li onClick="return Change('Z')">Z</li>
+        </ul>
+    </div>
+</div>
+<div style="position:absolute;width:730px;height:590px;top:50;left:0;border:1px solid gray;overflow-y:hidden; display:none;" id="container" ></div> 
+ 
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#dm_city .city_qie:eq(0)").hide();
+	$("#dm_city span").click(function(){
+		$(this).addClass("current").next("div.city_qie").slideToggle(100).siblings("div.city_qie").slideUp("slow");
+		$(this).siblings().removeClass("current");
+	});
+});
+</script>
+</body>
+</html>
+<script type="text/javascript" src="../../js/zepto.min.js"></script> 
+<script type="text/javascript" src="../../js/template.js"></script> 
+<script type="text/javascript" src="../../js/config.js"></script> 
+<script type="text/javascript" src="../../js/common.js"></script> 
+<script type="text/javascript" src="../../js/dm/dmcity.js"></script>

@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>省级旗舰店</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<link href="../css/style2.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+  /* 本例子css -------------------------------------- */
+  .slideBox{ position:relative; overflow:hidden;  max-width:560px;/* 设置焦点图最大宽度 */ }
+  .slideBox .hd{ position:absolute; height:28px; line-height:28px; bottom:0; right:0; z-index:1; }
+  .slideBox .hd li{ display:inline-block; width:5px; height:5px; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px; background:#333; text-indent:-9999px; overflow:hidden; margin:0 6px;   }
+  .slideBox .hd li.on{ background:#fff;  }
+  .slideBox .bd{ position:relative; z-index:0; }
+  .slideBox .bd li{ position:relative; text-align:center;  }
+  .slideBox .bd li img{ background:url(images/loading.gif) center center no-repeat;  vertical-align:top; width:100%;/* 图片宽度100%，达到自适应效果 */}
+  .slideBox .bd li a{ -webkit-tap-highlight-color:rgba(0,0,0,0);  }  /* 去掉链接触摸高亮 */
+  .slideBox .bd li .tit{ display:block; width:100%;  position:absolute; bottom:0; text-indent:10px; height:30px; line-height:30px; background:url(images/focusBg.png) repeat-x; color:#fff;  text-align:left;  }
+  .ul-main img{
+    width: 560px;
+
+  }
+</style>
+</head>
+
+<body>
+<div class="shg_top">
+	<a href="https://ytbwdtl.com/wap/"><img src="../images/shg_fh.png"/></a>
+    <p>省级旗舰店</p>
+</div>
+<div id="slideBox" class="slideBox">
+    <div class="bd">
+        <ul class="ul-main">
+        </ul>
+    </div>
+    <div class="hd">
+          <ul></ul>
+    </div>
+</div>
+<div class="shg_soso">
+	<p><input type="text" class="shg_soso_text" placeholder="查找旗舰店" id="keyword" value=""/><a href="javascript:void();" id="search"><img src="../images/shg_soso.png"/></a></p>
+</div>
+<div class="main">
+
+</div>
+<script type="text/javascript" src="../js/zepto.min.js"></script> 
+<script type="text/javascript" src="../js/config.js"></script> 
+<script type="text/javascript" src="../js/template.js"></script> 
+<script type="text/javascript" src="../js/swipe.js"></script>
+<script type="text/javascript" src="../js/tmpl/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="../js/TouchSlide.1.1.js"></script>
+<script type="text/javascript">  
+$(function(){  
+     $.getJSON(ApiUrl + '/index.php?act=province&op=index', function(result) {
+        var data = result.datas;
+        if(data!=''){
+            //商品信息
+                    for (var i=0;i<data.length;i++) {
+            var src  = "<div class='"+data[i]['colour']+"'>"
+                            +"<dl><a href='store.html?store_id="+data[i]['store_id']+"'>"
+                               +"<dt><img src='../images/"+data[i]['name']+".png' alt=''></dt>"
+                               +"<dd><img src='../images/"+data[i]['servicecredit']+".png'/></dd>"
+                               +"<dd>"+data[i]['sc_name']+"</dd>"
+                               +"<dd>宝贝共<em>"+data[i]['goodsinfo_count']+"</em>件</dd>"
+                             +"</a></dl>"
+                             +"<ul class='goodsinfo'>"
+                                for (var k=0;k<data[i]['goodsinfo'].length;k++) {
+                                src+="<li><a href='../tmpl/product_detail.html?goods_id="+data[i]['goodsinfo'][k]['goods_id']+"'><img src='"+data[i]['goodsinfo'][k]['goods_image']+"' alt=''/>"
+                                 +"<p>"+data[i]['goodsinfo'][k]['goods_name']+"</p>"
+                                 +"<p>&yen;"+data[i]['goodsinfo'][k]['goods_price']+"</p>"
+                                 +"</a></li>";
+                                }
+                      src+= "</ul><span><a href='store.html?store_id="+data[i]['store_id']+"'></a></span></div>";   
+                    $('.main').append(src);
+                    }
+            
+
+        }else{
+          var src = '暂无数据';
+           $('.main').append(src);
+        }
+
+     });
+
+     $.getJSON(ApiUrl + '/index.php?act=index&op=rec&rec_id=7', function(result) {
+      var data =result.datas;
+      if(data){
+        for(var i=0;i<data.body.length;i++){
+           var  src="<li>"
+                  +"<a class='pic' href='"+data.body[i]['url']+"'><img src='../../../data/upload/"+data.body[i]['title']+"' /></a>"
+                  +"</li>";
+          $(".ul-main").append(src);
+        }
+
+        TouchSlide({ 
+          slideCell:"#slideBox",
+          titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+          mainCell:".bd ul", 
+          effect:"leftLoop", 
+          autoPage:true,//自动分页
+          autoPlay:true //自动播放
+        });
+
+        $(".hd ul").hide();
+
+      }
+    }); 
+    
+})
+</script>
+<script type="text/javascript">
+    $("#search").click(function(){ 
+        var keyword = $("#keyword").val();
+　　　　$.getJSON(ApiUrl + '/index.php?act=province&op=index&keyword='+keyword, function(result) {
+            var data = result.datas;
+            if(data!=''){
+                //先清空上面列表的数据
+                $('.main').html('');
+                for (var i=0;i<data.length;i++) {
+            var src  = "<div class='"+data[i]['colour']+"'>"
+                            +"<dl><a href='store.html?store_id="+data[i]['store_id']+"'>"
+                               +"<dt><img src='../images/"+data[i]['name']+".png' alt=''></dt>"
+                               +"<dd><img src='../images/"+data[i]['servicecredit']+".png'/></dd>"
+                               +"<dd>"+data[i]['sc_name']+"</dd>"
+                               +"<dd>宝贝共<em>"+data[i]['goodsinfo_count']+"</em>件</dd>"
+                             +"</a></dl>"
+                             +"<ul class='goodsinfo'>"
+                                for (var k=0;k<data[i]['goodsinfo'].length;k++) {
+                                src+="<li><a href='../tmpl/product_detail.html?goods_id="+data[i]['goodsinfo'][k]['goods_id']+"'><img src='"+data[i]['goodsinfo'][k]['goods_image']+"' alt=''/>"
+                                 +"<p>"+data[i]['goodsinfo'][k]['goods_name']+"</p>"
+                                 +"<p>&yen;"+data[i]['goodsinfo'][k]['goods_price']+"</p>"
+                                 +"</a></li>";
+                                }
+                      src+= "</ul><span><a href='store.html?store_id="+data[i]['store_id']+"'></a></span></div>";   
+                    $('.main').append(src);
+                    }
+
+
+            }else{
+                $('.main').html('');
+                var src = '<p style="margin-left:45%;">暂无数据</p>';
+                $('.main').append(src);
+            }
+        });
+　　});
+</script>
+</body>
+</html>

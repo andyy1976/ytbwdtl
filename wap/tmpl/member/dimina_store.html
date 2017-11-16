@@ -1,0 +1,239 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>地面商家</title>
+<link href="../../css/ionic.min.css" rel="stylesheet">
+<link href="../../css/wdbase.css" rel="stylesheet">
+<link href="../../css/index.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+ <script type="text/javascript" src="https://3gimg.qq.com/lightmap/components/geolocation/geolocation.min.js"></script>
+ <script type="text/javascript" src="../../js/jquery-1.10.2.min.js">
+ </script>
+      <script type="text/javascript" src="../../js/zepto.min.js"></script> 
+     <script type="text/javascript" src="../../js/config.js"></script>
+     <script type="text/javascript" src="../../js/common.js"></script>  
+     <script type="text/javascript" src="../../js/template.js"></script> 
+    <script type="text/javascript">
+		var key = getCookie('key');
+	if(!key){
+		window.location.href = WapSiteUrl+'/tmpl/member/login.html';
+	}else{
+window.onload=function(){
+      geolocation.getLocation(showPosition, showErr, options);
+ }
+    function checkit(){
+		var bs = $('#ssp').val();
+		var hprovince=$('#province').val();
+		var hnation=$('#nation').val();
+		var hcity=$('#city').val();
+		var hdistrict=$('#district').val();
+		var haddr=$('#addr').val();
+		var hlat=$('#lat').val();
+		var hlng=$('#lng').val();
+		if(hlat != "" && hlng != "" && bs !=""){
+				 $.ajax({
+		     type:'post',
+			 url:ApiUrl+"/index.php?act=dimian_store&op=shangjia_list",
+			data:{lat:hlat,lng:hlng,key:key,city:hcity,district:hdistrict,addr:haddr,province:hprovince,bs:bs},
+			dataType:'json',
+               success: function(result){
+                 checkLogin(result.login); 
+				 if(result.datas.addresslist.length<=0){
+					 $("#seller_body").html('<div style="text-align:center" id="uc">没有找到相关的实体店铺</div>');
+				}else{
+					$('#uc').hide();
+					var data = result;
+					data.WapSiteUrl = WapSiteUrl;//页面地址
+				    data.ApiUrl = ApiUrl;
+			        data.key = getCookie('key');
+					var html = template.render('order-list-tmpl', data);
+				    $("#seller_body").append(html);
+						 } 
+      
+                  }
+            });
+				}
+		}
+	}
+</script>
+
+<style type="text/css">
+/*通用*/
+body{ font-size: 15px; font-family: "microsoft yahei", Arial; color: #333; margin: 0px; padding: 0px;}
+ul, ol, li, p, h1, h2, h3, h4, h5, h6, dl, dt, dd{ margin: 0px; padding: 0px; list-style: none;}
+a{ color: #333; text-decoration: none;}
+a:hover{ text-decoration: underline;}
+img{ vertical-align: middle;}
+i,em{ font-style: normal;}
+div:after{ content: ""; display: block; clear: both;}
+div:before{ content: ""; display: table;}
+
+/*地面商家*/
+.seller_top{ width:100%; padding:2% 3%; background:#aa374a;}
+.seller_name{ height:2rem; line-height:2rem; color:#fff; font-size:1rem; background:url(../../images/seller.png) no-repeat left center; background-size:1.6rem 1.6rem; padding-left:1.6rem;}
+.seller_soso {margin-top:.3rem;}
+.seller_soso input{ border:none; outline:none;}
+.soso_text{ width:75%; height:2rem; line-height:2rem; float:left; font-size:.9rem; color:#a9a9a9; font-family: "microsoft yahei"; background:#fff; border-radius:5px; padding:0 5%;}
+.soso_btn{ width:15%; height:2rem; float:right; background:url(../../images/search_ico.png) no-repeat center center; background-size:1.8rem 1.8rem;}
+.seller_body dl{ width:94%; float:left; border-bottom:1px solid #f6f6f6; padding:3%;}
+.seller_body dl dt{ width:30%; float:left;}
+.seller_body dl dt img{ width:100%; border-radius:3px;}
+.seller_body dl dd{ width:66%; float:right;}
+.seller_body dl dd p{ width:100%; height:1.45rem; line-height:1.45rem; font-size:.8rem; color:#666; float:left; overflow:hidden; padding:0; margin:0;}
+.seller_body dl dd p em{ color:#f60;}
+.seller_body dl dd p b{ font-size:.9rem; color:#333;}
+
+
+</style>
+</head>
+
+<body>
+<div class="seller_top">
+
+	<div class="seller_name"><span id="demo"></span><span id="jw"></span></div>
+    <div class="seller_soso"><input type="text" placeholder="搜索商家" id='ssp' class="soso_text"/><input type="button" class="soso_btn" onClick="return checkit();"/>
+    <input type="hidden" id="nation"/>
+    <input type="hidden" id="province"/>
+    <input type="hidden" id="city"/>
+    <input type="hidden" id="district"/>
+    <input type="hidden" id="addr"/>
+    <input type="hidden" id="lat"/>
+     <input type="hidden" id="lng"/>
+   
+    </div>
+</div>
+<div class="seller_body" id="seller_body">
+	<script type="text/html" id="order-list-tmpl">
+   <% var order_group_list = datas.addresslist; %>
+   <% if (order_group_list.length > 0){%>
+	<% for(var i = 0;i<order_group_list.length;i++){
+		var orderlist = order_group_list[i].order_list;
+	%>
+	 
+	<a href = "dimian_store_details.html?map_id=<%=order_group_list[i].map_id%>">
+		<dl>
+    	<dt>
+		<% if (order_group_list[i].store_label=='' || order_group_list[i].store_label==null){%>
+		<img src="../../images/nologo.jpg"/>
+		<% }else{ %>
+		<img src="/data/upload/shop/store/<%=order_group_list[i].store_label%>"/>
+		<% } %>
+		</dt>
+        <dd>
+        	<p><b><%=order_group_list[i].name_info%></b></p>
+            <p>商家消费说明：<%=order_group_list[i].shop_bzd%></p>
+            <p>距离商家：<em><%=order_group_list[i].distance%>km</em></p>
+			<!--<p>消费积分比例：（消费金额：<%=order_group_list[i].custom_money%>平台：<%=order_group_list[i].custom_point%>商家：<%=order_group_list[i].points%>）</p>-->
+            <p>商家描述：<%=order_group_list[i].store_descriptiond%></p>
+        </dd>
+    </dl>
+	</a>
+   <%}}%>
+   </script>
+   
+</div>
+<div class="bar bar-footer bar-assertive wd-footer">
+  <dl>
+    <dt><a href="/wap"><img src="../../images/f_01.png"><span>首页</span></a></dt>
+    <dt><a href="tmpl/product_first_categroy.html"><img src="../../images/f_02.png"><span>分类</span></a></dt>
+    <dd><a href="tmpl/member/member.html"><img src="../../images/f_logo.png"></a></dd>
+    <dt><a href="/wap/tmpl/cart_list.html"><img src="../../images/f_03.png"><span>购物车</span></a></dt>
+    <dt><a href="/wap/tmpl/member/order_list.html?data-state=state_new"><img src="../../images/f_04.png"><span>订单</span></a>
+    </dt>
+    
+  </dl>
+  
+</div>
+</body>
+</html>
+<script type="text/JavaScript">
+        var geolocation = new qq.maps.Geolocation("HYNBZ-SHB3P-W52D5-L4GKP-V7TOF-JIBHS", "myapp");
+         var positionNum = 0;
+        var options = {timeout: 8000};
+        function showPosition(position) {
+			var nation=position["nation"];
+			var province=position["province"];
+			var city = position["city"];
+			var district = position["district"];
+			var addr = position["addr"];
+			var lat= position["lat"];
+            var lng= position["lng"];
+			if(nation=='' || nation=='undefined' ){
+				nation='';
+				}else{
+					$('#nation').val(nation);
+					}
+			if(province=='' || province=='undefined' ){
+				province='';
+				}else{
+					$('#province').val(province);
+					}
+		     if(city=='' || city=='undefined' ){
+				city='';
+				}else{
+					$('#city').val(city);
+					}
+			if(district=='' || district=='undefined' ){
+				district='';
+				}else{
+					$('#district').val(district);
+					}
+			if(addr=='' || addr=='undefined' ){
+				addr='';
+				}else{
+				$('#addr').val(addr);	
+			}
+			//document.getElementById('demo').innerHTML =  addr;
+			$('#demo').html(addr);
+			if(lat != "" && lng != ""){
+				 addCookie('lat', lat);
+				 addCookie('lng', lng);
+				$('#lat').val(lat);
+				$('#lng').val(lng);
+				 $.ajax({
+		     type:'post',
+			 url:ApiUrl+"/index.php?act=dimian_store&op=shangjia_list",
+			data:{lat:lat,lng:lng,key:key,city:city,district:district,addr:addr,province:province},
+			dataType:'json',
+               success: function(result){
+                 checkLogin(result.login); 
+				 if(result.datas.addresslist.length<=0){
+					 $("#seller_body").html('<div style="text-align:center">没有找到相关的实体店铺</div>');
+				}else{
+					var data = result;
+					data.WapSiteUrl = WapSiteUrl;//页面地址
+				    data.ApiUrl = ApiUrl;
+			        data.key = getCookie('key');
+					var html = template.render('order-list-tmpl', data);
+				    $("#seller_body").append(html);
+						 } 
+      
+                  }
+            });
+				}
+			
+           
+        };
+ 
+   function showErr() {
+            positionNum ++;
+            //document.getElementById("demo").innerHTML += "序号：" + positionNum;
+           // document.getElementById("demo").appendChild(document.createElement('p')).innerHTML = "定位失败！";
+           // document.getElementById("pos-area").scrollTop = document.getElementById("pos-area").scrollHeight;
+        };
+ 
+        function showWatchPosition() {
+            document.getElementById("demo").innerHTML += "开始监听位置！<br /><br />";
+            geolocation.watchPosition(showPosition);
+            document.getElementById("pos-area").scrollTop = document.getElementById("pos-area").scrollHeight;
+        };
+ 
+        function showClearWatch() {
+            geolocation.clearWatch();
+            document.getElementById("demo").innerHTML += "停止监听位置！<br /><br />";
+            document.getElementById("pos-area").scrollTop = document.getElementById("pos-area").scrollHeight;
+        };
+    </script>
+ 

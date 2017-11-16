@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="format-detection" content="telephone=no"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no"/>
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1" />
+<title>商品分类</title>
+<link href="../css/ionic.min.css" rel="stylesheet">
+<link href="../css/wdbase.css" rel="stylesheet">
+<link href="../css/style.css" rel="stylesheet">
+<link href="../css/style_1.css" rel="stylesheet">
+<link href="../css/pan_footer.css" rel="stylesheet">
+</head>
+<body>
+<div class="bar bar-header bar-light wd-header">
+  <a class="button button-icon icon ion-ios-arrow-left" href="javascript:history.go(-1)" style="width: 10%; height: 100%; margin-left:-10px; background-image: url(../images/arrow_left_xin1.png); background-position: 50% 50%; background-repeat: no-repeat; background-size: 40%; opacity: 0.75;"> </a>
+  <h1 class="title">分类</h1>
+  <a class="button button-icon icon ion-ios-chatbubble-outline" href="member/chat_list.html"></a>
+</div>
+<!-- <header id="header">
+  <div class="header-wrap">
+    <div class="header-l"> <a href="javascript:history.go(-1)"> <i class="back"></i> </a> </div>
+    <div class="header-inp"> <i class="icon"></i> <span class="search-input" id="keyword">请输入关键字</span> </div>
+    <div class="header-r"> <a id="header-nav" href="javascript:void(0);"><i class="more"></i><sup></sup></a> </div>
+  </div>
+  <div class="nctouch-nav-layout">
+    <div class="nctouch-nav-menu"> <span class="arrow"></span>
+      <ul>
+        <li><a href="../index.html"><i class="home"></i>首页</a></li>
+        <li><a href="search.html"><i class="search"></i>搜索</a></li>
+        <li><a href="product_first_categroy.html"><i class="categroy"></i>分类</a></li>
+        <li><a href="javascript:void(0);"><i class="message"></i>消息<sup></sup></a></li>
+        <li><a href="cart_list.html"><i class="cart"></i>购物车<sup></sup></a></li>
+        <li><a href="member/member.html"><i class="member"></i>个人中心</a></li>
+      </ul>
+    </div>
+  </div>
+</header> -->
+
+<div class="scroll-content has-header has-footer overflow-scroll" id='categroy-cnt'>
+	<!-- <div class="wd-recommend"> -->
+<!--         <h3>为你推荐</h3>
+        <ul>
+          <li><a href="product_list.html?gc_id=160"><img src="../images/fl_01.jpg"/><span>手提包</span></a></li>
+          <li><a href="product_list.html?gc_id=46"><img src="../images/fl_02.jpg"/><span>外套</span></a></li>
+          <li><a href="product_list.html?gc_id=76"><img src="../images/fl_03.jpg"/><span>运动鞋</span></a></li>
+          <li><a href="product_list.html?gc_id=10351"><img src="../images/fl_04.jpg"/><span>会员资格</span></a></li>
+          <li><a href="product_list.html?gc_id=959"><img src="../images/fl_05.jpg"/><span>母婴用品</span></a></li>
+          <li><a href="product_list.html?gc_id=470"><img src="../images/fl_06.jpg"/><span>个护化妆</span></a></li>
+        </ul>
+        <h3>综合分类</h3> -->
+      <!--   <dl>
+          <dt><a href="#"><img src="img/fl_b1.jpg"/></a></dt>
+            <dd><a href="#">面膜</a><a href="#">面霜乳液</a><a href="#">眼霜</a><a href="#">精华</a><a href="#">爽肤水</a><a href="#">卸妆</a><a href="#">洁面</a><a href="#">隔离</a><a href="#">精油</a><a href="#">护发</a><a href="#">香水</a></dd>
+        </dl> -->
+    <!-- </div> -->
+</div>
+<footer id="footer" class="bottom"></footer>
+</body>
+<script type="text/html" id="category-one">
+    <div class="wd-recommend">
+        <h3>为你推荐</h3>
+        <ul>
+          <li><a href="product_list.html?gc_id=593"><img src="../images/fl_01.jpg"/><span>食品保健</span></a></li>
+          <li><a href="product_list.html?gc_id=530"><img src="../images/fl_02.jpg"/><span>珠宝手表</span></a></li>
+          <li><a href="product_list.html?gc_id=476"><img src="../images/fl_03.jpg"/><span>化妆品</span></a></li>
+          <li><a href="product_list.html?gc_id=471"><img src="../images/fl_04.jpg"/><span>护肤品</span></a></li>
+          <li><a href="product_list.html?gc_id=595"><img src="../images/fl_05.jpg"/><span>地方特产</span></a></li>
+          <li><a href="product_list.html?gc_id=202"><img src="../images/fl_06.jpg"/><span>日用</span></a></li>
+        </ul>
+        <h3>综合分类</h3>
+    
+		<% for(var i = 0;i<15;i++){
+        if(class_list[i].gc_id!='10351' && class_list[i].gc_id!='10417' && class_list[i].gc_id!='10424' && class_list[i].gc_id!='10425'){
+     %>
+
+      <dl>
+          <dt><a href="/wap/tmpl/product_list.html?gc_id=<%=class_list[i].gc_id;%>"><img src="../../data/upload/shop/goods_class/<%=class_list[i].cn_adv1;%>"/></a></dt>
+            <dd>
+              <% for(var s = 0;s<class_list[i].second_class.length;s++){ %> 
+                <a href="/wap/tmpl/product_list.html?gc_id=<%=class_list[i].second_class[s].gc_id;%>"><%=class_list[i].second_class[s].gc_name;%></a>
+              <% } %>
+           </dd>
+      </dl>
+			
+		<% }} %>
+</div>
+</script>
+<script> var navigate_id ="1";</script>
+<script type="text/javascript" src="../js/config.js"></script>
+<script type="text/javascript" src="../js/zepto.min.js"></script>
+<script type="text/javascript" src="../js/template.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/tmpl/categroy-frist-list.js"></script>
+<script type="text/javascript" src="../js/tmpl/footer.js"></script>
+</html>

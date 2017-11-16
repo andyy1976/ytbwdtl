@@ -1,0 +1,275 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>线下商城</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<link href="/wap/dmtmpl/css/style.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+body {
+	background: #fff;
+}
+</style>
+</head>
+
+<body>
+<div class="goods_main">
+</div>
+<div class="dm_fanh dm_dtj" id="maidan">提交订单</div>
+
+<div id="goodcover"></div>
+<div id="maidan_box" class="maidan_box1">
+  <div class="dm_pay01"><a href="#">返回</a><a href="#" onclick="guanbi1();">关闭</a></div>
+  <div class="dm_pay02">本次交易需在线支付<em>26.00</em>元</div>
+  <div class="dm_pay03"><span>在线支付方式</span></div>
+   <div class="logo" for="pay_7">
+                      <img style="width: 100px;" src="/shop/templates/default/images/payment/unionpay_logo.gif">
+                      </div>
+  <div class="dm_pay06">
+    <ul class="banklist">
+     <% for (var i=0; i<datas.length; i++) { %>
+
+     <li>光大银行<em>IC借记卡</em><span>6214 **** **** 9231</span></li>
+      <!--  <li>光大银行<em>IC借记卡</em><span>6214 **** **** 9231</span></li> -->
+      <% } %>
+  </script>
+  
+    </ul>
+  </div>
+  <div class="dm_pay07 add_card"><a href="#">添加新的银行卡<img src="/wap/dmtmpl/img/dm_y.png"/></a></div>
+  <div class="dm_pay08">确认支付</div>
+</div>
+
+<div id="maidan_box" class="maidan_box2">
+  <div class="dm_pay01"><a href="#">返回卡列表</a><a href="#" onclick="guanbi2();">关闭</a></div>
+  <div class="dm_pay02">本次交易需在线支付<em>26.00</em>元</div>
+  <div class="dm_pay03"><span>在线支付方式</span></div>
+  <div class="dm_pay05">
+    <ul>
+      <li>
+        <input type="text" placeholder="请输入银行卡号" name="bankcard">
+      </li>
+      <li>
+        <input type="text" placeholder="请输入开户姓名" name="bankname">
+      </li>
+      <li>
+        <input type="text" placeholder="请输入身份证号" name="identity">
+      </li>
+      <li>
+        <input type="text" placeholder="请输入预留手机号" name="mobile">
+      </li>
+    </ul>
+  </div>
+  <input type="hidden" value="<?php echo $_SESSION['member_name'];?>" name="member_id"/>
+  <div class="dm_fanh addcard" id="maidan2">确定添加</div>
+</div>
+<script type="text/javascript" src="../../js/zepto.min.js"></script> 
+<script type="text/javascript" src="../../js/config.js"></script> 
+<script type="text/javascript" src="../../js/template.js"></script> 
+<script type="text/javascript" src="../../js/common.js"></script>
+<script src="/wap/dmtmpl/js/jquery-1.11.3.js"/></script> 
+<script src="/wap/dmtmpl/js/fenxiang.js"/></script>
+<script type="text/javascript">
+    $(function(){
+      var key = getCookie('key');
+	  var city = getCookie('city');
+	  if(!city){
+		 window.location.href =  wapSiteUrl + '/tmpl/dm/dmcity'; 
+		  }
+      if(!key){
+        window.location.href = WapSiteUrl + '/tmpl/dm/dmlogin.html';
+      }
+      var goods_id = getQueryString('goods_id');
+      $.getJSON(ApiUrl + '/index.php?act=dmstore&op=dm_goods_details',{key:key,goods_id:goods_id}, function(result) {
+            var data = result.datas;
+            var src = "<div class='yp_top'>"
+                        +"<dl>"
+                          +"<dt><a href='#'><img src='/wap/dmtmpl/img/yp_fh.png'/></a></dt>"
+                          +"<dd class='goods_name'>"+data['goods_name']+"</dd>"
+                           +"<input type='hidden' class='goods_id' value='"+data['goods_id']+"'/>"
+                        +"</dl>"
+                      +"</div>"
+                      +"<div class='dm_ddan'>"
+                        +"<dl>"
+                          +"<dt><img src='"+data['goods_image']+"'/></dt>"
+                          +"<dd>"
+                            +"<p>季节限定芝士莓莓</p>"
+                            +"<p>营业时间 周一到周日</p>"
+                            +"<p><img src='/wap/dmtmpl/img/dm_j.png'/><u>随时退</u><img src='/wap/dmtmpl/img/dm_j.png'/><u>有效期内退</u></p>"
+                          +"</dd>"
+                        +"</dl>"
+                      +"</div>"
+                      +"<div class='dm_dlist'>"
+                        +"<ul>"
+                          +"<li><em>数量</em>"
+                            +"<p><img src='/wap/dmtmpl/img/dm_jia.png' class='jia'/>"
+                              +"<input type='test' value='1' class='num'>"
+                              +"<img src='/wap/dmtmpl/img/dm_jian.png' class='jian' /></p>"
+                          +"</li>"
+                          +"<li><em>小计</em><u>¥ <i class='xiaoji'>"+data['goods_price']+"</i></u></li>"
+                          +"<li><em>抵用券</em><a>暂无可用</a></li>"
+                          +"<li><em>实付金额</em><span>¥ <b class='goods_price'>"+data['goods_price']+"</b></span></li>"
+                          +"<input type='hidden' class='price' value='"+data['goods_price']+"'/>"
+                          +"<li><em>送云豆</em><u>+ <i class='yundou'>"+data['yundou']+"</i></u></li>"
+                          +"<input type='hidden' class='yundou1' value='"+data['yundou']+"'/>"
+                          +"<input type='hidden' class='store_id' value='"+data['store_id']+"'/>"
+                          +"<input type='hidden' class='store_name' value='"+data['store_name']+"'/>"
+                          +"<li><em>手机号</em><u>"+data['member_mobile']+"</u></li>"
+                        +"</ul>"
+                      +"</div>";
+
+                $(".goods_main").append(src);
+
+                //加数量
+                $(".jia").click(function(){
+                    var num = $(".num").val();
+                    var goods_price = parseInt($(".price").val());
+                    var yundou = parseInt($(".yundou1").val());
+                    num =num*1 +1;
+                    goods_price = goods_price*num;
+                    yundou = yundou*num;
+                    $(".num").val(num);
+                    $(".xiaoji").text(goods_price);
+                    $(".goods_price").text(goods_price);
+                    $(".yundou").text(yundou);
+
+                });
+
+                //减数量
+                $(".jian").click(function(){
+                    var num = $(".num").val();
+                    var goods_price = parseInt($(".price").val());
+                    var yundou = parseInt($(".yundou1").val());
+                    if(num ==1){
+                      num = 1;
+                    }else{
+                      num =num*1 -1;
+                    }
+                    goods_price = goods_price*num;
+                    yundou = yundou*num;
+                    $(".num").val(num);
+                    $(".xiaoji").text(goods_price);
+                    $(".goods_price").text(goods_price);
+                    $(".yundou").text(yundou);
+
+                });
+            
+      });
+
+    });
+
+    $("#maidan").click(function(){
+        var key = getCookie('key');
+        if(!key){
+          window.location.href = WapSiteUrl + '/tmpl/member/login.html';
+        }
+        $(".maidan_box1").show();
+        $('#goodcover').show();
+        $.getJSON(ApiUrl + '/index.php?act=dmstore&op=dm_banklist',{key:key}, function(result) {
+            var data = result.datas;
+            $(".banklist").html('');
+            for(var i=0;i<data.length;i++){         
+              var src  =  "<li>"+data[i]['name']+"<em>IC借记卡</em><span>"+data[i]['acc_no1']+"</span></li>";
+              $(".banklist").append(src);
+            }
+        });
+
+
+    });
+
+    //弹出添加银行卡的弹窗
+    $(".add_card").click(function(){
+        $(".maidan_box2").show();
+        $('#goodcover').show();
+    });
+
+    //关闭
+    function guanbi1(){
+        $(".maidan_box1").hide();
+        $("#goodcover").hide();
+    }
+
+    function guanbi2(){
+        $(".maidan_box2").hide();
+        $("#goodcover").hide();
+    }
+
+    //添加银行卡
+    $(".addcard").click(function(){
+        var bankcard = $("input[name='bankcard']").val();
+        var bankname = $("input[name='bankname']").val();
+        var identity = $("input[name='identity']").val();
+        var mobile   = $("input[name='mobile']").val();
+        if(bankcard ==''){
+          alert('银行卡号不能为空');
+          return false;
+        }
+        if(bankname ==''){
+          alert('开户姓名不能为空');
+          return false;
+        }
+        if(identity ==''){
+          alert('身份证号不能为空');
+          return false;
+        }
+        if(mobile ==''){
+          alert('预留手机号不能为空');
+          return false;
+        }
+        var key = getCookie('key');
+        if(!key){
+          window.location.href = WapSiteUrl + '/tmpl/member/login.html';
+        }
+        $.getJSON(ApiUrl + '/index.php?act=dmstore&op=add_bankcard',{key:key,bankcard:bankcard,bankname:bankname,identity:identity,mobile:mobile}, function(result) {
+            var data = result.datas;
+            if(data == 'ok'){
+              alert('添加成功');
+            }else if(data=='no'){
+			  alert('此卡已经添加');
+				}
+			else{
+              alert('添加失败');
+            }
+            $(".maidan_box2").hide();
+            $("#goodcover").hide();
+
+            $.getJSON(ApiUrl + '/index.php?act=dmstore&op=dm_banklist',{key:key}, function(result) {
+            var data = result.datas;
+            $(".banklist").html('');
+            for(var i=0;i<data.length;i++){         
+              var src  =  "<li>"+data[i]['name']+"<em>IC借记卡</em><span>"+data[i]['acc_no']+"</span></li>";
+              $(".banklist").append(src);
+            }
+          });
+        });
+
+    });
+
+    //确认支付
+    $(".dm_pay08").click(function(){
+      var key = getCookie('key');
+      if(!key){
+        window.location.href = WapSiteUrl + '/tmpl/member/login.html';
+      }
+      var goods_num = $(".num").val();
+      var goods_price = $(".price").val();
+      var goods_pay_points = $(".yundou").text();
+      var goods_pay_price  = goods_price*goods_num;
+      var goods_name   = $(".goods_name").text();
+      var goods_id  = $(".goods_id").val();
+      var store_id  = $(".store_id").val();
+      var store_name  = $(".store_name").val();
+      $.getJSON(ApiUrl + '/index.php?act=dmstore&op=order',{key:key,goods_num:goods_num,goods_price:goods_price,goods_pay_points:goods_pay_points,goods_pay_price:goods_pay_price,goods_name:goods_name,goods_id:goods_id,store_id:store_id,store_name:store_name}, function(result) {
+          var data = result.datas;
+          if(data == 1){
+              window.location.href = WapSiteUrl + '/tmpl/order/buy_step1.html?goods_id='+goods_id+'&buynum='+goods_num;
+          }
+      });
+      
+    });
+
+      
+</script>
+</body>
+</html>

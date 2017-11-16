@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="format-detection" content="telephone=no"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no"/>
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1" />
+<title>会员注册</title>
+
+<link href="../../css/ionic.min.css" rel="stylesheet">
+<link href="../../css/wdbase.css" rel="stylesheet">
+<link href="../../css/style.css" rel="stylesheet">
+</head>
+<body>
+<div id="login">
+
+</div>
+<div class="scroll-content has-header overflow-scroll">
+  <div class="wd-login">
+    <form action="" method ="">
+      <input type='hidden' name='free' id='free' value='0'>
+      <ul>
+        <!-- <li>
+          <label class="item item-input">
+            <input type="text" placeholder="用户名 / 手机号" class="inp" name="username" id="username" oninput="writeClear($(this));"/>
+          </label>
+        </li> -->
+        <li><label class="item item-input" style=" width:100%; float:left;"><input type="text" id="mobile" name="mobile" class="inp" autocomplete="off" maxlength="11" placeholder="输入手机号" oninput="writeClear($(this));" onfocus="writeClear($(this));" pattern="[0-9]*"/></label></li>
+
+        <li>
+        <label class="item item-input">
+            <input type="text" id="auth_code"  name="auth_code" class="inp" maxlength="6" placeholder="输入短信动态验证码" oninput="writeClear($(this));"   pattern="[0-9]*"/>
+          <a href="javascript: void(0);" id="send" style="width:35%; float:right; text-align:center; background:#eee; line-height:49px;">获取短信验证</a>
+        </li>
+        <li >
+          <label class="item item-input">
+            <input type="password" placeholder="请输入6-20位密码" class="inp" name="pwd" id="userpwd" oninput="writeClear($(this));"/>
+          </label>
+        </li>
+<!--         <li>
+          <label class="item item-input">
+            <input type="password" placeholder="请再次输入登录密码" class="inp" name="password_confirm" id="password_confirm" oninput="writeClear($(this));"/>
+          </label>  
+        </li> -->
+        <li >
+          <label class="item item-input">
+            <input type="password" placeholder="请输入6-20位安全密码" class="inp" name="paypwd" id="paypwd" oninput="writeClear($(this));"/>
+          </label>
+        </li>
+        <li class="form-item">
+          <label class="item item-input">
+            <input type="text" placeholder="请输入推荐人ID" class="inp" name="member_pid" id="member_pid" oninput="writeClear($(this));"/>
+          </label>  
+        </li>
+         <dd class='member_pname' id='member_pname'   style="position: absolute; z-index: 1000; margin-top: 225px; right: 20px;font-size: 15px;"></dd>  
+         
+        <li style="padding-left:10px; color:#555;">注册即视为同意<a href="/wap/tmpl/member/zcxy.html" style="color:#aa374a; text-decoration:underline;">《万店通联用户注册协议》</a> <a href="/wap/tmpl/member/ysxy.html" style="color:#aa374a; text-decoration:underline;">《万店通联用户隐私协议》</a></li>
+
+
+        <li><a href="javascript:void(0);" class="button button-block button-assertive" id="registerbtn" style="line-height:49px;">注册</a></li>
+      </ul>
+    </form>
+    <input type="hidden" id="map_id" >
+    <input type="hidden" name="referurl">
+  </div>
+</div>
+
+<script type="text/javascript" src="../../js/config.js"></script> 
+<script type="text/javascript" src="../../js/zepto.min.js"></script> 
+<script type="text/javascript" src="../../js/common.js"></script> 
+<script type="text/javascript" src="../../js/simple-plugin.js"></script> 
+<script type="text/javascript" src="../../js/tmpl/footer.js"></script> 
+<script type="text/javascript" src="../../js/tmpl/register.js"></script>
+</body>
+</html>

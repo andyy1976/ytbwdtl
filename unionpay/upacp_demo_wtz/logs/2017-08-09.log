@@ -1,0 +1,226 @@
+2017-08-09 22:46:35, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/cert_util.php ], Line[105]------ 读取加密证书…… 
+2017-08-09 22:46:35, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/cert_util.php ], Line[131]------ 加密证书读取成功，序列号：69042905377 
+2017-08-09 22:46:35, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/acp_service.php ], Line[71]------ =====签名报文开始====== 
+2017-08-09 22:46:35, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/cert_util.php ], Line[39]------ 读取签名证书…… 
+2017-08-09 22:46:35, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/cert_util.php ], Line[71]------ 签名证书读取成功，序列号：73288190342 
+2017-08-09 22:46:35, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/acp_service.php ], Line[84]------ 签名key=val&...串 >accNo=XeNvXT1+MSQQ4qBxc36Qd/GXueuDuVSPTk47YMVRmcRKSUpEEs7r7usx6lmfrDItAiGbaguLWAi7NuAgu9pDYQY4R5qElKcTYFuYWF4+GwqncWnc4nh1nXj53ay+97/tyrMymDMMYqBCKLDPBxbyRsECGZwkJhhlX4FNWUUx/wC/Y+bH6UuhB/yCGz4a+7uuzpZGj8PT7XLO4Dq8X4uN3Ham28dqfokvwJj08uSy2vIihlSKUU0DlEWiDD5MrM3pBDHv4Zy5HBZyxWk3qwjK8HF1LB5S0s/mQDpMZBvS8QQpq23M7xHaJduhHMnwJSladSl+kMyw+jehn8UiShr/4w==&accessType=0&backUrl=https://ytbwdtl.com/unionpay/upacp_demo_wtz/demo/api_03_wtz/BackReceive.php&bizType=000301&certId=73288190342&channelType=07&currencyCode=156&customerInfo=e2VuY3J5cHRlZEluZm89a0M0YU1zTy81M0t6SUNHNXVFVXI4UlpFbXppZnhON3UzZHJoQnczV0dvTTMxUy9Cd2pHbEErdEpNWE9WK3pQQ21xazVYdXNhV2xEOFhPa0loRzdId3lBb3NZb3J0WS9sUUhxUHNSWGo4cEhoUXRMSitoNmJzbWxWNjVFcWlyZkxvTXM3Y3RLblJmaVc0ZE4xUG5jZHRKYmcwV2l0NWVYa0FJVmtGWG8wMFBsdWhteXVtR2pBRitjeU93blJxNWE2OElRaHM4algwcUNrMERLUWxPUDlmY2dub080VHVyTVZyK3JUQTdIMDVjSGd2amhkNWN5MGhHdDBFdjI2OEdsSkFITmhyOVd6bndZSE51NkRHSk9ubHkyUkh2MEVCRDJmVXNIWnhrcVluVGttVWxlVDZtOEdFMEwwbkxJWCtPWFByWlpQR1lWaW1pVnJmZDBkV2lHdjFBPT19&encoding=utf-8&encryptCertId=69042905377&frontUrl=http://ytbwdtl.com/unionpay/upacp_demo_wtz/demo/api_03_wtz/FrontReceive.php&merId=848116048160005&orderId=20170809224635&payTimeout=20170809230135&signMethod=01&txnAmt=1&txnSubType=01&txnTime=20170809224635&txnType=01&version=5.1.0 
+2017-08-09 22:46:35, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/acp_service.php ], Line[101]------ 摘要sha256x16 >55da3b82a206ff59f64d8e95a949225c18244ea2c50677d34b416176a83b4a90 
+2017-08-09 22:46:35, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/acp_service.php ], Line[106]------ 签名串为 >Ki0ynkMOHjeb4/Mq65mFqHeJsPxqMpzcT2HLC1S0m9GREToqyQdGKp7lUFnAEmb+Hsy/208aEfUZXicpFMs4ghnFVL9W5XUpAVHxk3szBGZnm/LU6StWVbqgQZtFo1vBMtd3VDjd+8WRfgtsyb/zAE8Qa07QOAulvL3Ck1iEfh5pKDSMdtgZh7FS3VtHxzOp1IKiVkngpvIA052hFfqLYnhNir6bkY+lICkSq4lp3544n6YHEdtLK5Gfc1b6LQgDZq859VQg3ZBjn+MdVz9OvL7kofwvQPkeqCK9dcl9Seg7h4Z5JvQIx38m0uIIVcFpGfAYYSJQM+wXE1LR2JE/kQ== 
+2017-08-09 22:46:35, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/acp_service.php ], Line[119]------ =====签名报文结束====== 
+2017-08-09 22:46:35, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/acp_service.php ], Line[364]------ 自动跳转html><html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body onload="javascript:document.pay_form.submit();">
+    <form id="pay_form" name="pay_form" action="https://gateway.95516.com/gateway/api/frontTransReq.do" method="post">
+	    <input type="hidden" name="version" id="version" value="5.1.0" />
+    <input type="hidden" name="signMethod" id="signMethod" value="01" />
+    <input type="hidden" name="encoding" id="encoding" value="utf-8" />
+    <input type="hidden" name="txnType" id="txnType" value="01" />
+    <input type="hidden" name="txnSubType" id="txnSubType" value="01" />
+    <input type="hidden" name="bizType" id="bizType" value="000301" />
+    <input type="hidden" name="accessType" id="accessType" value="0" />
+    <input type="hidden" name="channelType" id="channelType" value="07" />
+    <input type="hidden" name="currencyCode" id="currencyCode" value="156" />
+    <input type="hidden" name="encryptCertId" id="encryptCertId" value="69042905377" />
+    <input type="hidden" name="frontUrl" id="frontUrl" value="http://ytbwdtl.com/unionpay/upacp_demo_wtz/demo/api_03_wtz/FrontReceive.php" />
+    <input type="hidden" name="backUrl" id="backUrl" value="https://ytbwdtl.com/unionpay/upacp_demo_wtz/demo/api_03_wtz/BackReceive.php" />
+    <input type="hidden" name="merId" id="merId" value="848116048160005" />
+    <input type="hidden" name="orderId" id="orderId" value="20170809224635" />
+    <input type="hidden" name="txnTime" id="txnTime" value="20170809224635" />
+    <input type="hidden" name="txnAmt" id="txnAmt" value="1" />
+    <input type="hidden" name="accNo" id="accNo" value="XeNvXT1+MSQQ4qBxc36Qd/GXueuDuVSPTk47YMVRmcRKSUpEEs7r7usx6lmfrDItAiGbaguLWAi7NuAgu9pDYQY4R5qElKcTYFuYWF4+GwqncWnc4nh1nXj53ay+97/tyrMymDMMYqBCKLDPBxbyRsECGZwkJhhlX4FNWUUx/wC/Y+bH6UuhB/yCGz4a+7uuzpZGj8PT7XLO4Dq8X4uN3Ham28dqfokvwJj08uSy2vIihlSKUU0DlEWiDD5MrM3pBDHv4Zy5HBZyxWk3qwjK8HF1LB5S0s/mQDpMZBvS8QQpq23M7xHaJduhHMnwJSladSl+kMyw+jehn8UiShr/4w==" />
+    <input type="hidden" name="customerInfo" id="customerInfo" value="e2VuY3J5cHRlZEluZm89a0M0YU1zTy81M0t6SUNHNXVFVXI4UlpFbXppZnhON3UzZHJoQnczV0dvTTMxUy9Cd2pHbEErdEpNWE9WK3pQQ21xazVYdXNhV2xEOFhPa0loRzdId3lBb3NZb3J0WS9sUUhxUHNSWGo4cEhoUXRMSitoNmJzbWxWNjVFcWlyZkxvTXM3Y3RLblJmaVc0ZE4xUG5jZHRKYmcwV2l0NWVYa0FJVmtGWG8wMFBsdWhteXVtR2pBRitjeU93blJxNWE2OElRaHM4algwcUNrMERLUWxPUDlmY2dub080VHVyTVZyK3JUQTdIMDVjSGd2amhkNWN5MGhHdDBFdjI2OEdsSkFITmhyOVd6bndZSE51NkRHSk9ubHkyUkh2MEVCRDJmVXNIWnhrcVluVGttVWxlVDZtOEdFMEwwbkxJWCtPWFByWlpQR1lWaW1pVnJmZDBkV2lHdjFBPT19" />
+    <input type="hidden" name="payTimeout" id="payTimeout" value="20170809230135" />
+    <input type="hidden" name="certId" id="certId" value="73288190342" />
+    <input type="hidden" name="signature" id="signature" value="Ki0ynkMOHjeb4/Mq65mFqHeJsPxqMpzcT2HLC1S0m9GREToqyQdGKp7lUFnAEmb+Hsy/208aEfUZXicpFMs4ghnFVL9W5XUpAVHxk3szBGZnm/LU6StWVbqgQZtFo1vBMtd3VDjd+8WRfgtsyb/zAE8Qa07QOAulvL3Ck1iEfh5pKDSMdtgZh7FS3VtHxzOp1IKiVkngpvIA052hFfqLYnhNir6bkY+lICkSq4lp3544n6YHEdtLK5Gfc1b6LQgDZq859VQg3ZBjn+MdVz9OvL7kofwvQPkeqCK9dcl9Seg7h4Z5JvQIx38m0uIIVcFpGfAYYSJQM+wXE1LR2JE/kQ==" />
+   <!-- <input type="submit" type="hidden">-->
+    </form>
+</body>
+</html> 
+2017-08-09 22:47:30, INFO, 101.230.11.189, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/demo/api_03_wtz/BackReceive.php ], Line[12]------ 
+
+
+receive back notify: accessType=0&bizType=000301&currencyCode=156&encoding=utf-8&merId=848116048160005&orderId=20170809224635&queryId=201708092246359945698&respCode=00&respMsg=%E6%88%90%E5%8A%9F%5B0000000%5D&settleAmt=1&settleCurrencyCode=156&settleDate=0809&signMethod=01&signPubKeyCert=-----BEGIN+CERTIFICATE-----%0D%0AMIIEIDCCAwigAwIBAgIFEDRVM3AwDQYJKoZIhvcNAQEFBQAwITELMAkGA1UEBhMC%0D%0AQ04xEjAQBgNVBAoTCUNGQ0EgT0NBMTAeFw0xNTEwMjcwOTA2MjlaFw0yMDEwMjIw%0D%0AOTU4MjJaMIGWMQswCQYDVQQGEwJjbjESMBAGA1UEChMJQ0ZDQSBPQ0ExMRYwFAYD%0D%0AVQQLEw1Mb2NhbCBSQSBPQ0ExMRQwEgYDVQQLEwtFbnRlcnByaXNlczFFMEMGA1UE%0D%0AAww8MDQxQDgzMTAwMDAwMDAwODMwNDBA5Lit5Zu96ZO26IGU6IKh5Lu95pyJ6ZmQ%0D%0A5YWs5Y%2B4QDAwMDE2NDkzMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA%0D%0AtXclo3H4pB%2BWi4wSd0DGwnyZWni7%2B22Tkk6lbXQErMNHPk84c8DnjT8CW8jIfv3z%0D%0Ad5NBpvG3O3jQ%2FYHFlad39DdgUvqDd0WY8%2FC4Lf2xyo0%2BgQRZckMKEAId8Fl6%2FrPN%0D%0AHsbPRGNIZgE6AByvCRbriiFNFtuXzP4ogG7vilqBckGWfAYaJ5zJpaGlMBOW1Ti3%0D%0AMVjKg5x8t1%2FoFBkpFVsBnAeSGPJYrBn0irfnXDhOz7hcIWPbNDoq2bJ9VwbkKhJq%0D%0AVz7j7116pziUcLSFJasnWMnp8CrISj52cXzS%2FY1kuaIMPP%2F1B0pcjVqMNJjowooD%0D%0AOxID3TZGfk5V7S%2B%2B4FowVwIDAQABo4HoMIHlMB8GA1UdIwQYMBaAFNHb6YiC5d0a%0D%0Aj0yqAIy%2BfPKrG%2FbZMEgGA1UdIARBMD8wPQYIYIEchu8qAQEwMTAvBggrBgEFBQcC%0D%0AARYjaHR0cDovL3d3dy5jZmNhLmNvbS5jbi91cy91cy0xNC5odG0wNwYDVR0fBDAw%0D%0ALjAsoCqgKIYmaHR0cDovL2NybC5jZmNhLmNvbS5jbi9SU0EvY3JsMjI3Mi5jcmww%0D%0ACwYDVR0PBAQDAgPoMB0GA1UdDgQWBBTEIzenf3VR6CZRS61ARrWMto0GODATBgNV%0D%0AHSUEDDAKBggrBgEFBQcDAjANBgkqhkiG9w0BAQUFAAOCAQEAHMgTi%2B4Y9g0yvsUA%0D%0Ap7MkdnPtWLS6XwL3IQuXoPInmBSbg2NP8jNhlq8tGL%2FWJXjycme%2F8BKu%2BHht6lgN%0D%0AZhv9STnA59UFo9vxwSQy88bbyui5fKXVliZEiTUhjKM6SOod2Pnp5oWMVjLxujkk%0D%0AWKjSakPvV6N6H66xhJSCk%2BRef59HuFZY4%2FLqyZysiMua4qyYfEfdKk5h27%2Bz1MWy%0D%0AnadnxA5QexHHck9Y4ZyisbUubW7wTaaWFd%2BcZ3P%2FzmIUskE%2FdAG0%2FHEvmOR6CGlM%0D%0A55BFCVmJEufHtike3shu7lZGVm2adKNFFTqLoEFkfBO6Y%2FN6ViraBilcXjmWBJNE%0D%0AMFF%2FyA%3D%3D%0D%0A-----END+CERTIFICATE-----&traceNo=994569&traceTime=0809224635&txnAmt=1&txnSubType=01&txnTime=20170809224635&txnType=01&version=5.1.0&signature=aPHJgmjibVpSkVAzCLvyZBJWWGShwzjjR6z9oDQwbeGhMiNXLNZOu3X6NcMWoG4x90ALE6YLziYJwZ8qaMcc6HRlVR1UDDjUQBJDmt0tlCuvlC2rFk5aAlcCFx9yJO3NIXm2e6ico661OAhC9So7frOM2JAtxN4VG5V6ly0xLskmLR0QioBUCMrRyTQHCTfn9Kw0f5UfbmDlaZHF25ncYBDlGlo0j6n0fpjp5cFVoO3zOAj%2FsGQS8cDBhytzzxDZHKzhkVTiaeqUrcs5ecGmwL5EnZKZpM6qbj5EMdf%2BBg9ptGN1NxL0SXk5L3QeSxB3yhnCpy4tccY3Bjjs12i3VQ%3D%3D 
+2017-08-09 22:47:30, INFO, 101.230.11.189, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/acp_service.php ], Line[167]------ 报文去[signature] key=val&串>accessType=0&bizType=000301&currencyCode=156&encoding=utf-8&merId=848116048160005&orderId=20170809224635&queryId=201708092246359945698&respCode=00&respMsg=成功[0000000]&settleAmt=1&settleCurrencyCode=156&settleDate=0809&signMethod=01&signPubKeyCert=-----BEGIN CERTIFICATE-----
+MIIEIDCCAwigAwIBAgIFEDRVM3AwDQYJKoZIhvcNAQEFBQAwITELMAkGA1UEBhMC
+Q04xEjAQBgNVBAoTCUNGQ0EgT0NBMTAeFw0xNTEwMjcwOTA2MjlaFw0yMDEwMjIw
+OTU4MjJaMIGWMQswCQYDVQQGEwJjbjESMBAGA1UEChMJQ0ZDQSBPQ0ExMRYwFAYD
+VQQLEw1Mb2NhbCBSQSBPQ0ExMRQwEgYDVQQLEwtFbnRlcnByaXNlczFFMEMGA1UE
+Aww8MDQxQDgzMTAwMDAwMDAwODMwNDBA5Lit5Zu96ZO26IGU6IKh5Lu95pyJ6ZmQ
+5YWs5Y+4QDAwMDE2NDkzMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA
+tXclo3H4pB+Wi4wSd0DGwnyZWni7+22Tkk6lbXQErMNHPk84c8DnjT8CW8jIfv3z
+d5NBpvG3O3jQ/YHFlad39DdgUvqDd0WY8/C4Lf2xyo0+gQRZckMKEAId8Fl6/rPN
+HsbPRGNIZgE6AByvCRbriiFNFtuXzP4ogG7vilqBckGWfAYaJ5zJpaGlMBOW1Ti3
+MVjKg5x8t1/oFBkpFVsBnAeSGPJYrBn0irfnXDhOz7hcIWPbNDoq2bJ9VwbkKhJq
+Vz7j7116pziUcLSFJasnWMnp8CrISj52cXzS/Y1kuaIMPP/1B0pcjVqMNJjowooD
+OxID3TZGfk5V7S++4FowVwIDAQABo4HoMIHlMB8GA1UdIwQYMBaAFNHb6YiC5d0a
+j0yqAIy+fPKrG/bZMEgGA1UdIARBMD8wPQYIYIEchu8qAQEwMTAvBggrBgEFBQcC
+ARYjaHR0cDovL3d3dy5jZmNhLmNvbS5jbi91cy91cy0xNC5odG0wNwYDVR0fBDAw
+LjAsoCqgKIYmaHR0cDovL2NybC5jZmNhLmNvbS5jbi9SU0EvY3JsMjI3Mi5jcmww
+CwYDVR0PBAQDAgPoMB0GA1UdDgQWBBTEIzenf3VR6CZRS61ARrWMto0GODATBgNV
+HSUEDDAKBggrBgEFBQcDAjANBgkqhkiG9w0BAQUFAAOCAQEAHMgTi+4Y9g0yvsUA
+p7MkdnPtWLS6XwL3IQuXoPInmBSbg2NP8jNhlq8tGL/WJXjycme/8BKu+Hht6lgN
+Zhv9STnA59UFo9vxwSQy88bbyui5fKXVliZEiTUhjKM6SOod2Pnp5oWMVjLxujkk
+WKjSakPvV6N6H66xhJSCk+Ref59HuFZY4/LqyZysiMua4qyYfEfdKk5h27+z1MWy
+nadnxA5QexHHck9Y4ZyisbUubW7wTaaWFd+cZ3P/zmIUskE/dAG0/HEvmOR6CGlM
+55BFCVmJEufHtike3shu7lZGVm2adKNFFTqLoEFkfBO6Y/N6ViraBilcXjmWBJNE
+MFF/yA==
+-----END CERTIFICATE-----&traceNo=994569&traceTime=0809224635&txnAmt=1&txnSubType=01&txnTime=20170809224635&txnType=01&version=5.1.0 
+2017-08-09 22:47:30, INFO, 101.230.11.189, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/acp_service.php ], Line[168]------ 签名原文>aPHJgmjibVpSkVAzCLvyZBJWWGShwzjjR6z9oDQwbeGhMiNXLNZOu3X6NcMWoG4x90ALE6YLziYJwZ8qaMcc6HRlVR1UDDjUQBJDmt0tlCuvlC2rFk5aAlcCFx9yJO3NIXm2e6ico661OAhC9So7frOM2JAtxN4VG5V6ly0xLskmLR0QioBUCMrRyTQHCTfn9Kw0f5UfbmDlaZHF25ncYBDlGlo0j6n0fpjp5cFVoO3zOAj/sGQS8cDBhytzzxDZHKzhkVTiaeqUrcs5ecGmwL5EnZKZpM6qbj5EMdf+Bg9ptGN1NxL0SXk5L3QeSxB3yhnCpy4tccY3Bjjs12i3VQ== 
+2017-08-09 22:47:30, INFO, 101.230.11.189, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/acp_service.php ], Line[188]------ sha256>4fcc07bc4a46cb21af9c8de560c73cccf31046e6f5909a8590a3aa7833d95257 
+2017-08-09 22:47:30, INFO, 101.230.11.189, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/acp_service.php ], Line[191]------ 验签成功 
+2017-08-09 22:50:55, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/cert_util.php ], Line[105]------ 读取加密证书…… 
+2017-08-09 22:50:55, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/cert_util.php ], Line[131]------ 加密证书读取成功，序列号：69042905377 
+2017-08-09 22:50:55, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/acp_service.php ], Line[71]------ =====签名报文开始====== 
+2017-08-09 22:50:55, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/cert_util.php ], Line[39]------ 读取签名证书…… 
+2017-08-09 22:50:55, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/cert_util.php ], Line[71]------ 签名证书读取成功，序列号：73288190342 
+2017-08-09 22:50:55, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/acp_service.php ], Line[84]------ 签名key=val&...串 >accNo=nxRsJHr28zoKP/kapHzTN4rdgFQNp0UpZrMvTtVrLEB4P4QJKHToouIALpCmQkNFSVaOO4gt6sIHndyCt8ZXu75mF0TTpa/8I7oeTJeEkEmN16fzEvmQ2muJuY1x/1vll+7Y2ShPiNQ+ZldfC4PPdHPROX7PKgRW+Nj6sfyuAq7Mjw9fTMjv8uiIYw4oOW4CsvQvHRfEz3l3rH4d7YnHVEndd9HrlUljweREYtuG60LVtP/Lld6pD+LAegkX67WRP/F9+E6agix0+a+lqfWqGifzaXS3bE4WhGu+mvkTsOieyYDlh6iIE8pI7k+t2hAQZuxJFh+k682XcD2BrxSdCQ==&accessType=0&backUrl=https://ytbwdtl.com/unionpay/upacp_demo_wtz/demo/api_03_wtz/BackReceive.php&bizType=000301&certId=73288190342&channelType=07&currencyCode=156&customerInfo=e2VuY3J5cHRlZEluZm89cFVrMU1UUVZ0Q1ZNNXlYckRNVlkzM0FZVEFKbnNiYXREWXBwWk13N3pNRWhvYnV6dmZ6MFY5QjdpQnV3ai9Pc2t0SDVSTDdDVkladzVWYlhYZXR5YTBxRkFkVkpXVU1ITkZQNnRFWGE1T3JaTS94a1JCbm96NFRwQWI3TnBDSm5oczRTZEtKN3pUVmVVUlU0NzhSQjhlRWt4anFuQnFPRjZmaEszTVhZWjBqTDZkUTJNZGh6eW9rQThVV0xjRWxmQlFFOFVnY2s3cG5Odnc0a1c4NjQ1a3dUQ29JWUJ3SlN1ZFF0VzI2VDRUcjFoNWZMdi9MZEF1UE8xTVNyS1pmRHE0bkNkRklvNVdUMlpZdndUTHhUWmQwTHhrbGQ4RjhrSEl6aGNCOFZjN3JWWFlyTTJCMTk5VDZqM0pYbENuMW5CcnB0ZE5CQVBpQU5yRnA5T0JrNm1nPT19&encoding=utf-8&encryptCertId=69042905377&frontUrl=http://ytbwdtl.com/unionpay/upacp_demo_wtz/demo/api_03_wtz/FrontReceive.php&merId=848116048160005&orderId=20170809225055&payTimeout=20170809230555&signMethod=01&txnAmt=1&txnSubType=01&txnTime=20170809225055&txnType=01&version=5.1.0 
+2017-08-09 22:50:55, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/acp_service.php ], Line[101]------ 摘要sha256x16 >13386eb6f3eaa6fb4f839db420ba1d40ff52f930478d614b49a8e1f59de08ce5 
+2017-08-09 22:50:55, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/acp_service.php ], Line[106]------ 签名串为 >pYyMbUDCxobqePAgEDUKCWAuQ8qG1zGGs7JmYmV1Hjpp1Da26KKEn84WGDVMXoDGSsamdpeSt/rXg3YLCGKQ/EfMSRB+l/aRHXCBmTOHv3y2Vr5IRme7C8WIPm7l7Qx6iz0qrUx7CW8cNsOa4to1EHwDLs/TKHpsUZR99mjAmNW8/+v2xHNCGAcDQEa4HFkE418GQngRd0j30ZDWHQ35yjo6NEH2+BrrefELtZLE+MPXkUC5luaFbfB1hxrPov8xHnlpztYTHn1mbxx4egS8vJhXDx1cdnyzBeacYH1DzXMAT2HzNfFcA5sZspuszMLymFQJznzFI1aljG7YDek8gA== 
+2017-08-09 22:50:55, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/acp_service.php ], Line[119]------ =====签名报文结束====== 
+2017-08-09 22:50:55, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/acp_service.php ], Line[364]------ 自动跳转html><html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body onload="javascript:document.pay_form.submit();">
+    <form id="pay_form" name="pay_form" action="https://gateway.95516.com/gateway/api/frontTransReq.do" method="post">
+	    <input type="hidden" name="version" id="version" value="5.1.0" />
+    <input type="hidden" name="signMethod" id="signMethod" value="01" />
+    <input type="hidden" name="encoding" id="encoding" value="utf-8" />
+    <input type="hidden" name="txnType" id="txnType" value="01" />
+    <input type="hidden" name="txnSubType" id="txnSubType" value="01" />
+    <input type="hidden" name="bizType" id="bizType" value="000301" />
+    <input type="hidden" name="accessType" id="accessType" value="0" />
+    <input type="hidden" name="channelType" id="channelType" value="07" />
+    <input type="hidden" name="currencyCode" id="currencyCode" value="156" />
+    <input type="hidden" name="encryptCertId" id="encryptCertId" value="69042905377" />
+    <input type="hidden" name="frontUrl" id="frontUrl" value="http://ytbwdtl.com/unionpay/upacp_demo_wtz/demo/api_03_wtz/FrontReceive.php" />
+    <input type="hidden" name="backUrl" id="backUrl" value="https://ytbwdtl.com/unionpay/upacp_demo_wtz/demo/api_03_wtz/BackReceive.php" />
+    <input type="hidden" name="merId" id="merId" value="848116048160005" />
+    <input type="hidden" name="orderId" id="orderId" value="20170809225055" />
+    <input type="hidden" name="txnTime" id="txnTime" value="20170809225055" />
+    <input type="hidden" name="txnAmt" id="txnAmt" value="1" />
+    <input type="hidden" name="accNo" id="accNo" value="nxRsJHr28zoKP/kapHzTN4rdgFQNp0UpZrMvTtVrLEB4P4QJKHToouIALpCmQkNFSVaOO4gt6sIHndyCt8ZXu75mF0TTpa/8I7oeTJeEkEmN16fzEvmQ2muJuY1x/1vll+7Y2ShPiNQ+ZldfC4PPdHPROX7PKgRW+Nj6sfyuAq7Mjw9fTMjv8uiIYw4oOW4CsvQvHRfEz3l3rH4d7YnHVEndd9HrlUljweREYtuG60LVtP/Lld6pD+LAegkX67WRP/F9+E6agix0+a+lqfWqGifzaXS3bE4WhGu+mvkTsOieyYDlh6iIE8pI7k+t2hAQZuxJFh+k682XcD2BrxSdCQ==" />
+    <input type="hidden" name="customerInfo" id="customerInfo" value="e2VuY3J5cHRlZEluZm89cFVrMU1UUVZ0Q1ZNNXlYckRNVlkzM0FZVEFKbnNiYXREWXBwWk13N3pNRWhvYnV6dmZ6MFY5QjdpQnV3ai9Pc2t0SDVSTDdDVkladzVWYlhYZXR5YTBxRkFkVkpXVU1ITkZQNnRFWGE1T3JaTS94a1JCbm96NFRwQWI3TnBDSm5oczRTZEtKN3pUVmVVUlU0NzhSQjhlRWt4anFuQnFPRjZmaEszTVhZWjBqTDZkUTJNZGh6eW9rQThVV0xjRWxmQlFFOFVnY2s3cG5Odnc0a1c4NjQ1a3dUQ29JWUJ3SlN1ZFF0VzI2VDRUcjFoNWZMdi9MZEF1UE8xTVNyS1pmRHE0bkNkRklvNVdUMlpZdndUTHhUWmQwTHhrbGQ4RjhrSEl6aGNCOFZjN3JWWFlyTTJCMTk5VDZqM0pYbENuMW5CcnB0ZE5CQVBpQU5yRnA5T0JrNm1nPT19" />
+    <input type="hidden" name="payTimeout" id="payTimeout" value="20170809230555" />
+    <input type="hidden" name="certId" id="certId" value="73288190342" />
+    <input type="hidden" name="signature" id="signature" value="pYyMbUDCxobqePAgEDUKCWAuQ8qG1zGGs7JmYmV1Hjpp1Da26KKEn84WGDVMXoDGSsamdpeSt/rXg3YLCGKQ/EfMSRB+l/aRHXCBmTOHv3y2Vr5IRme7C8WIPm7l7Qx6iz0qrUx7CW8cNsOa4to1EHwDLs/TKHpsUZR99mjAmNW8/+v2xHNCGAcDQEa4HFkE418GQngRd0j30ZDWHQ35yjo6NEH2+BrrefELtZLE+MPXkUC5luaFbfB1hxrPov8xHnlpztYTHn1mbxx4egS8vJhXDx1cdnyzBeacYH1DzXMAT2HzNfFcA5sZspuszMLymFQJznzFI1aljG7YDek8gA==" />
+   <!-- <input type="submit" type="hidden">-->
+    </form>
+</body>
+</html> 
+2017-08-09 23:42:53, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/cert_util.php ], Line[105]------ 读取加密证书…… 
+2017-08-09 23:42:53, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/cert_util.php ], Line[131]------ 加密证书读取成功，序列号：69042905377 
+2017-08-09 23:42:53, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/acp_service.php ], Line[71]------ =====签名报文开始====== 
+2017-08-09 23:42:53, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/cert_util.php ], Line[39]------ 读取签名证书…… 
+2017-08-09 23:42:53, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/cert_util.php ], Line[71]------ 签名证书读取成功，序列号：73288190342 
+2017-08-09 23:42:53, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/acp_service.php ], Line[84]------ 签名key=val&...串 >accNo=jGtDnyzmlyfSAQrkSVcsmicPa4ChtYb2PD+afUkvD+nm4FvXQWji6S9GlFVqa8Z2MI2mXGp3ov/j9HRw8zBYKF8ytBxS71HZfCm8DJRTh9bh+3u2YdCc+6DF5+lpWRiolh7ii1uxo7ZMYn9K75peprpOgwmyhc/X0xVD6mtTnDctuh5IDtmMa9tzfeM7gWpPDG5XRSiZp6NDRsvRNjeHisq9WrnPU7fJSSCsW9g+yDRehHGqUwDiiiSbUQks+q9JBG3vb0wbsq1vhKrDFJDs7IHCWRSDvoAGdwceyhopIXRe7g3IXnYMzqSMkfumJSuEhGlXPSo5E8FPQYmbSFLWHA==&accessType=0&backUrl=https://ytbwdtl.com/unionpay/upacp_demo_wtz/demo/api_03_wtz/BackReceive.php&bizType=000301&certId=73288190342&channelType=07&customerInfo=e2VuY3J5cHRlZEluZm89Y2xFNzZIMVFqcXhQVVlXUjNHaUFoVFIwMFZFbUtlVGNEOHRZRHlPMHV1S0Rmb0h3NzJZcW12UVZRTUlGRW5FOVR0dTJnVkwrbXJoTysvVit5Vjd5WFRCMFR5UjVuSVVjT3NDSDY3QncrbGphSUFTdzRIN3hPOFgvVDJSK1REQnBGOVNnY2ZCbG1QUUZWemVjcjlzS2pMK0tyVWlRVWhmMkc4VFJEcXRKclJtKzJ2UTVkYWpCZzhxTitKM1phbHhoUnBES21pUGd5aWt4ek15YTAvWEpWUDJvb0pFLzkycVBTUEJBcUhSM0RpVWNPRlhhbHJBaGlKd0Y3QnpQWGVtYjJjS1Q0SkN4eVE2WWphUnF4bHcvS0E0b1pXOUd3TTZSSlA2YlMxZjNIN3ZnT0J4bkRkY21velJQS0t1YlNIaWpIUGNrQkcxdDBoWXE4d01sekpoV0J3PT19&encoding=utf-8&encryptCertId=69042905377&frontUrl=http://ytbwdtl.com/unionpay/upacp_demo_wtz/demo/api_03_wtz/FrontReceive.php&merId=848116048160005&orderId=20170809234253&payTimeout=20170809235753&signMethod=01&txnSubType=00&txnTime=20170809234253&txnType=79&version=5.1.0 
+2017-08-09 23:42:53, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/acp_service.php ], Line[101]------ 摘要sha256x16 >6bbacb88a39ea6a0ed3361c6794593d8fee0a4d1234e5b6630e5682dd06d236e 
+2017-08-09 23:42:53, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/acp_service.php ], Line[106]------ 签名串为 >VnfeEL6S1Ty0vJhIGD2H46XHpD+txGI79akv5xS8qW3wgUiB80rI/N5GVgVU8RYa5G/mo4lgZsbv7pLTtPTY9c9G7e8PcEstyJgWF5pXkU8l1+HZbQnPsGz6O2ct6lRaECPXA+2wXL9JGeakVBNHcY5IApDIdjSVBGRkwNrD37q9kg5qs0ygvhk8GEjRmjbuya4PxhKZ6exCzYP/5oLMyiJoy1mM3n8/xoO+HNxj/qDOnKOJogbiDmwnHGkTOrJuYi/xh+hlXfJ3VHk2L41htzlVJIIt7GQtrrdb9F9UnKjfL0X2az0W9kzK1Vt5WKITPUWRsig4Ypsex9sA4o9U/g== 
+2017-08-09 23:42:53, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/acp_service.php ], Line[119]------ =====签名报文结束====== 
+2017-08-09 23:42:53, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/acp_service.php ], Line[364]------ 自动跳转html><html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body onload="javascript:document.pay_form.submit();">
+    <form id="pay_form" name="pay_form" action="https://gateway.95516.com/gateway/api/frontTransReq.do" method="post">
+	    <input type="hidden" name="version" id="version" value="5.1.0" />
+    <input type="hidden" name="signMethod" id="signMethod" value="01" />
+    <input type="hidden" name="encoding" id="encoding" value="utf-8" />
+    <input type="hidden" name="txnType" id="txnType" value="79" />
+    <input type="hidden" name="txnSubType" id="txnSubType" value="00" />
+    <input type="hidden" name="bizType" id="bizType" value="000301" />
+    <input type="hidden" name="accessType" id="accessType" value="0" />
+    <input type="hidden" name="channelType" id="channelType" value="07" />
+    <input type="hidden" name="encryptCertId" id="encryptCertId" value="69042905377" />
+    <input type="hidden" name="frontUrl" id="frontUrl" value="http://ytbwdtl.com/unionpay/upacp_demo_wtz/demo/api_03_wtz/FrontReceive.php" />
+    <input type="hidden" name="backUrl" id="backUrl" value="https://ytbwdtl.com/unionpay/upacp_demo_wtz/demo/api_03_wtz/BackReceive.php" />
+    <input type="hidden" name="merId" id="merId" value="848116048160005" />
+    <input type="hidden" name="orderId" id="orderId" value="20170809234253" />
+    <input type="hidden" name="txnTime" id="txnTime" value="20170809234253" />
+    <input type="hidden" name="accNo" id="accNo" value="jGtDnyzmlyfSAQrkSVcsmicPa4ChtYb2PD+afUkvD+nm4FvXQWji6S9GlFVqa8Z2MI2mXGp3ov/j9HRw8zBYKF8ytBxS71HZfCm8DJRTh9bh+3u2YdCc+6DF5+lpWRiolh7ii1uxo7ZMYn9K75peprpOgwmyhc/X0xVD6mtTnDctuh5IDtmMa9tzfeM7gWpPDG5XRSiZp6NDRsvRNjeHisq9WrnPU7fJSSCsW9g+yDRehHGqUwDiiiSbUQks+q9JBG3vb0wbsq1vhKrDFJDs7IHCWRSDvoAGdwceyhopIXRe7g3IXnYMzqSMkfumJSuEhGlXPSo5E8FPQYmbSFLWHA==" />
+    <input type="hidden" name="customerInfo" id="customerInfo" value="e2VuY3J5cHRlZEluZm89Y2xFNzZIMVFqcXhQVVlXUjNHaUFoVFIwMFZFbUtlVGNEOHRZRHlPMHV1S0Rmb0h3NzJZcW12UVZRTUlGRW5FOVR0dTJnVkwrbXJoTysvVit5Vjd5WFRCMFR5UjVuSVVjT3NDSDY3QncrbGphSUFTdzRIN3hPOFgvVDJSK1REQnBGOVNnY2ZCbG1QUUZWemVjcjlzS2pMK0tyVWlRVWhmMkc4VFJEcXRKclJtKzJ2UTVkYWpCZzhxTitKM1phbHhoUnBES21pUGd5aWt4ek15YTAvWEpWUDJvb0pFLzkycVBTUEJBcUhSM0RpVWNPRlhhbHJBaGlKd0Y3QnpQWGVtYjJjS1Q0SkN4eVE2WWphUnF4bHcvS0E0b1pXOUd3TTZSSlA2YlMxZjNIN3ZnT0J4bkRkY21velJQS0t1YlNIaWpIUGNrQkcxdDBoWXE4d01sekpoV0J3PT19" />
+    <input type="hidden" name="payTimeout" id="payTimeout" value="20170809235753" />
+    <input type="hidden" name="certId" id="certId" value="73288190342" />
+    <input type="hidden" name="signature" id="signature" value="VnfeEL6S1Ty0vJhIGD2H46XHpD+txGI79akv5xS8qW3wgUiB80rI/N5GVgVU8RYa5G/mo4lgZsbv7pLTtPTY9c9G7e8PcEstyJgWF5pXkU8l1+HZbQnPsGz6O2ct6lRaECPXA+2wXL9JGeakVBNHcY5IApDIdjSVBGRkwNrD37q9kg5qs0ygvhk8GEjRmjbuya4PxhKZ6exCzYP/5oLMyiJoy1mM3n8/xoO+HNxj/qDOnKOJogbiDmwnHGkTOrJuYi/xh+hlXfJ3VHk2L41htzlVJIIt7GQtrrdb9F9UnKjfL0X2az0W9kzK1Vt5WKITPUWRsig4Ypsex9sA4o9U/g==" />
+   <!-- <input type="submit" type="hidden">-->
+    </form>
+</body>
+</html> 
+2017-08-09 23:43:45, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/cert_util.php ], Line[105]------ 读取加密证书…… 
+2017-08-09 23:43:45, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/cert_util.php ], Line[131]------ 加密证书读取成功，序列号：69042905377 
+2017-08-09 23:43:45, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/acp_service.php ], Line[71]------ =====签名报文开始====== 
+2017-08-09 23:43:45, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/cert_util.php ], Line[39]------ 读取签名证书…… 
+2017-08-09 23:43:45, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/cert_util.php ], Line[71]------ 签名证书读取成功，序列号：73288190342 
+2017-08-09 23:43:45, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/acp_service.php ], Line[84]------ 签名key=val&...串 >accNo=UZG5+cHwNVJKtS03MzVs21d8Oy40x5+hOKd5Z1mYp14TCtSvPJb6VV0onMbgWv5O0V02tswcSXE963vlHBIfqoROmPURIL89E507cKkBV3NFyLOzjQJwTanDegPAk3HJ2p40hDcjGjdVs6TVxqHglE5VedUa6IkPDepCysKA9TaYpVyg8R5yRER2iopwfVM84x83PVRuhCW8RdL6mBx4+9bQQn47zv0q1Az1NIZZ3n4a7e3jba3rOz5Yr7v315tfeos7VYKi0zG8aJamAHCelTzzRsH8unPyNVxBPdbDLceGVhMvvUhRmx93BMTZL3uUzEDvdeCfEPe9ItmfnAeb9w==&accessType=0&backUrl=https://ytbwdtl.com/unionpay/upacp_demo_wtz/demo/api_03_wtz/BackReceive.php&bizType=000301&certId=73288190342&channelType=08&customerInfo=e2VuY3J5cHRlZEluZm89VG5oRzRqcHk3RFBYT0htSjBhUUJhai91aUVzUkovM3dIWmZ6ais2VkwrTE1sdFUzcDhrakh3Vmhld2VNY0JmaUQ3dkgzQWpvd1NtTHNpYWNqNVRhWExSa21INUcyakE0cVFENmdzZitkcm9WZXZseE9LdUZQb21Wd2MvWUVsT2hXNXQwb3g5S0RCZ3Z1am9uRDQwb1gxbFd6MlhScldiUlVvU1h1MFVjdFFpNmxvNm9vQms0cTduOWNuR0FEakEyeVpCMGg4aEx0ZjNGZkpza3JPMERZdlVoMDJueHhMNW1meVRYNWcrbEJBUXBVZ0dianY2bjFETGJEV21JUG9kcHloRWdZZmZEenVGV2ZsYWZPYjVabi96MEg0bDRNenRlc1llcmFjV29yalJtOWlBL3VaaUxSWWpwZTEyekttUFpVc1NiTTZ0WDNRZTl1enRHWWwxc2FBPT19&encoding=utf-8&encryptCertId=69042905377&frontUrl=http://ytbwdtl.com/unionpay/upacp_demo_wtz/demo/api_03_wtz/FrontReceive.php&merId=848116048160005&orderId=20170809234345&payTimeout=20170809235845&signMethod=01&txnSubType=00&txnTime=20170809234345&txnType=79&version=5.1.0 
+2017-08-09 23:43:45, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/acp_service.php ], Line[101]------ 摘要sha256x16 >77ade0c0917ee4394b66eb25d4eb2751409bb75354a7a59d14173cdf1ad24efa 
+2017-08-09 23:43:45, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/acp_service.php ], Line[106]------ 签名串为 >iGB/dNTmJVRph0sjq4CSa/Mfb94voh8mu3gHsYSQ+t/wtfOU2TjEvbn3ZAQ2zg31uOLD0g9Pj1mxguo+91/XNHfpnll6soO4v7jKVy5ChZ0Q5XfCPXFnGz1RQT+JQux6Df4S5nmCKF5Chg0HHsKvo5qdGU6Q3QdYLVLQ9g4H88WUuOHf21bUOmUzmE5iG7cLMp3bIi8CMr5CPqwwDoHo5Ny7xoWli4KQwiH0i/MeY4N5cvkmn+jRLRa8n3rK5HLhNDvCxZhWS+lUGWvyANRGx8aX0poPGnO/kuVeYC4JbDqCopdn88CzkfzqdNAxPpHvKddgfzws5QUuQeoZTf71Xw== 
+2017-08-09 23:43:45, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/acp_service.php ], Line[119]------ =====签名报文结束====== 
+2017-08-09 23:43:45, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/acp_service.php ], Line[364]------ 自动跳转html><html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body onload="javascript:document.pay_form.submit();">
+    <form id="pay_form" name="pay_form" action="https://gateway.95516.com/gateway/api/frontTransReq.do" method="post">
+	    <input type="hidden" name="version" id="version" value="5.1.0" />
+    <input type="hidden" name="signMethod" id="signMethod" value="01" />
+    <input type="hidden" name="encoding" id="encoding" value="utf-8" />
+    <input type="hidden" name="txnType" id="txnType" value="79" />
+    <input type="hidden" name="txnSubType" id="txnSubType" value="00" />
+    <input type="hidden" name="bizType" id="bizType" value="000301" />
+    <input type="hidden" name="accessType" id="accessType" value="0" />
+    <input type="hidden" name="channelType" id="channelType" value="08" />
+    <input type="hidden" name="encryptCertId" id="encryptCertId" value="69042905377" />
+    <input type="hidden" name="frontUrl" id="frontUrl" value="http://ytbwdtl.com/unionpay/upacp_demo_wtz/demo/api_03_wtz/FrontReceive.php" />
+    <input type="hidden" name="backUrl" id="backUrl" value="https://ytbwdtl.com/unionpay/upacp_demo_wtz/demo/api_03_wtz/BackReceive.php" />
+    <input type="hidden" name="merId" id="merId" value="848116048160005" />
+    <input type="hidden" name="orderId" id="orderId" value="20170809234345" />
+    <input type="hidden" name="txnTime" id="txnTime" value="20170809234345" />
+    <input type="hidden" name="accNo" id="accNo" value="UZG5+cHwNVJKtS03MzVs21d8Oy40x5+hOKd5Z1mYp14TCtSvPJb6VV0onMbgWv5O0V02tswcSXE963vlHBIfqoROmPURIL89E507cKkBV3NFyLOzjQJwTanDegPAk3HJ2p40hDcjGjdVs6TVxqHglE5VedUa6IkPDepCysKA9TaYpVyg8R5yRER2iopwfVM84x83PVRuhCW8RdL6mBx4+9bQQn47zv0q1Az1NIZZ3n4a7e3jba3rOz5Yr7v315tfeos7VYKi0zG8aJamAHCelTzzRsH8unPyNVxBPdbDLceGVhMvvUhRmx93BMTZL3uUzEDvdeCfEPe9ItmfnAeb9w==" />
+    <input type="hidden" name="customerInfo" id="customerInfo" value="e2VuY3J5cHRlZEluZm89VG5oRzRqcHk3RFBYT0htSjBhUUJhai91aUVzUkovM3dIWmZ6ais2VkwrTE1sdFUzcDhrakh3Vmhld2VNY0JmaUQ3dkgzQWpvd1NtTHNpYWNqNVRhWExSa21INUcyakE0cVFENmdzZitkcm9WZXZseE9LdUZQb21Wd2MvWUVsT2hXNXQwb3g5S0RCZ3Z1am9uRDQwb1gxbFd6MlhScldiUlVvU1h1MFVjdFFpNmxvNm9vQms0cTduOWNuR0FEakEyeVpCMGg4aEx0ZjNGZkpza3JPMERZdlVoMDJueHhMNW1meVRYNWcrbEJBUXBVZ0dianY2bjFETGJEV21JUG9kcHloRWdZZmZEenVGV2ZsYWZPYjVabi96MEg0bDRNenRlc1llcmFjV29yalJtOWlBL3VaaUxSWWpwZTEyekttUFpVc1NiTTZ0WDNRZTl1enRHWWwxc2FBPT19" />
+    <input type="hidden" name="payTimeout" id="payTimeout" value="20170809235845" />
+    <input type="hidden" name="certId" id="certId" value="73288190342" />
+    <input type="hidden" name="signature" id="signature" value="iGB/dNTmJVRph0sjq4CSa/Mfb94voh8mu3gHsYSQ+t/wtfOU2TjEvbn3ZAQ2zg31uOLD0g9Pj1mxguo+91/XNHfpnll6soO4v7jKVy5ChZ0Q5XfCPXFnGz1RQT+JQux6Df4S5nmCKF5Chg0HHsKvo5qdGU6Q3QdYLVLQ9g4H88WUuOHf21bUOmUzmE5iG7cLMp3bIi8CMr5CPqwwDoHo5Ny7xoWli4KQwiH0i/MeY4N5cvkmn+jRLRa8n3rK5HLhNDvCxZhWS+lUGWvyANRGx8aX0poPGnO/kuVeYC4JbDqCopdn88CzkfzqdNAxPpHvKddgfzws5QUuQeoZTf71Xw==" />
+   <!-- <input type="submit" type="hidden">-->
+    </form>
+</body>
+</html> 
+2017-08-09 23:44:00, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/cert_util.php ], Line[105]------ 读取加密证书…… 
+2017-08-09 23:44:00, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/cert_util.php ], Line[131]------ 加密证书读取成功，序列号：69042905377 
+2017-08-09 23:44:00, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/acp_service.php ], Line[71]------ =====签名报文开始====== 
+2017-08-09 23:44:00, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/cert_util.php ], Line[39]------ 读取签名证书…… 
+2017-08-09 23:44:00, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/cert_util.php ], Line[71]------ 签名证书读取成功，序列号：73288190342 
+2017-08-09 23:44:00, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/acp_service.php ], Line[84]------ 签名key=val&...串 >accNo=ZRDyvGoQB86u3/+L/cMOXgjXitJt3HQe2vsOP2tCJit2UgRWI3Ab3t12i0vkZBTGOGFdfJk1W/mAFc5Uj/6cMjXrCEqUS5MgCVKUE3S+NqqoSz/UC/XAGjT9td/KPNKMa8gBT0+A7YUpO1otPVHhjdRWxXrmOY0SS9AzabfQJbjbJEwbVwcwRFDzU5GLj+SqktUqypzp8VHuML8DDA74XiMYjQXqGOMOcFjCnBxTQ/+hrgR1pVoxcUEjw8naOCa2W/T/pvvpa2WgIt/CY+4GZT6VuMinjWi0IPaPNBJfC8qKEfssI8oJkwq3RkYbdjIRGLB+t+xPX0UngOrEhJUYbw==&accessType=0&backUrl=https://ytbwdtl.com/unionpay/upacp_demo_wtz/demo/api_03_wtz/BackReceive.php&bizType=000301&certId=73288190342&channelType=08&customerInfo=e2VuY3J5cHRlZEluZm89R1RoTzVJWEM0OWdHRm1CZHdwcUtldnpnVjl2T0ZnTE54U1JpdTduQWZGbzdBeFVEWEV5eUZnU1FXbUE1K0tpMFRrYUF4OFdSbUZrUkNjVHFtK2RidEZ6Z0kvb054TWdFdGdlQzRsMjZpM0ZPNjUzSVJmaERXMnBIR0NJWGNPRlVjSWZGYzMyeUFxOXVjcUIxb3VicVlibE8yZmVZbXR4V0VCZldIWmNsekdNNGJsMWlHN3RNNDlaYy9ORGJ4ODNBMW9NeTdlRFE3WW5GTWo4ZGJPWUx5dThhTkptVnBvTVJIK3Iwdnl0YkJhTVlJejlIa3doNlNYYnpHY2cyam1VUTRQTDAvNlpOL0tDRi9IdlJ2Q2dSZVFLUXBsMXdjTFptcGFtek5BT2dXMmpyT21CRGlkbk9pelJUWnkwUy9DbjR1dHFCLzlybkR0WmVSNjk5SjBtR3RBPT19&encoding=utf-8&encryptCertId=69042905377&frontUrl=http://ytbwdtl.com/unionpay/upacp_demo_wtz/demo/api_03_wtz/FrontReceive.php&merId=848116048160005&orderId=20170809234400&payTimeout=20170809235900&signMethod=01&txnSubType=00&txnTime=20170809234400&txnType=79&version=5.1.0 
+2017-08-09 23:44:00, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/acp_service.php ], Line[101]------ 摘要sha256x16 >013d55f3a85fdf0445c077d8c0c8549bcc8e11e7ccff5275fdccb6aaab51f755 
+2017-08-09 23:44:00, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/acp_service.php ], Line[106]------ 签名串为 >gRrT3jogFasBKUwpVr6ZH/GWdzb369/clYWEV4GrpAU0F/pXDGrNfooVGDJRvb93i+HaHimG3jjFPKNajwuybGF1nwdGO7MM72TQxETFGIxHt9jW0TpvQkhADl5n3a6BB1jE0g9YyFFEm9UrEyL2P8d0tyeiEObfzY+GzL9WAQ09+S12FIhQiduPrL9W0WiLqm8TQ3z5/6C9hIWKIm7FpFyvrQB16PaVx/gNj2eqYV5sYwrjhPtzjVKaO7M/G+072SybiOym3OYIuM+cCj7jL+XtGT5MSPa7Cvnc9ee8jsoFXNSZez+diwWuWk9DgHTnczqwcuJtiFuLWjCw1Smrxg== 
+2017-08-09 23:44:00, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/acp_service.php ], Line[119]------ =====签名报文结束====== 
+2017-08-09 23:44:00, INFO, 118.249.102.32, File[ /home/wwwroot/lnmp01/domain/wdtl.com/web/unionpay/upacp_demo_wtz/sdk/acp_service.php ], Line[364]------ 自动跳转html><html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body onload="javascript:document.pay_form.submit();">
+    <form id="pay_form" name="pay_form" action="https://gateway.95516.com/gateway/api/frontTransReq.do" method="post">
+	    <input type="hidden" name="version" id="version" value="5.1.0" />
+    <input type="hidden" name="signMethod" id="signMethod" value="01" />
+    <input type="hidden" name="encoding" id="encoding" value="utf-8" />
+    <input type="hidden" name="txnType" id="txnType" value="79" />
+    <input type="hidden" name="txnSubType" id="txnSubType" value="00" />
+    <input type="hidden" name="bizType" id="bizType" value="000301" />
+    <input type="hidden" name="accessType" id="accessType" value="0" />
+    <input type="hidden" name="channelType" id="channelType" value="08" />
+    <input type="hidden" name="encryptCertId" id="encryptCertId" value="69042905377" />
+    <input type="hidden" name="frontUrl" id="frontUrl" value="http://ytbwdtl.com/unionpay/upacp_demo_wtz/demo/api_03_wtz/FrontReceive.php" />
+    <input type="hidden" name="backUrl" id="backUrl" value="https://ytbwdtl.com/unionpay/upacp_demo_wtz/demo/api_03_wtz/BackReceive.php" />
+    <input type="hidden" name="merId" id="merId" value="848116048160005" />
+    <input type="hidden" name="orderId" id="orderId" value="20170809234400" />
+    <input type="hidden" name="txnTime" id="txnTime" value="20170809234400" />
+    <input type="hidden" name="accNo" id="accNo" value="ZRDyvGoQB86u3/+L/cMOXgjXitJt3HQe2vsOP2tCJit2UgRWI3Ab3t12i0vkZBTGOGFdfJk1W/mAFc5Uj/6cMjXrCEqUS5MgCVKUE3S+NqqoSz/UC/XAGjT9td/KPNKMa8gBT0+A7YUpO1otPVHhjdRWxXrmOY0SS9AzabfQJbjbJEwbVwcwRFDzU5GLj+SqktUqypzp8VHuML8DDA74XiMYjQXqGOMOcFjCnBxTQ/+hrgR1pVoxcUEjw8naOCa2W/T/pvvpa2WgIt/CY+4GZT6VuMinjWi0IPaPNBJfC8qKEfssI8oJkwq3RkYbdjIRGLB+t+xPX0UngOrEhJUYbw==" />
+    <input type="hidden" name="customerInfo" id="customerInfo" value="e2VuY3J5cHRlZEluZm89R1RoTzVJWEM0OWdHRm1CZHdwcUtldnpnVjl2T0ZnTE54U1JpdTduQWZGbzdBeFVEWEV5eUZnU1FXbUE1K0tpMFRrYUF4OFdSbUZrUkNjVHFtK2RidEZ6Z0kvb054TWdFdGdlQzRsMjZpM0ZPNjUzSVJmaERXMnBIR0NJWGNPRlVjSWZGYzMyeUFxOXVjcUIxb3VicVlibE8yZmVZbXR4V0VCZldIWmNsekdNNGJsMWlHN3RNNDlaYy9ORGJ4ODNBMW9NeTdlRFE3WW5GTWo4ZGJPWUx5dThhTkptVnBvTVJIK3Iwdnl0YkJhTVlJejlIa3doNlNYYnpHY2cyam1VUTRQTDAvNlpOL0tDRi9IdlJ2Q2dSZVFLUXBsMXdjTFptcGFtek5BT2dXMmpyT21CRGlkbk9pelJUWnkwUy9DbjR1dHFCLzlybkR0WmVSNjk5SjBtR3RBPT19" />
+    <input type="hidden" name="payTimeout" id="payTimeout" value="20170809235900" />
+    <input type="hidden" name="certId" id="certId" value="73288190342" />
+    <input type="hidden" name="signature" id="signature" value="gRrT3jogFasBKUwpVr6ZH/GWdzb369/clYWEV4GrpAU0F/pXDGrNfooVGDJRvb93i+HaHimG3jjFPKNajwuybGF1nwdGO7MM72TQxETFGIxHt9jW0TpvQkhADl5n3a6BB1jE0g9YyFFEm9UrEyL2P8d0tyeiEObfzY+GzL9WAQ09+S12FIhQiduPrL9W0WiLqm8TQ3z5/6C9hIWKIm7FpFyvrQB16PaVx/gNj2eqYV5sYwrjhPtzjVKaO7M/G+072SybiOym3OYIuM+cCj7jL+XtGT5MSPa7Cvnc9ee8jsoFXNSZez+diwWuWk9DgHTnczqwcuJtiFuLWjCw1Smrxg==" />
+   <!-- <input type="submit" type="hidden">-->
+    </form>
+</body>
+</html> 

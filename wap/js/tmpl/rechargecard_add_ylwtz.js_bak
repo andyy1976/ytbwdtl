@@ -1,0 +1,221 @@
+var pdr_sn;
+
+var card_order_data
+
+$(function() {
+    var key = getCookie('key');
+
+    if (!key) {
+        window.location.href = WapSiteUrl+'/tmpl/member/login.html';
+        return;
+    }
+
+    $('#saveform').click(function(){
+        var money=$('#rc_sn').val();
+        
+        if(money<1000){
+            alert('输入金额请大于1000元！！！');
+            return false;
+        }
+
+        // test...
+        // money = '1001'
+
+
+        $.ajax({
+            type:'post',
+            url:ApiUrl+'/index.php?act=member_fund&op=rechargecard_add',
+            data:{
+                key:key,
+                money:money
+            },
+            dataType:'json',
+            success: function(result){
+
+                if(result==1){alert('农行卡信息未完善，请重新绑定！！！');}
+                if(result==2){alert('请先激活会员，再充值！！！');}
+
+                checkLogin(result.login);
+
+                if (result.datas.error) {
+                    $.sDialog({
+                        skin:"red",
+                        content:result.datas.error,
+                        okBtn:false,
+                        cancelBtn:false
+                    });
+                    return false;
+                }
+
+                $('#pdr_sn').val(result.datas);
+
+                $.animationUp({valve:'',scroll:''});
+
+                $('#onlineTotal').html(money);
+
+
+                // $('#ybzf').click(function(){
+                //     $('#payment_list_wrapper').show()
+                //     $('#member_bank_card_list_box').hide()
+
+                //     $('#payment_list_wrapper li').removeClass('using');
+                //     $(this).addClass('using');
+                //     $('#payment_code').val('ybzf');
+                // });
+
+
+                document.getElementById('member_bank_card_list')
+                .onclick = function(e){
+                    var el = e.target
+                    if (el.className == 'card-item'){
+                        $('#member_bank_card_list li').removeClass('checked')
+                        $(el).addClass('checked')
+                        // ...
+                    }
+                }
+
+                $('#mb_card_list_back').click(function(){
+                    $('#payment_list_wrapper').show()
+                    $('#member_bank_card_list_box').hide()
+                })
+
+                $('#add_new_card').click(function(){
+                    $('#payment_list_wrapper').hide()
+                    $('#member_bank_card_list_box').hide()
+                    $('#new_card_add_panel').show()
+                })
+
+                $('#back_to_cart_list').click(function(){
+                    $('#payment_list_wrapper').hide()
+                    $('#new_card_add_panel').hide()
+                    $('#member_bank_card_list_box').show()
+                })
+
+
+                ///////////////////////////////////////
+                // 选定银行卡后，点击支付
+                $('#to_card_pay').click(function(){
+                    var idx = $('#member_bank_card_list li.checked').attr('key')
+                    if (!idx) {
+                        alert('请选择或添加用于支付的银行卡')
+                    }
+
+                    var cardInfo = card_order_data[1*idx]
+                    console.log(1*idx, cardInfo)
+
+
+                    var pdr_sn = $('#pdr_sn').val();
+                    var payment_code = $('#payment_code').val();
+
+                    location.href = ApiUrl
+                    + '/index.php?act=member_payment&op=pd_order'
+                    + '&pay_sn=' + pdr_sn
+                    + '&key=' + key
+                    + '&payment_code=' + payment_code
+                    + '&accNo=' + cardInfo.acc_no
+                    + '&phone=' + cardInfo.phone
+
+                })
+
+                ///////////////////////////////////////
+                // 选择银联支付
+
+                var showCardLlist = function(){
+                    $('#payment_list_wrapper').hide()
+                    $('#new_card_add_panel').hide()
+                    $('#member_bank_card_list_box').show()
+                    $.ajax({
+                        type: 'get',
+                        url: ApiUrl+ '/index.php?act=member_bankcard&op=getCardList' + '&key='+key,
+                        success: function(result){
+                            if (result) {
+                                var list = $.parseJSON(result)
+                                card_order_data = list
+                                console.log(card_order_data)
+
+                                var html = ''
+                                for (var i=0, L=list.length; i<L; i++) {
+                                    html += '<li key="'+ i +'" class="card-item">'
+                                    html += list[i].bank_name
+                                    html += '<br>'
+                                    html += list[i].acc_no
+                                    html += '<input type="hidden" name="accNo" valve="'+list[i].acc_no+'">'
+                                    html += '<input type="hidden" name="phone" valve="'+list[i].phone+'">'
+                                    html += '</li>'
+                                }
+                            }
+                            $('#member_bank_card_list').html(html)
+                        }
+                    })
+                }
+
+                $('#ylwtz').click(function(){
+
+                    $('#payment_list_wrapper li').removeClass('using');
+                    $(this).addClass('using');
+                    $('#payment_code').val('ylwtz');
+
+                    showCardLlist();
+
+                });
+                $('#vbill').click(function(){
+                    $('#payment_list_wrapper li').removeClass('using');
+                    $(this).addClass('using');
+                    $('#payment_code').val('vbill');
+                    var pdr_sn=$('#pdr_sn').val();
+                    var payment_code=$('#payment_code').val();
+                    location.href = ApiUrl
+                   + '/index.php?act=member_payment&op=pd_order'
+                   + '&pay_sn='+pdr_sn+'&key='+key+'&payment_code='+payment_code;
+                    // showCardLlist();
+
+                });
+
+                ///////////////////////////////////////
+                // 添加新卡
+                $('#do_add_card').click(function(){
+
+                    var accNo = $('#card_accNo').val().trim()
+                    var phone = $('#card_phone').val().trim()
+
+                    if (!accNo || !phone) {
+                        !accNo || alert('请输入银行卡号')
+                        !phone || alert('请输入预留手机号')
+                        return false
+                    }
+
+                    $.ajax({
+                        type: 'post',
+                        url: ApiUrl+ '/index.php?act=member_bankcard&op=add' + '&key='+key,
+                        data:{
+                            accNo: accNo,
+                            phone: phone
+                        },
+                        dataType:'json',
+                        success: function(result){
+                            $('#card_accNo').val('')
+                            $('#card_phone').val('')
+                            // alert(result)
+                            showCardLlist();
+                        }
+                    })
+                })
+
+                $('#toPay').click(function(){
+                    
+                   var pdr_sn=$('#pdr_sn').val();
+                   var payment_code=$('#payment_code').val();
+                   location.href = ApiUrl
+                   + '/index.php?act=member_payment&op=pd_order'
+                   + '&pay_sn='+pdr_sn+'&key='+key+'&payment_code='+payment_code;
+
+                   // $.post(ApiUrl+"/index.php?act=member_payment&op=pd_order",{pdr_sn:pdr_sn,payment_code:payment_code,key:key});
+                    
+                });
+                
+            }
+        });
+        
+    });
+    
+});

@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>线下商城</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<link href="/wap/dmtmpl/css/style.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+body{ background:#fff;}
+</style>
+</head>
+
+<body>
+<div class="yp_top">
+  <dl>
+    <dt><a href="#"><img src="/wap/dmtmpl/img/yp_fh.png"/></a></dt>
+    <dd>
+      <input type="text" class="dm_top_text yp_top_text"  value="" oninput="writeClear($(this));"  id="keyword" placeholder="请输入搜索关键词" maxlength="50"   onblur="return knchange(); "/>
+      <span class="input-del"></span>
+    </dd>
+  </dl>
+</div>
+<div class="city_hot city_sou">
+	<dl>
+    	<dt>热门搜索</dt>
+        <dd id="hot_list_container">
+        <script type="text/html" id="hot_list">
+		<%for(i = 0; i<list.length; i++){%>
+        <a href="<%=$buildUrl('keyword',list[i])%>"><%=list[i]%></a>
+		<%}%>
+		</script>
+        </dd>
+    </dl>
+    <dl>
+    	<dt>历史搜索</dt>
+        <dd id="search_his_list_container">
+        <script type="text/html" id="search_his_list">
+		<%for(i = 0; i < his_list.length; i++){%>
+       <a href="<%=$buildUrl('keyword',his_list[i])%>"><%=his_list[i]%></a>
+		<%}%>
+		</script>
+		</dd>
+    </dl>
+</div>
+</body>
+</html>
+<script type="text/javascript" src="../../js/zepto.min.js"></script> 
+<script type="text/javascript" src="../../js/config.js"></script> 
+<script type="text/javascript" src="../../js/template.js"></script> 
+<script type="text/javascript" src="../../js/common.js"></script> 
+<script type="text/javascript" src="../../js/dm/dmsearch.js"></script>

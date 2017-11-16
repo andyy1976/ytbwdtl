@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>线下商城</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<link href="/wap/dmtmpl/css/style.css" rel="stylesheet" type="text/css"/>
+</head>
+<script type="text/javascript" src="/wap/dmtmpl/js/jquery-1.11.3.js"></script>
+<script src="/wap/dmtmpl/js/meishi.js"/></script>
+<script src="/wap/dmtmpl/js/TouchSlide.1.1.js"></script>
+<script type="text/javascript" src="/wap/js/bsl.js"></script>
+</head>
+
+<body>
+<div class="dm_xq_top">
+	<dl>
+    	<dt><img src="/wap/dmtmpl/img/dm_tb4_h.png"/></dt>
+        <dd>商品详情</dd>
+        <dt><img src="/wap/dmtmpl/img/dm_tb3_h.png"/><img src="/wap/dmtmpl/img/dm_tb2_h.png" id="fenxiang"/></dt>
+    </dl>
+</div>
+<div class="dm_xq02" id="dm_xq02"></div>
+<!--<div class="dm_xq03">
+	<h3>基本信息</h3>
+    <ul>
+    	<li>规　　格<span>250克x2罐</span></li>
+        <li>配　　料<span>生腰果、面粉、食用油、白砂糖、食用盐</span></li>
+        <li>食用方法<span>开罐去壳食用</span></li>
+        <li>生产日期<span>见包装封口处</span></li>
+        <li>保 质&nbsp; 期<span>常温下8个月</span></li>
+        <li>保存方法<span>25度以下密封保存</span></li>
+        <li>产　　地<span>浙江杭州临安</span></li>
+        <li>特　　点<span>适度油炸、果仁酥脆香甜</span></li>
+    </ul>
+</div>-->
+<div class="dm_xq04">
+	<h3>购买须知</h3>
+    <div id='detailscontent'>
+  
+    
+    
+    </div>
+</div>
+<!--<div class="dm_xq04">
+	<h3>本单详情</h3>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" >
+  <tr>
+    <td bgcolor="#f2f2f2">内容</td>
+    <td bgcolor="#f2f2f2">单价</td>
+    <td bgcolor="#f2f2f2">数量</td>
+    <td bgcolor="#f2f2f2">小计</td>
+  </tr>
+  <tr id="goods_all">
+    
+  </tr>
+</table>
+
+</div>-->
+<div class="dm_xq05">
+	<ul>
+    	<li id='goods_name'></li>
+        <li><small>¥</small><b id='price'></b><img src="/wap/dmtmpl/img/dm_s.png"/><em><span id='ydz'></span>云豆</em></li>
+        <li id='anniu'></li>
+    </ul>
+
+</div>
+<div id="goodcover"></div>
+<div id="dm_fenx">
+	<h3>—————<span>分享到</span>—————</h3>
+	<ul>
+    	<li><a href="#"><img src="/wap/dmtmpl/img/dm_fx1.png"/><span>微信</span></a></li>
+        <li><a href="#"><img src="/wap/dmtmpl/img/dm_fx2.png"/><span>朋友圈</span></a></li>
+        <li><a href="http://connect.qq.com/widget/shareqq/index.html?url='+ encodeURIComponent(location.href)+ '"><img src="/wap/dmtmpl/img/dm_fx3.png"/><span>QQ好友</span></a></li>
+        <li><a href="javascript:(function(){window.open('http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url='+ encodeURIComponent(location.href)+ '&title='+encodeURIComponent(document.title),'_blank');})()" mce_href="javascript:(function(){window.open('http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url='+ encodeURIComponent(location.href)+ '&title='+encodeURIComponent(document.title),'_blank');})()" title="分享到QQ空间"><img src="/wap/dmtmpl/img/dm_fx4.png"/><span>QQ空间</span></a></li>
+        <li id="sms"></li>
+        <li><a href="http://service.weibo.com/share/mobile.php?url='+ encodeURIComponent(location.href)+ '"><img src="/wap/dmtmpl/img/dm_fx6.png"/><span>新浪微博</span></a></li>
+        <li><a onclick="copyToClipboard()"><img src="/wap/dmtmpl/img/dm_fx7.png"/><span>复制</span></a></li>
+        <li><a href="#"><img src="/wap/dmtmpl/img/dm_fx8.png"/><span>更多</span></a></li>
+    </ul>
+</div>
+
+</body>
+</html>
+<script type="text/javascript" src="../../js/zepto.min.js"></script> 
+<script type="text/javascript" src="../../js/template.js"></script> 
+<script type="text/javascript" src="../../js/config.js"></script> 
+<script type="text/javascript" src="../../js/common.js"></script> 
+<script type="text/javascript" src="../../js/dm/dmgoods_details.js"></script>
+

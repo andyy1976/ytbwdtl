@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>支付接口测试</title> 
+<style type="text/css">
+<!--
+body {
+	background-color: #FFFFFF;
+}
+body,td,th {
+	font-family: 宋体;
+	font-size: large;
+}
+.STYLE1 {font-size: x-large}
+.STYLE2 {font-size: large}
+.STYLE4 {color: #FF0000}
+-->
+</style></head>
+
+<body>
+<form id="pay" action="pay.php" method="post">
+  <div align="center">
+    <table width="713" border="0">
+       <tr>
+        <td width="164">商户编号</td>
+        <td width="539">
+        <span class="STYLE1">
+          <label>
+          <input type="text" name="mercNo" value="600000000001044">
+          </label>
+        </span>     </td>
+      </tr>
+      <tr>
+        <td width="164">交易码:</td>
+        <td width="539"><span class="STYLE1">
+          <label>
+          <input type="text" name="tranCd" value="1001">
+          </label>
+        </span> </td>
+      </tr>
+      <tr>
+        <td width="164">版本号:</td>
+        <td width="539"><span class="STYLE1">
+          <label>
+          <input type="text" name="version" value="1.0">
+          </label>
+        </span> </td>
+      </tr>
+      <tr>
+        <td width="164">订单号:</td>
+        <td width="539"><span class="STYLE1">
+          <label>
+          <input type="text" name="orderNo" value="20160126154950102">
+          </label>
+        </span> </td>
+      </tr>
+      
+      <tr>
+        <td width="164">交易金额</td>
+        <td width="539"><span class="STYLE1">
+          <label>
+          <input type="text" name="tranAmt" value="2.12">
+          </label>
+        </span> </td>
+      </tr><tr>
+        <td width="164">币种</td>
+        <td width="539"><span class="STYLE1">
+          <label>
+          <input type="text" name="ccy" value="CNY">
+          </label>
+        </span> </td>
+      </tr>
+      <tr>
+        <td width="164">商品名称</td>
+        <td width="539"><span class="STYLE1">
+          <label>
+          <input type="text" name="pname" value="测试商品">
+          </label>
+        </span> </td>
+      </tr>
+      <tr>
+        <td width="164">商品数量</td>
+        <td width="539"><span class="STYLE1">
+          <label>
+          <input type="text" name="pnum" value="1">
+          </label>
+        </span> </td>
+      </tr>
+      <tr>
+        <td width="164">商品描述</td>
+        <td width="539"><span class="STYLE1">
+          <label>
+          <input type="text" name="pdesc" value="1">
+          </label>
+        </span> </td>
+      </tr>
+	        <tr>
+        <td width="164">支付完成跳转地址</td>
+        <td width="539"><span class="STYLE1">
+          <label>
+          <input type="text" name="retUrl" value="http://localhost/pay/vbill/php/callback.php">
+          </label>
+        </span> </td>
+      </tr>
+      <tr>
+        <td width="164">后台通知的地址</td>
+        <td width="539"><span class="STYLE1">
+          <label>
+          <input type="text" name="notifyUrl" value="http://www.baidu.com">
+          </label>
+        </span> </td>
+      </tr>
+	   
+      <tr>
+        <td width="164">订单有效期</td>
+        <td width="539"><span class="STYLE1">
+          <label>
+          <input type="text" name="period" value="120">
+          </label>
+        </span> </td>
+      </tr>
+      <tr>
+        <td width="164">IP</td>
+        <td width="539"><span class="STYLE1">
+          <label>
+           <input type="text" name="ip" value="">
+          </label>
+        </span> </td>
+      </tr>
+      <tr>
+        <td width="164">订单描述</td>
+        <td width="539"><span class="STYLE1">
+          <label>
+           <input type="text" name="desc" value="订单描述">
+          </label>
+        </span> </td>
+      </tr>
+      <tr>
+        <td width="164">商户扩展字段</td>
+        <td width="539"><span class="STYLE1">
+          <label>
+           <input type="text" name="ext" value="123">
+          </label>
+        </span> </td>
+      </tr>
+      <tr>
+        <td width="164">加密加签类型</td>
+        <td width="539"><span class="STYLE1">
+          <label>
+           <input type="text" name="encodeType" value="RSA#RSA">
+            
+           <span class="STYLE2"></span> </label>
+        </span> </td>
+      </tr>
+      <tr>
+        <td width="164">返回类型(1:web 2:json)</td>
+        <td width="539">
+          <label>	<input type="text" name="type" value="1"></label>      </td>
+      </tr>
+	        
+      <tr>
+        <td width="164">支付银行(ICBC,SXF)(直连填，非直连不填):</td>
+        <td width="539">
+          <select name="bankWay">
+		  <option value="">非直连</option>
+            <option value="ICBC">中国工商银行</option>
+            <option value="CCB">中国建设银行</option>
+            <option value="CMB">招商银行</option>
+            <option value="ABC">中国农业银行</option>
+            <option value="ECITIC">中信银行</option>
+            <option value="BOC">中国银行</option>
+            <option value="BOCOM">交通银行</option>
+            <option value="CMBC">民生银行</option>
+            <option value="SPDB ">浦发银行</option>
+            <option value="CEB">光大银行</option>
+            <option value="CIB">兴业银行</option>
+            <option value="PSBC">中国邮政储蓄银行</option>
+            <option value="PAB">平安银行</option>
+            <option value="BOB">北京银行</option>
+            <option value="CGB">广发银行</option>
+        </select>&nbsp;</td>
+      </tr>
+   
+      <tr>
+	  	 
+        <td width="666" ><span class="STYLE4">以下为快捷支付直连需要传入参数</span></td>
+
+	  <tr>
+	  	 
+        <td width="164">商户用户ID</td>
+        <td width="539"><span class="STYLE1">
+          <label>
+         <input type="text" name="userId" value="123">
+          </label>
+        </span> </td>
+      </tr>
+	  <tr>
+        <td width="164">银行卡号</td>
+        <td width="539"><span class="STYLE1">
+          <label>
+          	<input type="text" name="bankCardNo" value="">
+          </label>
+        </span> </td>
+      </tr>
+	  <tr>
+        <td width="164">cvv</td>
+        <td width="539"><span class="STYLE1">
+          <label>
+          <input type="text" name="cvv" value="">
+          </label>
+        </span> </td>
+      </tr>
+	    <tr>
+        <td width="164">信用卡有效期</td>
+        <td width="539"><span class="STYLE1">
+          <label>
+          <input type="text" name="valid" value="">
+          </label>
+        </span> </td>
+      </tr>
+	  <tr>
+        <td width="164">持卡人姓名</td>
+        <td width="539"><span class="STYLE1">
+          <label>
+          <input type="text" name="accountName" value="">
+          </label>
+        </span> </td>
+      </tr>
+	  <tr>
+        <td width="164">持卡人身份证号码</td>
+        <td width="539"><span class="STYLE1">
+          <label>
+          <input type="text" name="certificateNo" value="">
+          </label>
+        </span> </td>
+      </tr>
+	  <tr>
+        <td width="164">持卡人手机号码</td>
+        <td width="539"><span class="STYLE1">
+          <label>
+          <input type="text" name="mobilePhone" value="">
+          </label>
+        </span> </td>
+      </tr>
+	 <input name="提交" type="submit" />
+    </table>
+
+</form> 
+</body>
+<script type="text/javascript">
+ document.getElementById("orderNo").value=new Date().valueOf();
+</script>
+</html>

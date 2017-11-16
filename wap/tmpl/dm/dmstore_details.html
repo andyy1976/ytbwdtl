@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>线下商城</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<link href="/wap/dmtmpl/css/style.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+body{ background:#fff;}
+</style>
+</head>
+
+<body>
+<div class="dm_pu_top">
+	<div class="dm_pu_tb">
+    	<dl>
+        	<dt><img src="/wap/dmtmpl/img/dm_tb4.png"/></dt>
+            <dd><img src="/wap/dmtmpl/img/dm_tb1.png" id="store_collected" alt=""/><img src="/wap/dmtmpl/img/dm_tb2.png" id="fenxiang"/><img src="/wap/dmtmpl/img/dm_tb3.png"/></dd>
+        </dl>
+    </div>
+  <div id="focus" class="focus">
+    <div class="hd">
+      <ul>
+      </ul>
+    </div>
+    <div class="bd">
+      <ul class="bdd">
+        <!-- <li><a href="#"><img src="/wap/dmtmpl/img/dp_b.jpg"/></a></li>
+        <li><a href="#"><img src="/wap/dmtmpl/img/dp_b.jpg"/></a></li>
+        <li><a href="#"><img src="/wap/dmtmpl/img/dp_b.jpg"/></a></li> -->
+      </ul>
+    </div>
+</div>
+</div>
+<div class="goods_main">
+
+</div>
+<!-- <div class="dm_maid">
+    <dl>
+        <dt>
+            <p>喜茶（花城汇店）</p>
+            <p><img src="img/dm_sc.png"/>109人收藏</p>
+        </dt>
+        <dd><a href="#">买单</a></dd>
+    </dl>
+</div>
+<div class="dm_suanb">
+    <h3>全部商品<em>(5)</em></h3>
+    <ul>
+        <li><a href="#"><img src="/wap/dmtmpl/img/dm_k1.png" alt=""/><span>喜茶-AA茶</span><span>&yen;<b>260</b></span></a></li>
+        <li><a href="#"><img src="/wap/dmtmpl/img/dm_k1.png" alt=""/><span>喜茶-AA茶</span><span>&yen;<b>260</b></span></a></li>
+        <li><a href="#"><img src="/wap/dmtmpl/img/dm_k1.png" alt=""/><span>喜茶-AA茶</span><span>&yen;<b>260</b></span></a></li>
+        <li><a href="#"><img src="/wap/dmtmpl/img/dm_k1.png" alt=""/><span>喜茶-AA茶</span><span>&yen;<b>260</b></span></a></li>
+        <li><a href="#"><img src="/wap/dmtmpl/img/dm_k1.png" alt=""/><span>喜茶-AA茶</span><span>&yen;<b>260</b></span></a></li>
+        <li><a href="#"><img src="/wap/dmtmpl/img/dm_k1.png" alt=""/><span>喜茶-AA茶</span><span>&yen;<b>260</b></span></a></li>
+        <li><a href="#"><img src="/wap/dmtmpl/img/dm_k1.png" alt=""/><span>喜茶-AA茶</span><span>&yen;<b>260</b></span></a></li>
+        <li><a href="#"><img src="/wap/dmtmpl/img/dm_k1.png" alt=""/><span>喜茶-AA茶</span><span>&yen;<b>260</b></span></a></li>
+    </ul>
+</div>
+<div class="dm_jies">
+    <h3>店铺介绍</h3>
+    <ul>
+        <li>店铺类型<span>美食</span></li>
+        <li>店铺名称<span>喜茶（花城汇店）</span></li>
+        <li>店铺地址<span>广州市天河区华夏路30号1510</span></li>
+    </ul>
+</div>
+<div class="dm_jies dm_huod">
+    <h3>店铺活动</h3>
+    <ul>
+        <li><img src="/wap/dmtmpl/img/dm_huod1.png"/>店内任意消费均赠送消费额50%的云豆</li>
+        <li><img src="/wap/dmtmpl/img/dm_huod2.png"/>店内任意消费均赠送消费额50%的云豆</li>
+    </ul>
+</div>
+<div class="dm_lianx">联系商家<span>156 7375 5659</span><img src="/wap/dmtmpl/img/dm_phone.png"/></div> -->
+<div class="dm_tsjy"><a href="/wap/tmpl/dm/service.html">投诉建议</a></div>
+<script src="../../js/TouchSlide.1.1.js"></script>
+<script type="text/javascript" src="../../js/zepto.min.js"></script> 
+<script type="text/javascript" src="../../js/config.js"></script> 
+<script type="text/javascript" src="../../js/template.js"></script> 
+<script type="text/javascript" src="../../js/common.js"></script> 
+<script type="text/javascript">
+
+</script>
+<script type="text/javascript">
+$(function(){
+
+     $.getJSON(ApiUrl + '/index.php?act=index&op=rec&rec_id=9', function(result) {
+      var data =result.datas;
+      if(data){
+            for(var i=0;i<data.body.length;i++){
+               var  src="<li>"
+                      +"<a class='pic' href='"+data.body[i]['url']+"'><img src='../../../data/upload/"+data.body[i]['title']+"' /></a>"
+                      // +"<a class='tit' href=''>墨西哥教师罢工 与警察激烈冲突</a>"
+                      +"</li>";
+              $(".bdd").append(src);
+            }
+            TouchSlide({ 
+            slideCell:"#focus",
+            titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+            mainCell:".bd ul", 
+            effect:"leftLoop", //左循环滚动
+            autoPlay:true,//自动播放
+            autoPage:true, //自动分页
+            });
+
+        }
+    });
+
+    var key = getCookie('key');
+        if(!key){
+          window.location.href = WapSiteUrl + '/tmpl/dm/dmlogin.html';
+    }
+    var city = getCookie('city');
+    if(!city){
+        window.location.href = WapSiteUrl + '/tmpl/dm/dmcity.html'
+        }
+    var store_id = getQueryString('store_id');
+    $.getJSON(ApiUrl + '/index.php?act=dmstore&op=dmstore_details',{key:key,store_id:store_id,city:city}, function(result) {
+        var data = result.datas;
+        var src = "<div class='dm_maid'>"
+            +"<dl>"
+                +"<dt>"
+                    +"<p>"+data['store_name']+"</p>"
+                    +"<p><img src='/wap/dmtmpl/img/dm_sc.png'/>"+data['store_collected']+"人收藏</p>"
+                +"</dt>"
+                +"<dd><a href='dm_buy.html?store_id="+store_id+"'>买单</a></dd>"
+            +"</dl>"
+        +"</div>"
+        +"<div class='dm_suanb'>"
+            +"<h3>全部商品<em>("+data['goods_count']+")</em></h3>"
+            +"<ul>"
+                for(var i=0;i<data.goods.length;i++){
+                   src+="<li><a href='dmgoods_details.html?goods_id="+data.goods[i]['goods_id']+"'><img src='"+data.goods[i]['goods_image']+"' alt=''/><span>"+data.goods[i]['goods_name']+"</span><span>&yen;<b>"+data.goods[i]['goods_price']+"</b></span></a></li>";
+                }
+                
+            src+="</ul>";
+        src+="</div>";
+        src+="<div class='dm_jies'>";
+            src+="<h3>店铺介绍</h3>";
+            src+="<ul>";
+                src+="<li>店铺类型<span>"+data['sc_name']+"</span></li>";
+                src+="<li>店铺名称<span>"+data['store_name']+"</span></li>";
+                src+="<li>店铺地址<span>"+data['store_address']+"</span></li>";
+            src+="</ul>";
+        src+="</div>";
+        src+="<div class='dm_jies dm_huod'>";
+            src+="<h3>店铺活动</h3>";
+            src+="<ul>";
+                src+="<li><img src='/wap/dmtmpl/img/dm_huod1.png'/>店内任意消费均赠送消费额50%的云豆</li>";
+                /*src+="<li><img src='/wap/dmtmpl/img/dm_huod2.png'/>店内任意消费均赠送消费额50%的云豆</li>";*/
+            src+="</ul>";
+        src+="</div>";
+        src+="<input type='hidden' value='"+data['sc_id']+"' name='sc_id'/>";
+        src+="<input type='hidden' value='"+data['store_name']+"' name='store_name'/>";
+        src+="<div class='dm_lianx'>联系商家<span>"+data['member_mobile']+"</span><img src='/wap/dmtmpl/img/dm_phone.png'/></div>";
+        $(".goods_main").append(src);
+            
+    });
+
+    //店铺收藏
+    $("#store_collected").click(function(){
+        var store_id = getQueryString('store_id');
+        var store_name = $("input[name='store_name']").val();
+        var sc_id = $("input[name='sc_id']").val();
+        $.getJSON(ApiUrl + '/index.php?act=dmstore&op=store_collected',{key:key,store_id:store_id,store_name:store_name,sc_id:sc_id}, function(result) {
+            var data = result.datas;
+            if(data==1){
+                alert('收藏成功');
+            }else{
+               alert('已收藏');
+            }
+        });
+    });
+
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+@charset "utf-8";
+body{ font-size:14px; font-family:"microsoft yahei", Arial; color:#000; margin:0; padding:0; border:0;}
+ul, ol, li, p, h1, h2, h3, h4, h5, h6, dl, dt, dd{ margin:0px; padding:0px; list-style:none; font-weight:normal;}
+a{ color:#000; text-decoration:none;}
+img{ width:100%; vertical-align:middle;}
+i,em{ font-style:normal;}
+div:after{ content:""; display:block; clear:both;}
+div:before{ content:""; display:table;}
+
+/*内容*/
+.w720{ width:90%; margin:0 5%;}
+.banner{ width:100%; float:left; overflow:hidden; text-align:center;}
+
+.shaji{width:100%; float:left; background:#ffda47;}
+.sj_01 dl{ width:21%; float:left; overflow:hidden; margin-left:5%;}
+.sj_01 dl:first-child{ margin-left:0;}
+.sj_01 dl dt,.sj_01 dl dt img{ width:100%; float:left;}
+.sj_01 dl dd{ width:100%; line-height:25px; font-size:.7rem; text-align:center; border:2px solid #ccc; font-weight:bold; margin-top:15px; float:left; box-sizing:border-box;}
+.sj_02{ padding-top:20px; font-size:20px;text-align:center;}
+.sj_03{font-size:22px; padding:20px 0; color:#fb1c1f;}
+.sj_04{ background:url(img/hd_01.png) no-repeat left center; background-size:72px 38px; line-height:20px; padding-left:80px; margin-bottom:20px;}
+.sj_05{ background:url(img/hd_02.png) no-repeat left center; background-size:72px 38px;}
+.sj_06{ background:url(img/hd_03.png) no-repeat left center; background-size:72px 38px;}
+
+.product dl{ width:90%; margin:10px 5%; float:left;}
+.product dl dt{ width:34%; float:left;}
+.product dl dd{ width:60%; float:right;}
+.product dl dd h3{ width:100%; line-height:22px; float:left; margin-top:10px;}
+.product dl dd h3 a{font-size:16px;}
+.product dl dd p{ width:100%; float:left; line-height:20px; color:#6b6b6b;}
+.product dl dd h4{ width:100%; line-height:38px; float:left; color:#fa261f;}
+.product dl dd h4 em{ font-size:22px; font-family:Impact; float:left;}
+.product dl dd h4 span{ font-size:20px; float:left;}
+.product dl dd p a{ font-size:18px; line-height:30px; padding:0 20px; color:#fff; float:left; background:#fa261f;}
+
+.cp_list{ background:#e63934; padding:5px 0 20px;}
+.cp_list dl{ width:100%; float:left; background:#fff; padding:20px 15px 8px; box-sizing:border-box; margin-top:15px;}
+.cp_list dl dt{ width:58%; float:left;}
+.cp_list dl dt h3{ width:100%; height:44px; line-height:22px; float:left; padding-bottom:6px;}
+.cp_list dl dt h3 a{font-size:16px;}
+.cp_list dl dt p{ width:100%; float:left; line-height:22px; color:#6b6b6b;}
+.cp_list dl dt h4{ width:100%; line-height:38px; float:left; color:#fa261f;font-size:1rem;}
+.cp_list dl dt h4 em{ font-size:1.3rem; font-family:Impact;}
+.cp_list dl dd{ width:40%; float:right;}
+.cp_list dl dd i{ width:100%; font-size:14px; text-align:center; line-height:30px; color:#fff; float:left; background:#fa261f;}
+
+.book{ background:url(img/bt_11.jpg) no-repeat center bottom; padding:0 0 80px; margin-bottom:50px;}
+.book a{ width:100%; text-align:center; float:left; font-size:30px; padding:1rem 0; color:#fff; background:#e62721;}
+.book a em{ font-family:Impact; font-size:32px;}
+
+/*底部*/
+.wd-footer{ background:#aa374a; padding:.3rem 0; position:fixed; left:0; bottom:0;}
+.wd-footer dl{ width:100%;}
+.wd-footer dt{ width:12%; float:left; margin:0 1% 0 5%;}
+.wd-footer dt img { width:80%; float:left; margin-left:10%;}
+.wd-footer dt a{ color:#fff;}
+.wd-footer dt span{ width:100%; float:left; font-size:.7rem; font-weight:normal; text-align:center;}
+.wd-footer dd{ width:14%; float:left; margin:0 3% 0 8%;}
+

@@ -1,0 +1,114 @@
+<!doctype html> 
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="format-detection" content="telephone=no"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1" />
+<title>参与抽奖万元好礼在等你</title>
+<link rel="stylesheet" type="text/css" href="./css/base.css">
+<link rel="stylesheet" type="text/css" href="./css/nctouch_member.css">
+<link rel="stylesheet" type="text/css" href="./css/nctouch_common.css">
+<style>
+body{
+    background:#f03200;
+}
+.box{
+    position:relative;
+    max-width:750px;
+    margin:0 auto;
+    margin-top: 1.5rem;
+}
+.box .img01{
+    width:100%;
+}
+.box .drawBtn{
+    position:absolute;
+    width:10rem;
+    height:auto;
+    left:50%;
+    margin-left:-5rem;
+}
+.pandetail{
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    color: #fff;
+}
+.pandetail h2{
+    font-size: 16px;
+    line-height: 16px;
+    margin-top: 0.2rem;
+}
+.pandetail p{
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 1px;
+}
+</style>
+</head>
+<body>
+<header id="header" class="fixed">
+  <div class="header-wrap">
+    <div class="header-l"><a href="index.html"><i class="back"></i></a></div>
+    <div class="header-title" id="luckydraw-name"></div>
+    <div class="header-title"></div>
+    <div class="header-r"> <a id="header-nav" href="javascript:void(0);"><i class="more"></i><sup></sup></a> </div>
+  </div>
+  <div class="nctouch-nav-layout">
+    <div class="nctouch-nav-menu"> <span class="arrow"></span>
+      <ul>
+        <li><a href="index.html"><i class="home"></i>首页</a></li>
+        <li><a href="tmpl/search.html"><i class="search"></i>搜索</a></li>
+        <li><a href="tmpl/product_first_categroy.html"><i class="categroy"></i>分类</a></li>
+        <li><a href="tmpl/cart_list.html"><i class="cart"></i>购物车<sup></sup></a></li>
+        <li><a href="javascript:void(0);"><i class="message"></i>消息<sup></sup></a></li>
+        <li><a href="tmpl/member/member.html"><i class="member"></i>个人中心</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+<div class="nctouch-main-layout" style="background:#f03200;">
+    <div class="box">
+        <img src="./images/img_01.png" class="img01" alt="">
+        <img src="./images/img_03.png" class="drawBtn" id="startbtn">
+    </div>
+    <div class='pandetail' id="awardInfo"></div>
+</div>
+<script type="text/html" id="luckydraw-name-script">
+    <h1><%=sweepstakes_name%></h1>
+</script>
+<script type="text/html" id="awardInfo-script">
+    <h2>游戏规则:</h2>
+    <p>每参加一次抽奖消耗云豆:<%=sweepstakesInfo.sweepstakes_cons%>个!</p>
+    <p>本游戏最终解释权归万店通联所有!</p>
+    <p>转动箭头未在转盘中心位置，请重新进入抽奖页面！</p>
+    <p>中奖后如未能及时登记个人信息，请前往微信公众号客服提供会员ID号查询以及登记，中奖后7个工作日内未联系客服登记，视为放弃奖品!</p>
+    <h2>奖项设置:</h2>
+    <% for (var k in awardInfo) { var v = awardInfo[k]; %>
+    <p><%=v.praise_name%>：<%=v.praise_content%>!</p>
+    <%}%>
+</script>
+
+<script type="text/javascript" src="./js/zepto.min.js"></script>
+<script type="text/javascript" src="./js/template.js"></script> 
+<script type="text/javascript" src="./js/config.js"></script> 
+<script type="text/javascript" src="./js/common.js"></script>
+<script type="text/javascript" src="./js/simple-plugin.js"></script>
+<script type="text/javascript" src="./js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="./js/jQueryRotate.2.2.js"></script>
+<script type="text/javascript" src="./js/jquery.easing.min.js"></script>
+<script type="text/javascript">
+    var obj = $(".drawBtn");
+    var hei = $(".img01").height();
+    var hei2 = obj.height();
+    obj.css("top",(hei - hei2)/2);
+</script>
+<script type="text/javascript" src="./js/tmpl/luckydraw.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+
+RAW
+Array
+(
+    [orderNo] => 380558460644437817
+    [tranAmt] => 1000.00
+    [ccy] => CNY
+    [pname] => 商品
+    [pnum] => 1
+    [pdesc] => 1
+    [retUrl] => https://ytbwdtl.com/shop/api/payment/vbill/return_pd_order.php
+    [notifyUrl] => https://ytbwdtl.com/shop/api/payment/vbill/notify_pd_order.php
+    [bankWay] => 
+    [period] => 1440
+    [userId] => 
+    [desc] => 订单描述
+    [ext] => 123
+    [bankCardNo] => 
+    [cvv] => 
+    [valid] => 
+    [accountName] => 
+    [certificateNo] => 
+    [mobilePhone] => 
+    [payWay] => 1
+)
+
+ENCODE
+Array
+(
+    [mercNo] => 600000000000827
+    [tranCd] => 1001
+    [version] => 1.0
+    [encodeData] => bHhVdGDyHoIeAADMfUB2L4gb3itmhkEsb1fTG39yuN9N4JotHxs/CzA99xScuD9XKvwKmbP5hnqMAIfOFcyhQycK+za3vGlpKg0DN76HU00WmUp5cH77kCaBtUezaNhYes+ZXY6Q41TRA5x1+Bd/R2LywcM1UV9t2m+fK3yXMb06Yio1a7jW/9wbIVcN3fPNbw6VNfqmbPx8M9KEL0sOdnoL8uhIJD1wBYTAxnawVlAwAZdOANS4Pbhv6SvWnxjH1+c9Vza2J6xp9Vcn9wBbF4aZ0HDx3UHzyoL3gwzZI5JTHDMet8Pn9Sj5GBkLAbVvpbfC3tsHvEzRKlWjTeT/VhD0t6AaJ6/MqGKbhvoWCJr3K2WlRXTa01Z/be6elxoGuDdANPiHBwG0OKGTH6X3R/ubqiQ9547IiPE1o3xzB8d5yKL17cW78vSMFg3zO6sM/gKw7yhXEWE98vm2Zi+FC2c4hwO1bsI4VKyqjkdBQfywZuH1ez0J2vCHwDuVKkLh4TrnJdvPqZzThCH/0b6NAQgxA6y6KEsxCLIyHb2zFxGHyVrTlr4CUECMAdFSwYw71dNKUShLzJSqwI6rUN5swAbVzAmXjVZyC0xLFQRkZN0Sm9k8dV3OdM2QIFiEMxkaZB2xFHmyeAWKBkvmhqh9VVYdjmGqzGsMe1nwyODMZVo=
+    [ip] => 116.11.113.120
+    [encodeType] => RSA#RSA
+    [sign] => Yt3XcadRBvD8RNHP1+kb+9LCEuHZCF5pVLo4Q94wza11GxlGl244wLNlFcrQozH9iCyp9JBlZue4cFAQfRWDsf78KCI38+tK+CrMOxVwrux0b3hBecLuzklWiJu1OMWmMWZNlHEOkndr/qomjR8lB+XrFfy1yFQO20N4hA1WPeTcNnC9ooaTMI/guxr4/VXOrSyfjT71eYEIe20KgyISwMRGKqnGchkpmxZz7waE6FylJHruqAt8wnDZQnd4gxpeUPhnK0c4y2/1LO4GGUpUO0ANyYhi7O5SKbIriXF6QHcRkPWSA5q8HwN1py1YzIjIfR0pklqr8+D5bvWF10vY2Q==
+    [type] => 1
+)

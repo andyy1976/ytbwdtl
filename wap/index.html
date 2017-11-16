@@ -1,0 +1,265 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>万店通联</title>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+<meta name="keywords" content="万店通联,PHP商城系统,万店通联商城系统,多用户商城系统,电商ERP,电商CRM,电子商务解决方案"/>
+<meta name="description" content="万店通联打造一个新经济时代的全新互联网实现共创，共赢，共享，共富。咨询电话：400-066-1366"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+<link href="css/style_1.css" rel="stylesheet" type="text/css"/>
+<link href="css/pan_footer.css" rel="stylesheet" type="text/css"/>
+<script src="js/ionic.bundle.min.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/scroll.js"></script>
+<script src="https://www.ytbwdtl.com/wap/js/bsl.js" type="text/javascript"></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?6d5163b0235924b2d3b3a42c2b5bbb94";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="text/javascript">
+angular.module('ionicApp', ['ionic'])
+.controller('SlideController', function($scope) {
+$scope.bannerSlide = 0;
+$scope.rushSlide = 0;
+$scope.floneSlide = 0;
+$scope.fltwoSlide = 0;
+$scope.flthereSlide = 0;
+})
+</script>
+</head>
+
+<body >
+<!-- <div class="bar bar-header bar-assertive item-input-inset wd-header">
+  <a class="button button-icon icon ion-navicon" href='tmpl/product_first_categroy.html'></a>
+  <label class="item-input-wrapper"> <i class="icon ion-ios-search placeholder-icon"></i>
+      <a href="tmpl/search.html">
+    <input type="search" placeholder="休闲/运动鞋">
+    </a>
+  </label>
+  <a class="button button-icon icon ion-ios-chatbubble-outline" href="tmpl/member/chat_list.html"></a>
+</div> -->
+
+<div class="wan_top">
+  <div class="wan_logo">
+    <dl>
+      <dt><a href="tmpl/product_first_categroy.html"><img src="images/wan_fl.png"/>分类</a></dt>
+      <dd><img src="images/wan_logo.png"/></dd>
+      <!-- <dt><a href="#"><img src="images/wan_sm.png"/>扫码</a></dt> -->
+    </dl>
+  </div>
+  <div class="wan_soso">
+    <a href="tmpl/search.html">
+      <input type="text" class="wan_top_text" placeholder="坚果零食大比拼"/>
+    </a>
+  </div>
+</div>
+<div class="wan_meun">
+  <ul>
+    <li><a href="/wap/special.html?special_id=28"><img src="images/wan_m1.png"/><p>每周新品</p></a></li>
+    <li><a href="/wap/special.html?special_id=5"><img src="images/wan_m2.png"/><p>限时抢购</p></a></li>
+    <li><a href="/wap/tmpl/cart_list.html"><img src="images/wan_m3.png"/><p>购物车</p></a></li>
+    <li><a href="/wap/lucky_draw.html?id=87"><img src="images/wan_m4.png"/><p>幸运转盘</p></a></li>
+    <li><a href="/wap/tmpl/province.html"><img src="images/wan_m5.png"/><p>省旗舰店</p></a></li>
+    <li><a href="/wap/tmpl/pointspro_list.html"><img src="images/wan_m6.png"/><p>超值兑换</p></a></li>
+    <li><a href="/wap/tmpl/product_list.html?gc_id=10351"><img src="images/wan_m7.png"/><p>VIP优购</p></a></li>
+    <li><a href="/wap/tmpl/invitation.html"><img src="images/wan_m8.png"/><p>邀请好友</p></a></li>
+    <li><a href="/wap/special.html?special_id=26"><img src="images/wan_m9.png"/><p>兑换云豆</p></a></li>
+    <li><a href="/wap/tmpl/store.html?store_id=1106"><img src="images/wan_m10.png"/><p>官方自营</p></a></li>
+  </ul>
+</div>
+<div class="wan_tj" >
+  <div class="tj_t"><a href="#"><img src="images/wan_tj.png"/></a></div>
+    <div id="focus" class="focus">
+    <div class="hd">
+      <ul>
+      </ul>
+    </div>
+    <div class="bd" >
+      <ul id="main-container1">
+<!--         <li><a href="https://www.ytbwdtl.com/wap/"><img src="./images/wan_pu1.png"/></a></li>
+        <li><a href="https://www.ytbwdtl.com/wap/"><img src="./images/wan_pu2.png"/></a></li> -->
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="scroll-content has-header has-footer overflow-scroll">
+<div class="nctouch-home-layout" id="main-container2"></div>
+
+<script type="text/html" id="adv_list" class="111">
+		
+		<% for (var i in item) { %>
+       <li><a href="<%= item[i].url %>"><img src="<%= item[i].image %>"/></a></li>
+		<% } %>
+</script>
+<script type="text/html" id="home1">
+  <div class="wan_dui">
+  <% if (title) { %>
+    <div class="dui_t"><a href="#"><b>超值</b><%= title %></a></div>
+
+  <% } %>
+  </div>
+  <div class="wan_dui-pic">
+      <a href="<%= url %>">
+        <img src="<%= image %>" alt="">
+      </a>
+  </div>
+</script> 
+<script type="text/html" id="home2">
+	<div class="wan_jing">
+	
+	<% if (title) { %>
+		<div class="dui_t hui_t"><a href="#"><%= title %></a></div>
+	<% } %>
+		<div class="haopu_list">
+      <ul>
+  			<li>
+  				<a href="<%= square_url %>"><img src="<%= square_image %>" alt="" ></a>
+  			</li>
+  			<li>
+  				<a href="<%= rectangle1_url %>"><img src="<%= rectangle1_image %>" alt="" ></a>
+  			</li>
+  			<li>
+  				<a href="<%= rectangle2_url %>"><img src="<%= rectangle2_image %>" alt="" ></a>
+  			</li>
+		  </ul>
+    </div>
+	</div>
+</script>
+<script type="text/html" id="home3">
+  <div class="wan_jing">
+    <% if (title) { %>
+      <div class="dui_t jing_t"><a href="#"><%= title %></a></div>
+    <% } %>
+    <div class="dui_list">
+      <ul>    
+      <% for (var i in item) { %>
+        <li  onclick='return cheit(<%= item[i].image %>)'>
+		<a id="<%= item[i].image %>">
+          <a href="<%= item[i].url %>"><img src="<%= item[i].image %>" alt=""></a>
+        </li>
+      <% } %>
+      </ul>
+    </div>
+  </div>
+</script> 
+<script type="text/html" id="home4">
+  <div class="nctouch-home-block">
+  <% if (title) { %>
+    <div class="tit-bar"><%= title %></div>
+  <% } %>
+    <ul class="item-pic-l2-r1">
+      <li>
+        <a href="<%= rectangle1_url %>"><img src="<%= rectangle1_image %>" alt=""></a>
+      </li>
+      <li>
+        <a href="<%= rectangle2_url %>"><img src="<%= rectangle2_image %>" alt=""></a>
+      </li>
+      <li>
+        <a href="<%= square_url %>"><img src="<%= square_image %>" alt=""></a>
+      </li>
+    </ul>
+  </div>
+</script>
+ <script type="text/html" id="goods">
+  <div class="wd-rush">
+  <ion-slide-box active-slide="floneSlide" does-continue="true" auto-play="true" slide-interval="6000" show-pager="false">
+      <ion-slide>
+        <ul>
+        <% for (var i in item) { %>
+          <li>
+            <a href="tmpl/product_detail.html?goods_id=<%= item[i].goods_id %>">
+              <img src="<%= item[i].goods_image %>" alt="">
+              <span><%= item[i].goods_name %></span>
+              <p>￥<em><%= item[i].goods_promotion_price %></em></em>+<i class="icon ion-heart"></i><%= item[i].goods_points %></p>
+              
+            </a>
+          </li>
+        <% } %>
+    </ul>
+   </ion-slide>
+  </ion-slide-box>
+  </div> 
+</script> 
+<script type="text/html" id="goods1">
+  <div class="nctouch-home-block item-goods">
+  <% if (title) { %>
+    <div class="tit-bar"><%= title %></div>
+  <% } %>
+    <ul class="goods-list">
+    <% for (var i in item) { %>
+      <li>
+      <i><div>打折</div></i>
+      <a href="tmpl/product_detail.html?goods_id=<%= item[i].goods_id %>">
+      <div class="goods-pic"><img src="<%= item[i].goods_image %>" alt=""></div>
+          <dl class="goods-info">
+            <dt class="goods-name"><%= item[i].goods_name %></dt>
+            <dd class="goods-price">￥<em><%= item[i].goods_promotion_price %></em><i class="list-price">￥<%= item[i].goods_price %></i></dd>
+          </dl>
+      </a>
+        </li>
+      
+    <% } %>
+    </ul>
+  </div>
+</script>
+<script type="text/html" id="goods2">
+  <div class="wan_miao">
+    <div class="miao_t"><a href="https://www.ytbwdtl.com/wap/special.html?special_id=5">整点秒杀</a></div>
+      <div class="miao_list">
+      <% for (var i in item) { %>
+        <dl  onclick='return cheit(<%= item[i].goods_id %>)'><a id="<%= item[i].goods_id %>"></a><a href="tmpl/product_detail.html?goods_id=<%= item[i].goods_id %>">
+            <dt><img src="<%= item[i].goods_image %>"/></dt>
+              <dd>¥ <em><%= item[i].groupbuy_price %></em></dd>
+              </a>
+        </dl>
+       <% } %>   
+      </div>
+  </div>
+</script>
+</div>
+<footer id="footer" class="bottom"></footer>
+<script> var navigate_id ="1";</script>
+<script type="text/javascript" src="js/config.js"></script> 
+<script type="text/javascript" src="js/zepto.min.js"></script> 
+<script type="text/javascript" src="js/template.js"></script> 
+<script type="text/javascript" src="js/common.js"></script> 
+<!-- <script type="text/javascript" src="js/swipe.js"></script>  -->
+<script type="text/javascript" src="js/index.js"></script> 
+<script type="text/javascript" src="js/tmpl/footer-index.js"></script> 
+<script type="text/javascript" src="js/addtohomescreen.js"></script> 
+<script type="text/javascript" src="js/TouchSlide.1.1.js"></script>
+<script type="text/javascript">
+  // alert($("#main-container1").children('li').length);
+  // TouchSlide({ 
+  //   slideCell:"#focus",
+  //   titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+  //   mainCell:".bd ul", 
+  //   effect:"leftLoop", //左循环滚动
+  //   autoPlay:true,//自动播放
+  //   autoPage:true //自动分页
+  // });
+  function check(){
+    alert('暂未开放！！！');
+  }
+ if (getQueryString('key') != '') {
+        var key = getQueryString('key');
+        var username = getQueryString('username');
+        addCookie('key', key);
+        addCookie('username', username);
+    } else {
+        var key = getCookie('key');
+    }
+     $.post(ApiUrl + '/index.php?act=article&op=article_new',{},function(result){
+        $('#gonggao').html('<marquee style="height:30px;width:100%;font-size:16px;line-height:30px;color:red;float:right;position:relative;top:-5px;"><em style="  position: absolute;left:-100px; top:0;">系统公告：</em>'+result.datas.article_content+'<marquee>');
+    },'json');
+function cheit(obj){addCookie('goods_id',obj);}
+</script>
+</body>
+</html>

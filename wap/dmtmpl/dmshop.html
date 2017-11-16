@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>线下商城</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="http://gc.kis.v2.scr.kaspersky-labs.com/59527C88-D02A-FD4F-AD0E-A31B86970F4F/main.js" charset="UTF-8"></script><script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=c0rI9UXaNZ3qlZ29ZAa46GGWWYXKg19H"></script>
+ <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+ <script src="js/TouchSlide.1.1.js"></script>
+
+  <script type="text/javascript" src="../js/common.js"></script> 
+  <script type="text/javascript" src="../js/zepto.min.js"></script>
+  <script type="text/javascript" src="../js/template.js"></script> 
+  <script type="text/javascript" src="../js/config.js"></script>
+  <script type="text/javascript" src="js/dmshop.js"></script>
+  <style type="text/css">
+   /* 本例子css -------------------------------------- */
+  .slideBox{ position:relative; overflow:hidden; margin:10px auto;  max-width:560px;/* 设置焦点图最大宽度 */ }
+  .slideBox .hd{ position:absolute; height:28px; line-height:28px; bottom:0; right:0; z-index:1; }
+  .slideBox .hd li{ display:inline-block; width:5px; height:5px; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px; background:#333; text-indent:-9999px; overflow:hidden; margin:0 6px;   }
+  .slideBox .hd li.on{ background:#fff;  }
+  .slideBox .bd{ position:relative; z-index:0; }
+  .slideBox .bd li{ position:relative; text-align:center;  }
+  .slideBox .bd li img{ background:url(images/loading.gif) center center no-repeat;  vertical-align:top; width:100%;/* 图片宽度100%，达到自适应效果 */}
+  .slideBox .bd li a{ -webkit-tap-highlight-color:rgba(0,0,0,0);  }  /* 去掉链接触摸高亮 */
+  .slideBox .bd li .tit{ display:block; width:100%;  position:absolute; bottom:0; text-indent:10px; height:28px; line-height:28px; background:url(images/focusBg.png) repeat-x; color:#fff;  text-align:left;  }
+  .ul-main img{
+    width: 560px;
+
+  }
+  </style>
+  
+</head>
+
+<body>
+<div id="dm_top">
+  <dl>
+
+    <dt><a href="#"><img src="img/dm_dw.png"/><span id="demo"></span></a><input type="hidden" id="nation"/>
+    <input type="hidden" id="province"/>
+    <input type="hidden" id="city"/>
+    <input type="hidden" id="district"/>
+    <input type="hidden" id="addr"/>
+    <input type="hidden" id="lat"/>
+     <input type="hidden" id="lng"/>
+   </dt>
+    <dd>
+      <input type="text" class="dm_top_text" placeholder="最好吃的蛋糕"/>
+    </dd>
+    <dt><a href="#"><img src="img/dm_sm.png"/>扫码</a></dt>
+  </dl>
+</div>
+<div class="dm_banner">
+ <div id="slideBox" class="slideBox">
+          <div class="bd">
+            <ul class="ul-main">
+            </ul>
+          </div>
+          <div class="hd">
+          <ul></ul>
+        </div>
+      </div>
+</div>
+<div class="dm_meun">
+  <ul>
+    <li><a href="#"><img src="img/dm_m1.png"/><span>美食</span></a></li>
+    <li><a href="#"><img src="img/dm_m2.png"/><span>酒店住宿</span></a></li>
+    <li><a href="#"><img src="img/dm_m3.png"/><span>休闲娱乐</span></a></li>
+    <li><a href="#"><img src="img/dm_m4.png"/><span>KTV</span></a></li>
+    <li><a href="#"><img src="img/dm_m5.png"/><span>时尚购</span></a></li>
+  </ul>
+</div>
+<div class="dm_like">
+  <h3>猜你喜欢</h3>
+  <dl>
+    <a href="#">
+    <dt><img src="img/dm_k1.png"/></dt>
+    <dd>
+      <p><b>泰芒了</b><em>613m</em></p>
+      <p>[天河城/体育西]25元代金劵一张</p>
+      <p><span>&yen;18.8</span>门市价&yen;25<i>已售654</i></p>
+    </dd>
+    </a>
+  </dl>
+  <dl>
+    <a href="#">
+    <dt><img src="img/dm_k1.png"/></dt>
+    <dd>
+      <p><b>泰芒了</b><em>613m</em></p>
+      <p>[天河城/体育西]25元代金劵一张</p>
+      <p><span>&yen;18.8</span>门市价&yen;25<i>已售654</i></p>
+    </dd>
+    </a>
+  </dl>
+  <dl>
+    <a href="#">
+    <dt><img src="img/dm_k1.png"/></dt>
+    <dd>
+      <p><b>泰芒了</b><em>613m</em></p>
+      <p>[天河城/体育西]25元代金劵一张</p>
+      <p><span>&yen;18.8</span>门市价&yen;25<i>已售654</i></p>
+    </dd>
+    </a>
+  </dl>
+  <dl>
+    <a href="#">
+    <dt><img src="img/dm_k1.png"/></dt>
+    <dd>
+      <p><b>泰芒了</b><em>613m</em></p>
+      <p>[天河城/体育西]25元代金劵一张</p>
+      <p><span>&yen;18.8</span>门市价&yen;25<i>已售654</i></p>
+    </dd>
+    </a>
+  </dl>
+</div>
+<div class="dm_footer">
+  <ul>
+    <li><a href="#"><img src="img/dm_f1.png"/><span>云品</span></a></li>
+    <li class="footer_red"><a href="#"><img src="img/dm_f4.png"/><span>云店</span></a></li>
+    <li><a href="#"><img src="img/dm_f5.png"/><span>万店通联</span></a></li>
+    <li><a href="#"><img src="img/dm_f7.png"/><span>订单</span></a></li>
+    <li><a href="#"><img src="img/dm_f9.png"/><span>我的</span></a></li>
+  </ul>
+</div>
+
+
+</body>
+</html>

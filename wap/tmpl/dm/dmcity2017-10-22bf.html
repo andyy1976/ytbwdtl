@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>线下商城</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<link href="/wap/dmtmpl/css/style.css" rel="stylesheet" type="text/css"/>
+<script src="/wap/dmtmpl/js/jquery-1.11.3.js"></script> 
+<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=c0rI9UXaNZ3qlZ29ZAa46GGWWYXKg19H"></script>
+</head>
+
+<body>
+<div class="yp_top">
+  <dl>
+    <dt><a href="dmxxsc.html"><img src="/wap/dmtmpl/img/yp_fh.png"/></a></dt>
+    <dd>
+      <input type="text" id="palce" class="dm_top_text yp_top_text" placeholder="城市名 / 拼音" onChange="return searchPlace()"/>
+    </dd>
+  </dl>
+</div>
+<div class="city_box">
+	<div class="city_box_l">
+    	<div id="dm_city">当前：<b id="demo"></b><input type="hidden" value="" id="provice"><input type="hidden" value="" id="city"><input type="hidden" value="" id="cityid"><!--<span>切换区县<em></em></span>
+  <div style="display:block" class="city_qie" id="city_qie">
+ 
+  </div>-->
+</div>
+<div class="city_hot">
+  <dl>
+    <dt>最近访问</dt>
+    <dd id='recentcity'></dd>
+  </dl>
+  <dl>
+    <dt>热门城市</dt>
+    <dd id='hotcity'></dd>
+  </dl>
+</div>
+<div class="city_list">
+  <dl>
+    <dt id="A">A</dt>
+  
+  </dl>
+  <dl>
+    <dt id="B">B</dt>
+   
+  </dl>
+  <dl>
+    <dt id="C">C</dt>
+   
+  </dl>
+   <dl>
+    <dt id="D">D</dt>
+  
+  </dl>
+   <dl>
+    <dt id="E">E</dt>
+   
+  </dl>
+   <dl>
+    <dt id="F">F</dt>
+  
+  </dl>
+   <dl>
+    <dt id="G">G</dt>
+   
+  </dl>
+   <dl>
+    <dt id="H">H</dt>
+  
+  </dl>
+   <dl>
+    <dt id="I">I</dt>
+   
+  </dl>
+   <dl>
+    <dt id="J">J</dt>
+   
+  </dl>
+   <dl>
+    <dt id="K">K</dt>
+    
+  </dl>
+   <dl>
+    <dt id="L">L</dt>
+    
+  </dl>
+   <dl>
+    <dt id="M">M</dt>
+    
+  </dl>
+   <dl>
+    <dt id="N">N</dt>
+    
+  </dl>
+   <dl>
+    <dt id="O">O</dt>
+   
+  </dl>
+   <dl>
+    <dt id="P">P</dt>
+    
+  </dl>
+   <dl>
+    <dt id="Q">Q</dt>
+  
+  </dl>
+   <dl>
+    <dt id="R">R</dt>
+    
+  </dl>
+   <dl>
+    <dt id="S">S</dt>
+    
+  </dl>
+   <dl>
+    <dt id="T">T</dt>
+   
+  </dl>
+   <dl>
+    <dt id="U">U</dt>
+   
+  </dl>
+   <dl>
+    <dt id="V">V</dt>
+  
+  </dl>
+   <dl>
+    <dt id="W">W</dt>
+    
+  </dl>
+   <dl>
+    <dt id="X">X</dt>
+    
+  </dl>
+   <dl>
+    <dt id="Y">Y</dt>
+  
+  </dl>
+   <dl>
+    <dt id="Z">Z</dt>
+    
+  </dl>
+</div>
+    </div>
+    <div class="city_box_r">
+    	<ul>
+        	<li onClick="return Change('A')">A</li>
+            <li onClick="return Change('B')">B</li>
+            <li onClick="return Change('C')">C</li>
+            <li onClick="return Change('D')">D</li>
+            <li onClick="return Change('E')">E</li>
+            <li onClick="return Change('F')">F</li>
+            <li onClick="return Change('G')">G</li>
+            <li onClick="return Change('H')">H</li>
+            <li onClick="return Change('I')">I</li>
+            <li onClick="return Change('J')">J</li>
+            <li onClick="return Change('K')">K</li>
+            <li onClick="return Change('L')">L</li>
+            <li onClick="return Change('M')">M</li>
+            <li onClick="return Change('N')">N</li>
+            <li onClick="return Change('O')">O</li>
+            <li onClick="return Change('P')">P</li>
+            <li onClick="return Change('Q')">Q</li>
+            <li onClick="return Change('R')">R</li>
+            <li onClick="return Change('S')">S</li>
+            <li onClick="return Change('T')">T</li>
+            <li onClick="return Change('U')">U</li>
+            <li onClick="return Change('V')">V</li>
+            <li onClick="return Change('W')">W</li>
+            <li onClick="return Change('X')">X</li>
+            <li onClick="return Change('Y')">Y</li>
+            <li onClick="return Change('Z')">Z</li>
+        </ul>
+    </div>
+</div>
+<div style="position:absolute;width:730px;height:590px;top:50;left:0;border:1px solid gray;overflow-y:hidden; display:none;" id="container" ></div> 
+ 
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#dm_city .city_qie:eq(0)").hide();
+	$("#dm_city span").click(function(){
+		$(this).addClass("current").next("div.city_qie").slideToggle(100).siblings("div.city_qie").slideUp("slow");
+		$(this).siblings().removeClass("current");
+	});
+});
+</script>
+</body>
+</html>
+<script type="text/javascript" src="../../js/zepto.min.js"></script> 
+<script type="text/javascript" src="../../js/template.js"></script> 
+<script type="text/javascript" src="../../js/config.js"></script> 
+<script type="text/javascript" src="../../js/common.js"></script> 
+<script type="text/javascript" src="../../js/dm/dmcity.js"></script>

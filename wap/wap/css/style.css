@@ -1,0 +1,65 @@
+﻿/*分类页面*/
+.wd-recommend{ background:#fff;}
+.wd-recommend h3{ width: 100%; float: left; text-align:center; line-height:4rem; font-weight:bold; font-size:1.2rem; margin:0;letter-spacing:1px;}
+.wd-recommend ul{ width: 100%; float: left;}
+.wd-recommend li{ width:33.3%; float:left; border-right:1px solid #efefef; border-bottom:1px solid #efefef;}
+.wd-recommend a{ color:#333;}
+.wd-recommend li img{ width:70%; float:left; margin-left:15%;}
+.wd-recommend li span{ width:100%; line-height:2rem; float:left; font-size:.9rem; text-align:center;}
+.wd-recommend dl{ width:100%; float:left; margin-bottom:13px;}
+.wd-recommend dl dd{ margin-top:3px; float:left;}
+.wd-recommend dl dd a{ padding:5px 10px; float:left; border:1px solid #d3d3d3; margin:10px 0 0 10px;}
+
+/*登录注册协议*/
+.wd-guide{ width:100%; height:100%; background:url(../images/login.jpg) no-repeat; background-size:100% 100%;}
+.wd-guide-a{width:90%; height:30%; margin:5% 5% 0 5%;}
+.wd-guide-a a{ color:#666; font-size:4rem;}
+.wd-guide-b{width:84%; height:35%; margin-left:8%;}
+.wd-guide-c{width:84%; margin-left:8%;}
+.wd-guide-c .button-assertive{ border:none;}
+.wd-guide-c .button-dark{ border:none; background:#272727;}
+
+.wd-login{ width:90%; margin:1rem 0 0 5%;}
+.wd-login li a{line-height:53px; color:#aa374a; text-decoration:underline;}
+.wd-login .item{ border:none; border-bottom:1px solid #ddd; margin:0;}
+.wd-login .item-input{ padding:10px;}
+.wd-login .button{ border-radius:0;}
+.wd-login .item-checkbox{ font-size:14px; padding-left:40px; float:left; border-bottom:none;}
+.wd-login .checkbox input{ width:20px; height:20px; margin-top:5px;}
+ 
+.wd-agreement{ width:92%; margin:15px 4%;}
+.wd-agreement h4{ font-weight:bold; font-size:16px;}
+.wd-agreement p{ line-height:1.7rem; font-size:15px; color:#444;}
+
+/*会员专享*/
+.wd-huiy dd{ width:100%; float:left; background:#aa374a; padding:.7rem 0; color:#d2af78;}
+.wd-huiy dd>a{ width:50%; float:left; text-align:center; color:#fff;}
+.wd-huiy dd>a b{ font-size:20px; line-height:30px; font-weight:normal;letter-spacing:1px;}
+.wd-huiy dd p{ width:90%; margin-left:5%; line-height:28px; font-size:16px; margin-bottom:0;}
+.wd-huiy dd p a{ float:right; background:#d2af78; color:#000; padding:0 1rem;}
+
+.wd-twoji h3{ background:#e4e4e4; color:#2f2f2f; text-align:center; line-height:2.6rem; font-weight:bold; font-size:1rem; letter-spacing:1px; margin:0;}
+.wd-twoji li{ width:50%; float:left; border-right:1px solid #e8e8e8; border-top:1px solid #e8e8e8;}
+.wd-twoji li a{ width:90%; color:#333; float:left; text-align:center; font-size:.8rem; margin:5%;}
+.wd-twoji li img{ width:80%; float:left; margin-left:10%;}
+.wd-twoji li span{ width:100%; height:2rem; line-height:2rem; padding-top:4px; float:left; overflow:hidden;}
+.wd-twoji li p{ width:100%; height:1.2rem; float:left; color:#aa374a; overflow:hidden;}
+
+/*新人礼包*/
+.wd-sanji h3{color:#333; text-align:center; line-height:2.6rem; font-weight:bold; font-size:1rem; letter-spacing:1px; margin:0;}
+.wd-sanji dl{ width:100%; height:auto; float:left; border-top:1px solid #e8e8e8; padding:4% 0; margin-bottom:0;}
+.wd-sanji dl a{ color:#333; font-size:.8rem;}
+.wd-sanji dt{ width:40%; float:left;}
+.wd-sanji dt img{ width:80%; float:left; margin-left:10%;}
+.wd-sanji dd{ width:55%; float:right; margin-right:5%;}
+.wd-sanji dd span{ width:100%; height:1.5rem; line-height:1.5rem; font-size:1rem; float:left; overflow:hidden;}
+.wd-sanji dd em{width:100%; height:1.5rem; line-height:1.5rem; float:left; color:#999; overflow:hidden;}
+.wd-sanji dd p{ width:100%; height:1.5rem; float:left; color:#aa374a; font-size:1rem; overflow:hidden; margin-bottom:0;}
+.wd-sanji dd small{line-height:1.5rem; float:left; font-size:.8rem; color:#fff; background:#aa374a; padding:0 .8rem; border-radius:13px;}
+
+/*邀请好友*/
+.wd-yaoqing{ border-top:10px solid #efefef;}
+.wd-yaoqing h3{color:#555; text-align:center; line-height:4.5rem;font-size:1rem; letter-spacing:1px; margin:0;}
+.wd-yaoqing span{ width:40%; line-height:2.5rem; background:#efefef; text-align:center; color:#000; font-size:1.5rem; float:left; margin-left:30%;}
+.wd-yaoqing p{ width:80%; float:left; margin:1.2rem 0 0 10%; color:#666;}
+.wd-yaoqing p a{ width:100%; float:left; line-height:3rem; text-align:center; color:#fff; font-size:1.4rem; background:#aa374a;letter-spacing:2px;}

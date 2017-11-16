@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="format-detection" content="telephone=no"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no"/>
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1" />
+<title>注册会员</title>
+<link rel="stylesheet" type="text/css" href="../../css/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/nctouch_member.css">
+</head>
+<body>
+<header id="header">
+  <div class="header-wrap">
+    <div class="header-l"><a href="member.html"><i class="back"></i></a></div>
+    <div class="header-tab"><a href="javascript:void(0);" class="cur">注册会员</a></div>
+    <div class="header-r"> <a id="header-nav" href="javascript:void(0);"><i class="more"></i><sup></sup></a> </div>
+  </div>
+  <div class="nctouch-nav-layout">
+    <div class="nctouch-nav-menu"> <span class="arrow"></span>
+      <ul>
+        <li><a href="../../index.html"><i class="home"></i>云品</a></li>
+        <li><a href="#"><i class="search"></i>云店</a></li>
+         <li><a href="../search.html"><i class="categroy"></i>搜索</a></li>
+        <li><a href="../cart_list.html"><i class="cart"></i>我的订单<sup></sup></a></li>
+        <li><a href="../member/member.html"><i class="member"></i>我的</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+<div class="nctouch-main-layout fixed-Width">
+  
+  <div class="nctouch-inp-con">
+    <form action="" method ="">
+      <ul class="form-box">
+        <li class="form-item">
+          <h4>手机号码</h4>
+          <div class="input-box">
+            <input type="text" placeholder="请输入手机号码" class="inp" name="member_name" id="member_name"/>
+            <span class="input-del"></span></div>
+        </li>
+       
+        <li class="form-item">
+          <h4>登陆密码</h4>
+          <div class="input-box">
+            <input type="password" placeholder="请输入登陆密码" class="inp" name="member_passwd" id="member_passwd" oninput="writeClear($(this));"/>
+            <span class="input-del"></span></div>
+        </li>
+        <li class="form-item">
+          <h4>安全密码</h4>
+          <div class="input-box">
+            <input type="password" placeholder="请输入安全密码" class="inp" name="member_paypwd" id="member_paypwd" oninput="writeClear($(this));"/>
+            <span class="input-del"></span></div>
+        </li>
+      </ul>     
+      <div class="error-tips"></div>
+      <div class="form-btn"><a href="javascript:void(0);" class="btn" id="registerbtn">确定</a></div>
+    </form>
+    <input type="hidden" name="referurl">
+    <div>
+        <p style="font-size: 0.8rem;color: #FF0000;margin-left: 10px;margin-top: 20px;">注：成功注册会员后，扣除您的分销奖金500元，奖励100元，奖励您的上级150元。<br></p>
+      </div>
+  </div>
+</div>
+<footer id="footer" class="bottom"></footer>
+<script> var navigate_id ="5";</script>
+<script type="text/javascript" src="../../js/config.js"></script> 
+<script type="text/javascript" src="../../js/zepto.min.js"></script> 
+<script type="text/javascript" src="../../js/common.js"></script> 
+<script type="text/javascript" src="../../js/simple-plugin.js"></script> 
+<script type="text/javascript" src="../../js/tmpl/footer.js"></script> 
+<script> 
+$(function(){
+    var key = getCookie('key');   
+    if (!key) {
+        window.location.href = WapSiteUrl + '/tmpl/member/login.html';
+        return;
+    }
+    $('#registerbtn').click(function(){
+      var member_name=$('#member_name').val();
+      
+      var member_passwd=$('#member_passwd').val();
+      var member_paypwd=$('#member_paypwd').val();
+      if(member_name=='' ){
+        alert('手机号码不能为空，请重新输入！');exit();
+      }
+      if(member_paypwd=='' || member_passwd==''){
+        alert('密码不能为空，请重新输入！');exit();
+      }
+      $.post(ApiUrl + '/index.php?act=member_index&op=registerfx',{member_name:member_name,member_passwd:member_passwd,member_paypwd:member_paypwd,key:key},function(result){
+        if(result==5){alert('您分销金额不足500元，暂时无法注册新会员！');exit();}
+        if(result==4){alert('该会员注册成功！');exit();}
+        if(result==3){alert('密码不能为空，请重新输入！');exit();}
+        if(result==2){alert('该账号已存在，请重新输入！');exit();}
+        if(result==1){alert('手机号码不能为空，请重新输入！');exit();}
+      
+      })
+    })    
+});
+</script> 
+</body>
+</html>

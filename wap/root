@@ -1,0 +1,4 @@
+0  9 * * * bash /usr/local/nginx/sbin/cut_nginx_logs.sh
+*/1 2-4 * * * /usr/bin/curl http://xn--chqr71blpzqgn.xn--fiqs8s/shop/index.php?act=auto_split
+*/2 4-5 * * * /usr/bin/curl http://xn--chqr71blpzqgn.xn--fiqs8s/shop/index.php?act=statistics
+0 4 * * * /usr/local/php53/bin/php /data/wwwroot/shopnc_v5se/crontab/index.php date

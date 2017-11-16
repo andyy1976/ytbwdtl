@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>线下商城</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<link href="/wap/dmtmpl/css/style.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="/wap/dmtmpl/js/jquery-1.11.3.js"></script>
+<script src="/wap/dmtmpl/js/TouchSlide.1.1.js"></script>
+<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=c0rI9UXaNZ3qlZ29ZAa46GGWWYXKg19H"></script>
+<script type="text/javascript" src="/wap/js/bsl.js"></script>
+ <style type="text/css">
+.slideBox{max-width:560px; margin:0 auto; position:relative; overflow:hidden;}
+.slideBox .hd{ width:100%; height:11px; position:absolute; z-index:1; bottom:5px; text-align:center;}
+.slideBox .hd li{ display:inline-block; width:8px; height:8px; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px; background:#fff; text-indent:-9999px; overflow:hidden; margin:0 3px; color:#fff; vertical-align:top;}
+.slideBox .hd li.on{ background:#F3CC39; color:#F3CC39;}
+.slideBox .bd{ position:relative; z-index:0; }
+.slideBox .bd li{ position:relative; text-align:center;  }
+.slideBox .bd li img{ background:url(images/loading.gif) center center no-repeat;  vertical-align:top; width:100%;/* 图片宽度100%，达到自适应效果 */}
+.slideBox .bd li a{ -webkit-tap-highlight-color:rgba(0,0,0,0);}  /* 去掉链接触摸高亮 */
+.slideBox .bd li .tit{ display:block; width:100%;  position:absolute; bottom:0; text-indent:10px; height:28px; line-height:28px; background:url(images/focusBg.png) repeat-x; color:#fff;  text-align:left;  }
+.ul-main img{ width: 560px;}
+  .ydmenu{
+	width: 100px;
+	line-height: 20px;
+	position: absolute;
+	top: 42px;
+	right:20px;
+	text-align: center;
+	background-color: #fff;
+	color: #000000;
+	font-size: 12px;
+	z-index:2000;
+	display:none;
+}
+#topmeun dd{ border-bottom: solid #666 1px; border-left:solid #666 1px; border-right:solid #666 1px; height:25px; text-decoration:none;}
+.bb{ border-top:solid #666 1px;}
+.middle{ text-align:center; font-size:14px; background-color:#ffffff; padding-top:10px; padding-bottom:10px;}
+  </style>
+
+  
+  
+</head>
+
+<body>
+<div id="dm_top">
+  <dl>
+
+    <dt><a href="dmcity.html"><img src="/wap/dmtmpl/img/dm_dw.png"/><span id="demo"></span></a><input type="hidden" id="nation"/>
+    <input type="hidden" id="province"/>
+    <input type="hidden" id="city"/>
+    <input type="hidden" id="district"/>
+    <input type="hidden" id="addr"/>
+    <input type="hidden" id="lat"/>
+     <input type="hidden" id="lng"/>
+   </dt>
+    <dd>
+      <input type="text" class="dm_top_text" placeholder="最好吃的蛋糕"  onClick="return seacheOp()"/>
+    </dd>
+    <dt><a href="#" onClick="return itCheck()"><img src="/wap/dmtmpl/img/dm_sm.png"/>扫码</a></dt>
+  </dl>
+</div>
+<div class="ydmenu" id="topmeun">
+<dl>
+<dd class="bb"> <a onClick="qrcode(1)">扫一扫</a></dd>
+<!--<dd><a href="#">付款码</a></dd>-->
+</dl>
+</div>
+<div class="dm_banner">
+  <div id="slideBox" class="slideBox">
+          <div class="bd">
+            <ul class="ul-main">
+            </ul>
+          </div>
+          <div class="hd">
+          <ul></ul>
+        </div>
+      </div>
+</div>
+
+
+<div class="dm_meun" id="dm_meun">
+ 
+</div>
+<div class = "middle">
+ 猜你喜欢
+ </div>
+<div class="dm_like" id="member-evaluation-div">
+ 
+  <script type="text/html" id="member-evaluation-script">
+  <% for (var i=0; i<datas.length; i++) { %>
+  <dl>
+    <a href="dmgoods_details.html?goods_id=<%=datas[i].goods_id%>">
+    <dt><img src="<%=datas[i].goods_image%>"/></dt>
+    <dd>
+      <p><b><%=datas[i].store_name%></b><em><%=datas[i].distance%>km</em></p>
+      <p>[<%=datas[i].store_address%>]<%=datas[i].voucher_price%>元代金劵一张</p>
+      <p><span>&yen;<%=datas[i].goods_price%></span>门市价&yen;<%=datas[i].goods_marketprice%><i>已售<%=datas[i].count%></i></p>
+    </dd>
+    </a>
+  </dl>
+  <% } %>
+  </script>
+  
+  
+</div>
+
+<div class="dm_footer">
+  <ul>
+    <li><a href="/wap"><img src="/wap/dmtmpl/img/dm_f1.png"/><span>云品</span></a></li>
+    <li class="footer_red"><a href="dmxxsc.html"><img src="/wap/dmtmpl/img/dm_f4.png"/><span>云店</span></a></li>
+    <li><a href="dmwdtl.html"><img src="/wap/dmtmpl/img/dm_f5.png"/><span>万店通联</span></a></li>
+    <li ><a href="dm_order.html"><img src="/wap/dmtmpl/img/dm_f7.png"/><span>订单</span></a></li>
+    <li><a href="/wap/tmpl/member/member.html"><img src="/wap/dmtmpl/img/dm_f9.png"/><span>我的</span></a></li>
+  </ul>
+</div>
+
+
+</body>
+</html>
+<script type="text/javascript" src="../../js/zepto.min.js"></script> 
+<script type="text/javascript" src="../../js/template.js"></script> 
+<script type="text/javascript" src="../../js/config.js"></script> 
+<script type="text/javascript" src="../../js/common.js"></script> 
+<script type="text/javascript" src="../../js/dm/dmshop.js"></script>

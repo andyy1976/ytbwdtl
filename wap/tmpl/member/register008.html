@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>线下商城</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<link href="/wap/dmtmpl/css/style.css" rel="stylesheet" type="text/css"/>
+</head>
+<style>
+.button {
+    border-color: #b2b2b2;
+    background-color: #bb8f3c;
+    color: #ffffff;
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0 12px;
+    min-width: 52px;
+    min-height: 47px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 2px;
+    vertical-align: top;
+    text-align: center;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    line-height: 42px;
+    cursor: pointer;
+	border-radius: 15px 15px 15px 15px;
+}
+.button-block {
+    display: block;
+    clear: both;
+}
+a.button {
+    text-decoration: none;
+}
+.error-tips{
+display: none;
+    background-color: rgba(255,255,255,0.95);
+    border: solid 1px #CCC;
+    padding: 0.8rem 0.6rem;
+    text-align: center;
+    border-radius: 0.2rem;
+    position: fixed;
+    z-index: 9999;
+    top: 40%;
+    left: 25%;
+    right: 25%;
+    color: #333;
+    font-size: 0.7rem;
+    line-height: 1rem;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.15);
+}
+</style>
+<body>
+ <form action="" method ="">
+ <input type='hidden' name='free' id='free' value='0'>
+<div id='step1'>
+<div class="dm_xq_top" id="step1h">
+ 
+</div>
+<div class="dm_login" >
+    <ul>
+      <li>
+        <input type="text" placeholder="请输入推荐人ID" class="login_text" name="member_pid" id="member_pid" oninput="writeClear($(this));"/>
+        <dd class='member_pname' id='member_pname'   style="position: absolute; z-index: 1000; margin-top: -30px; right: 40px;font-size: 13px;"></dd>
+      </li>
+      <li>
+      <input type="text" id="mobile" name="mobile" class="login_text" autocomplete="off" maxlength="11" placeholder="输入手机号" oninput="writeClear($(this));" onfocus="writeClear($(this));" pattern="[0-9]*"/>
+      </li>
+      <li class="login_04"><input type="text" id="auth_code"  name="auth_code" class="login_text login_text2" maxlength="6" placeholder="输入短信动态验证码" oninput="writeClear($(this));"   pattern="[0-9]*"/><a href="javascript: void(0);" id="send">获取短信验证</a></li>
+     <li class="login_05 xiayibu"><a  onClick="return abc(1)" >下一步</a></li>
+    </ul>
+  </div>
+  <div class="login_tip">注册即视为同意<a href="/wap/tmpl/member/zcxy.html">《万店通联用户注册协议》</a>和<a href="/wap/tmpl/member/ysxy.html">《万店通联用户隐私协议》</a></div>
+</div>
+<div id='step2' style="display:none;">
+<div class="dm_xq_top" id='step2h' ></div>
+<div class="dm_login" >
+    <ul>
+      <li><input type="password" placeholder="请输入6-20位密码" class="login_text" name="pwd" id="userpwd" oninput="writeClear($(this));"/>
+      </li>
+      <li> <input type="password" placeholder="请再次输入登录密码" class="login_text" name="password_c" id="password_c" oninput="writeClear($(this));"</li>
+      <li class="login_05 xiayibu"><a onClick="return abc(2)">下一步</a></li>
+    </ul>
+  </div>
+  </div>
+  <div id='step3' style="display:none;">
+  <div class="dm_xq_top" id='step3h' ></div>
+<div class="dm_login" >
+    <ul>
+      <li><input type="password" placeholder="请输入6-20位安全密码" class="login_text" name="paypwd" id="paypwd" oninput="writeClear($(this));"/></li>
+      <li class="login_05 xiayibu"><a href="javascript:void(0);"  id="registerbtn"  onClick="return abc(3)">注册</a></li>
+    </ul>
+  </div>
+  </div>
+  </form>
+  <input type="hidden" id="map_id" >
+  <input type="hidden" name="referurl">
+</body>
+</html>
+<script type="text/javascript" src="../../js/config.js"></script> 
+<script type="text/javascript" src="../../js/zepto.min.js"></script> 
+<script type="text/javascript" src="../../js/common.js"></script> 
+<script type="text/javascript" src="../../js/simple-plugin.js"></script> 
+<script type="text/javascript" src="../../js/tmpl/footer.js"></script> 
+<script type="text/javascript" src="../../js/dm/dmregister008.js"></script>
+<script type="text/javascript">
+    function abc(obj){
+		switch(obj){
+		   case 1:
+		   if($('#member_pid').val()==''){
+			   $('#member_pid').val();
+			   alert('推荐人ID不能为空！');
+			   return false;
+			   }
+		   if($('#mobile').val()==''){
+			    $('#mobile').val();
+			   alert('手机号码不能为空！');
+			   return false;
+			   }
+		   if($('#auth_code').val()==''){
+			    $('#auth_code').val();
+			   alert('验证码不能为空！');
+			   return false;
+			   }
+		   $('#step2').show();
+		   $('#step1').hide();
+		   $('#step3').hide();
+		   break;
+		   case 2:
+		   if($('#userpwd').val()==''){
+			      $('#userpwd').val();
+			   alert('登录密码不能为空！');
+			   return false;
+			   }
+			if($('#password_c').val()==''){
+				  $('#password_c').val();
+			   alert('确认登录密码不能为空！');
+			   return false;
+				}
+		    if($('#userpwd').val()!=$('#password_c').val()){
+				  $('#userpwd').val();
+				   $('#password_c').val();
+				alert('两次输入的密码不一样！');
+				return false;
+				}
+		   $('#step3').show();
+		   $('#step1').hide();
+		   $('#step2').hide();
+		   break;
+		   case 3:
+		   if($('#paypwd').val()==''){
+			   $('#paypwd').val();
+			   alert('支付密码不能为空！');
+			   return false;
+			   }
+			return true;
+		   break;
+			}
+		}
+		 function goBack(){
+        document.referrer === '' ? window.location.href = 'dmxxsc.html' :window.history.go(-1);
+      }
+</script>
+

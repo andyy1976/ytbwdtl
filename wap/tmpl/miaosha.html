@@ -1,0 +1,293 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>秒杀</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<link href="../css/miaosha.css" rel="stylesheet" type="text/css"/>
+<!-- <script src="../js/TouchSlide.1.1.js"/></script> -->
+<style>
+.nctouch-nav-layout{
+    position: fixed;
+    width:80px;
+    right: 0;
+    background-color: transparent;
+    z-index: 9999;
+}
+.nctouch-nav-menu{
+    display: block;
+    position: absolute;
+    top: 1.2rem;
+    right: 0.2rem;
+    width: 5rem;
+    background: #bb8f3c;
+}
+.arrow{
+    display: block;
+    float: right;
+    width: 0;
+    height: 0;
+    margin-right: 0.4rem;
+    font-size: 0;
+    line-height: 0;
+    border-width: 0.4rem;
+    border-color: transparent
+}
+.nctouch-nav-menu ul{
+    display: block;
+    clear: both;
+    background-color: #bb8f3c;
+    border-radius: 0.2rem;
+}
+.nctouch-nav-menu li{
+    position: relative;
+z-index: 1;
+border-bottom: solid 1px #fff;
+}
+.nctouch-nav-menu li a{
+    display: block;
+height: 0.9rem;
+padding: 0.5rem;
+font-size: 0.6rem;
+line-height: 0.9rem;
+width:4.9rem; 
+color: #FFF;
+}
+.nctouch-nav-menu li a i{
+    display: inline-block;
+    width: 0.72rem;
+    height: 0.72rem;
+    vertical-align: middle;
+    margin-right: 0.3rem;
+    background-position: 50% 50%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.nctouch-nav-menu li a i.home {
+    background-image: url(../images/home_w.png);
+}
+.nctouch-nav-menu li a i.search {
+    background-image: url(../images/dm_bai_03.png);
+}
+.nctouch-nav-menu li a i.categroy {
+    background-image: url(../images/categroy_w.png);
+}
+.nctouch-nav-menu li a i.cart {
+    background-image: url(../images/cart_w.png);
+}
+.nctouch-nav-menu li a i.member {
+    background-image: url(../images/dm_bai_05.png);
+}
+.zhe{
+    position:absolute;
+    width: 100%;
+    height:100%;
+    top:0;
+    z-index: 90;
+    display: none;
+}
+
+</style>
+</head>
+
+<body>
+<div class="zhe"></div>
+<div class="seck_top">
+  <dl>
+    <dt><img src="../images/seck_01.png"/></dt>
+    <dd>整点秒杀</dd>
+    <dt class="dian"><img src="../images/seck_03.png"/></dt>
+  </dl>
+</div>
+<div class="nctouch-nav-layout" style="display: none">
+    <div class="nctouch-nav-menu"> <span class="arrow"></span>
+      <ul>
+        <li><a href="../index.html"><i class="home"></i>云品</a></li>
+        <li><a href="#"><i class="search"></i>云店</a></li>
+         <li><a href="./search.html"><i class="categroy"></i>搜索</a></li>
+        <li><a href="./cart_list.html"><i class="cart"></i>我的订单<sup></sup></a></li>
+        <li><a href="./member/member.html"><i class="member"></i>我的</a></li>
+      </ul>
+    </div>
+</div>
+<div class="seck_box">
+  <div id="leftTabBox" class="seckBox">
+    <div class="hd">
+      <ul>
+        <li><a><p>10:00</p><i>即将开始</i></a></li>
+        <li><a><p>12:00</p><i>即将开始</i></a></li>
+        <li><a><p>14:00</p><i>即将开始</i></a></li>
+        <li><a><p>16:00</p><i>即将开始</i></a></li>
+        <li><a><p>18:00</p><i>即将开始</i></a></li>
+      </ul>
+    </div>
+    <div class="bd">
+    	<div class="bd_list" id="10list">
+        </div>
+    	<div class="bd_list" id="12list">
+        </div>
+        <div class="bd_list" id="14list">
+        </div>
+        <div class="bd_list" id="16list">
+        </div>
+        <div class="bd_list" id="18list">
+        </div>
+    </div>
+  </div>
+</div>
+<div id="goodcover"></div>
+<!-- <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"0","bdPos":"right","bdTop":"100"},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script> -->
+<div id="dm_fenx">
+  <h3><span>分享到</span></h3>
+    <div class="bdsharebuttonbox">
+  <ul>
+    <li><a href="#"><img src="../images/dm_fx1.png"/><span>微信</span></a></li>
+    <li><a href="#"><img src="../images/dm_fx2.png"/><span>朋友圈</span></a></li>
+    <li><a href="#"><img src="../images/dm_fx3.png"/><span>QQ好友</span></a></li>
+    <li><a href="#"><img src="../images/dm_fx4.png"/><span>QQ空间</span></a></li>
+    <li><a href="#"><img src="../images/dm_fx5.png"/><span>短信</span></a></li>
+    <li><a href="#"><img src="../images/dm_fx6.png"/><span>新浪微博</span></a></li>
+    <li><a href="#"><img src="../images/dm_fx7.png"/><span>复制</span></a></li>
+    <li><a href="#"><img src="../images/dm_fx8.png"/><span>更多</span></a></li>
+  </ul>
+</div>
+<script type="text/javascript" src="../js/zepto.min.js"></script> 
+<script type="text/javascript" src="../js/config.js"></script> 
+<script type="text/javascript" src="../js/template.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script src="../js/jquery-1.11.3.js"/></script> 
+<script src="../js/fenxiang.js"/></script>
+<script type="text/javascript">
+$(function(){
+    var key = getCookie('key');
+    /*if(!key){
+        window.location.href = WapSiteUrl + '/tmpl/member/login.html';
+    }*/
+    var now = new Date();
+    var hour = now.getHours();
+    var time ='';
+    $(".hd ul li:eq(0)").removeClass("on");
+    if(hour>=10 && hour<12){
+        $(".hd ul li:eq(0)").addClass("on");
+        $(".hd ul li:eq(0) a i").text('正在抢购');
+        time = 10;
+    }else if(hour>=12 && hour<14){
+        $(".hd ul li:eq(1)").addClass("on");
+        $(".hd ul li:eq(0) a i").text('已结束');
+        $(".hd ul li:eq(1) a i").text('正在抢购');
+        time = 12;
+    }else if(hour>=14 && hour<16){
+        $(".hd ul li:eq(2)").addClass("on");
+        $(".hd ul li:eq(0) a i").text('已结束');
+        $(".hd ul li:eq(1) a i").text('已结束');
+        $(".hd ul li:eq(2) a i").text('正在抢购');
+        time = 14;
+    }else if(hour>=16 && hour<18){
+        $(".hd ul li:eq(3)").addClass("on");
+        $(".hd ul li:eq(0) a i").text('已结束');
+        $(".hd ul li:eq(1) a i").text('已结束');
+        $(".hd ul li:eq(2) a i").text('已结束');
+        $(".hd ul li:eq(3) a i").text('正在抢购');
+        time = 16;
+    }else if(hour>=18 && hour<20){
+        $(".hd ul li:eq(4)").addClass("on");
+        $(".hd ul li:eq(0) a i").text('已结束');
+        $(".hd ul li:eq(1) a i").text('已结束');
+        $(".hd ul li:eq(2) a i").text('已结束');
+        $(".hd ul li:eq(3) a i").text('已结束');
+        $(".hd ul li:eq(4) a i").text('正在抢购');
+        time = 18;
+    }else{
+        time = 10;
+        $(".hd ul li:eq(0)").addClass("on");
+        $(".hd ul li:eq(0) a i").text('已结束');
+        $(".hd ul li:eq(1) a i").text('已结束');
+        $(".hd ul li:eq(2) a i").text('已结束');
+        $(".hd ul li:eq(3) a i").text('已结束');
+        $(".hd ul li:eq(4) a i").text('已结束');
+    }
+     $.getJSON(ApiUrl + '/index.php?act=miaosha&op=index',{key:key,time:time},function(result) {
+            var data = result.datas;
+            for (var i=0;i<data.length;i++) {
+                    var miaosha = data[i]['miaosha'];
+                    if(miaosha==0){
+                        miaosha = "<a class='qgle'>被抢光啦!</a>";
+                    }else{
+                         miaosha = "<a href"+data[i]['status']+"='product_detail.html?goods_id="+data[i]['goods_id']+"' class='qgle' style='font-size:.85rem;padding:0 .8rem;height:1.7rem;background:linear-gradient(to bottom,#fae76a,#f3cc3a);'>去抢购</a>";
+                    }
+                    src = "<dl>"
+                            +"<dt><a href"+data[i]['status']+"='product_detail.html?goods_id="+data[i]['goods_id']+"'><img src='"+data[i]['groupbuy_image']+"' alt=''/></a><span style='"+data[i]['style']+"'>"+data[i]['buy_quantity']+"</span></dt>"
+                            +"<dd>"
+                                +"<h5><a href=''>"+data[i]['goods_name']+"</a></h5>"
+                                +"<span>"+data[i]['store_name']+"</span>"
+                                +"<p>"
+                                    +"<em>¥</em><i>"+data[i]['groupbuy_price']+"</i>原价 ¥<strong>"+data[i]['goods_price']+"</strong>"
+                                    +miaosha
+                                +"</p>"
+                            +"</dd>"
+                        +"</dl>";
+                    $("#"+time+"list").append(src);
+                }
+             
+    });
+
+    $('.hd ul').find('li').on('click', function(){
+        var now = new Date();
+        var hour = now.getHours();
+        var num = $(this).index();
+        var time ='';
+        $(".hd ul li").removeClass("on");
+        $(".hd ul li:eq("+num+")").addClass("on");
+        if(num==0){
+            time = 10;
+        }else if(num==1){
+            time = 12;
+        }else if(num==2){
+            time = 14;
+        }else if(num==3){
+            time = 16;
+        }else{
+            time = 18;
+        }
+        $(".bd_list").css('display','none');
+        $("#"+time+"list").css('display','block');
+        $.getJSON(ApiUrl + '/index.php?act=miaosha&op=index',{key:key,time:time},function(result) {
+                var data = result.datas;
+                $("#"+time+"list").html('');
+                for (var i=0;i<data.length;i++) {
+                    var miaosha = data[i]['miaosha'];
+                    if(miaosha==0){
+                        miaosha = "<a  class='qgle'>被抢光啦!</a>";
+                    }else{
+                         miaosha = "<a href"+data[i]['status']+"='product_detail.html?goods_id="+data[i]['goods_id']+"' class='qgle' style='font-size:.85rem;padding:0 .8rem;height:1.7rem;background:linear-gradient(to bottom,#fae76a,#f3cc3a);'>去抢购</a>";
+                    }
+                    src = "<dl>"
+                            +"<dt><a href"+data[i]['status']+"='product_detail.html?goods_id="+data[i]['goods_id']+"'><img src='"+data[i]['groupbuy_image']+"' alt=''/></a><span style='"+data[i]['style']+"'>"+data[i]['buy_quantity']+"</span></dt>"
+                            +"<dd>"
+                                +"<h5><a href=''>"+data[i]['goods_name']+"</a></h5>"
+                                +"<span>"+data[i]['store_name']+"</span>"
+                                +"<p>"
+                                    +"<em>¥</em><i>"+data[i]['groupbuy_price']+"</i>原价 ¥<strong>"+data[i]['goods_price']+"</strong>"
+                                    +miaosha
+                                +"</p>"
+                            +"</dd>"
+                        +"</dl>";
+                    $("#"+time+"list").append(src);
+                }
+        });
+    });
+
+    $(".dian").click(function(){
+        $(".nctouch-nav-layout").css('display','block');
+        $(".zhe").css('display','block');
+    });
+    $(".zhe").click(function(){
+      $(".nctouch-nav-layout").css('display','none');
+      $(".zhe").css('display','none');
+    });
+    
+});
+</script>
+</body>
+</html>

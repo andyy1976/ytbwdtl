@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>会员余额支付页面</title>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<style type="text/css">
+/*通用*/
+body{ font-size: 15px; font-family: "microsoft yahei", Arial; color: #333; margin: 0px; padding: 0px;}
+ul, ol, li, p, h1, h2, h3, h4, h5, h6, dl, dt, dd{ margin: 0px; padding: 0px; list-style: none;}
+a{ color: #333; text-decoration: none;}
+a:hover{ text-decoration: underline;}
+img{ vertical-align: middle;}
+i,em{ font-style: normal;}
+div:after{ content: ""; display: block; clear: both;}
+div:before{ content: ""; display: table;}
+
+/*云豆支付页面*/
+.yundou h5{ width:100%; float:left; text-align:center; line-height:44px; background:#f7f7f7; font-size:1rem; border-bottom:1px solid #e7e7e7;}
+.yundou ul{ width:92%; margin:2rem 4% 0; float:left;}
+.yundou li{ width:100%; float:left; line-height:2rem; margin-bottom:15px;}
+.yundou li span{ width:28%; float:left; text-align:right;}
+.yundou li b{ color:#f60; padding-left:3%;}
+.yd_name{ width:69%; float:right; border-radius:3px; height:2rem; border:1px solid #ddd; padding:0 5px; box-sizing:border-box; outline:none;}
+.yd_btn{ width:98%; float:right; border-radius:3px; height:2.6rem; border:none; padding:0 5px; box-sizing:border-box; background:#aa374a; color:#fff; font-size:1rem; margin-top:10px; font-weight:bold; outline:none;}
+</style>
+</head>
+
+<body>
+
+<div class="yundou">
+	<h5>扫码支付页面 <input type="hidden" value="" id="map_id"/><input type="hidden" value="" id="member_id"></h5>
+    <ul>
+    	<li><span>支付金额：</span><input type="text" value="" id="yd_name" class="yd_name"/></li>
+        <li><span>消费店铺名称：</span><input type="text" value="" id="yd_store_name" class="yd_name" readonly/></li>
+        <li><span>支付单号：</span><input type="text" value="" id="pay_sn" class="yd_name" readonly/>
+        <li><span>订单单号：</span><input type="text" value="" id="order_sn" class="yd_name" readonly/>
+        </li>
+        <li><input type="button" value="确 定" id="yd_btn" class="yd_btn"></li>
+    </ul>
+</div>
+
+<div style="margin-left:auto; margin-right:auto; font-size:30px; color:green;padding:10px 20px 0px 20px;" id="tip"></div>
+</body>
+</html>
+<script type="text/javascript" src="../../js/config.js"></script> 
+<script type="text/javascript" src="../../js/zepto.min.js"></script> 
+<script type="text/javascript" src="../../js/template.js"></script> 
+<script type="text/javascript" src="../../js/common.js"></script> 
+<script type="text/javascript" src="../../js/simple-plugin.js"></script> 
+<script type="text/javascript" src="../../js/tmpl/member_yeepay.js"></script>   
+<script type="text/javascript" src="../../js/tmpl/footer.js"></script>

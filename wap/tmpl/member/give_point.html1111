@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="format-detection" content="telephone=no"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no"/>
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1" />
+<title>会员转账</title>
+<link rel="stylesheet" type="text/css" href="../../css/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/nctouch_member.css">
+</head>
+<body>
+<header id="header">
+  <div class="header-wrap">
+    <div class="header-l"><a href="member.html"><i class="back"></i></a></div>
+    <div class="header-tab"><a href="javascript:void(0);" class="cur">云豆转账</a> <a href="points_log.html">转账记录</a></div>
+    <div class="header-r"> <a id="header-nav" href="javascript:void(0);"><i class="more"></i><sup></sup></a> </div>
+  </div>
+  <div class="nctouch-nav-layout">
+    <div class="nctouch-nav-menu"> <span class="arrow"></span>
+      <ul>
+        <li><a href="../../index.html"><i class="home"></i>云品</a></li>
+        <li><a href="#"><i class="search"></i>云店</a></li>
+         <li><a href="../search.html"><i class="categroy"></i>搜索</a></li>
+        <li><a href="../cart_list.html"><i class="cart"></i>我的订单<sup></sup></a></li>
+        <li><a href="../member/member.html"><i class="member"></i>我的</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+<div class="nctouch-main-layout fixed-Width">
+  
+  <div class="nctouch-inp-con">
+    <form action="" method ="">
+      <ul class="form-box">
+        <li class="form-item">
+          <h4>转账云豆</h4>
+          <div class="input-box">
+            <input type="number" placeholder="请输入云豆金额" class="inp" name="point" id="money" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onafterpaste="this.value=this.value.replace(/[^0-9]/g" oninput="writeClear($(this));"/>
+            <span class="input-del"></span></div>
+        </li>
+        <li class="form-item">
+          <h4>对 方 I D</h4>
+          <div class="input-box">
+            <input type="number" placeholder="请输入对方ID" class="inp" name="userid" id="userid" oninput="check();"/>
+            <p id="member_name" style="margin-top: -32px; font-size: 14px; margin-left:80px;"></p>
+            <span class="input-del" ></span></div>
+        </li>
+        <li class="form-item">
+          <h4 style="width: 110px">对方银行卡姓名</h4>
+          <div class="input-box" style="margin-left: 120px">
+            <input type="text" placeholder="请输入姓名" class="inp" name="bank_name" id="bank_name" />
+            <p id="bankname" style="margin-top: -32px; font-size: 14px; margin-left:150px;">
+              
+            </p>
+            <span class="input-del" ></span></div>
+        </li>
+        <li class="form-item">
+          <h4>安全密码</h4>
+          <div class="input-box">
+            <input type="password" placeholder="请输入安全密码" class="inp" name="pwds" id="pwd" oninput="writeClear($(this));"/>
+            <span class="input-del"></span></div>
+        </li>
+        <li class="form-item">
+          <h4>手机验证码</h4>
+          <div class="input-box">
+            <input type="text" placeholder="请输入手机验证码" class="inp" name="code" id="code" oninput="writeClear($(this));" style="width:45%;"/>
+            <a href="javascript: void(0);" id="send" style="float: right; text-align: center; background: rgb(238, 238, 238) none repeat scroll 0% 0%; font-size: 14px; line-height: 53px; width: 45%;">获取短信验证</a>
+          </div>
+        </li>
+      </ul>     
+      <div class="error-tips"></div>
+      <div class="form-btn"><a href="javascript:void(0);" class="btn" id="registerbtn">确定</a></div>
+    </form>
+<!--     <p style="font-size:16px;">注：应广大会员要求，为了方便会员间的云豆流通，开通站内转账功能，转账时请务必填写正确对方ID号，如果ID错误云豆可能无法归还，由于错误填写造成的云豆损失，本站概不负责！！！！
+云豆转账扣除3%手续费</p> -->
+    <input type="hidden" name="referurl">
+    <div class="form-btn" style="text-align:left;font-size: 0.6rem;line-height:1.2rem;padding: 0.6rem 1rem;color: #888;">
+      说明：<br />
+      （1）应广大会员要求，为了方便会员间的云豆流通，开通站内转账功能，云豆转账扣除3%手续费！<br/>
+      （2）转账时请务必填写正确对方ID号，如果ID错误云豆可能无法归还，由于错误填写造成的云豆损失，本站概不负责！</div>
+  </div>
+</div>
+<footer id="footer" class="bottom"></footer>
+<script type="text/javascript" src="../../js/config.js"></script> 
+<script type="text/javascript" src="../../js/zepto.min.js"></script> 
+<script type="text/javascript" src="../../js/common.js"></script> 
+<script type="text/javascript" src="../../js/simple-plugin.js"></script> 
+<script type="text/javascript" src="../../js/tmpl/footer.js"></script> 
+<script>
+function trim(str) {
+  return str.replace(/(^\s+)|(\s+$)/g, "");
+} 
+$(function(){
+    var key = getCookie('key');   
+    if (!key) {
+        window.location.href = WapSiteUrl + '/tmpl/member/login.html';
+        return;
+    }
+    
+    $('#send').click(function(){
+      $.post(ApiUrl + '/index.php?act=member_money&op=send',{key:key},function(result){
+        if(result==1){
+              alert('手机号必须是11位数字');                 
+          }else if(result==2){
+            alert('验证码已发送您手机，请注意查收'); 
+          }else if(result==3){
+            alert('短信发送失败');  
+          }else if(result==4){
+            alert('该手机号码未注册，请重新输入！！！');
+          }else if(result==6){
+            alert('验证码发送频繁2分钟之后在发送');
+          }
+      });
+    });
+    $('#registerbtn').click(function(){
+      var bank_name=$('#bank_name').val();
+      bank_name=trim(bank_name);
+      if(bank_name==''){alert('请输入对方银行卡姓名！');exit();}
+      var money=$('#money').val();
+      if(money < 0 || money ==0){alert('请输入有效数字！');exit();}
+      if(money > 1000000){alert('单日最高转账1000000！');exit();}
+      var userid=$('#userid').val();
+      if(userid < 0 || userid ==0){alert('请输入有效ID号！');exit();}
+      var pwd=$('#pwd').val();
+      if(pwd ==''){alert('请输入密码！');exit();}
+      var code=$('#code').val();
+      $.post(ApiUrl + '/index.php?act=member_money&op=give_point',{money:money,userid:userid,pwd:pwd,code:code,key:key,bank_name:bank_name},function(result){
+        if(result==10){alert('您输入的银行卡姓名错误!');exit();}
+        if(result==9){alert('您的验证码已过期!');exit();}
+        if(result==8){alert('您的验证码错误!');exit();}
+        if(result==7){alert('您的账户云豆低于20万，无法转账!');exit();}
+        if(result==6){alert('单日最高转账1000000云豆！');exit();}
+        if(result==5){alert('不能转给自己账号！');exit();}
+        if(result==4){alert('您输入的用户ID不存在！');exit();}
+        if(result==3){alert('您的支付密码错误！');exit();}
+        if(result==2){alert('您的云豆不足！');exit();}
+        if(result==1){alert('转账成功！');exit();}
+        if(result==0){alert('转账失败！');exit();}
+      })
+    })    
+});
+function check(){
+      var key = getCookie('key');   
+      var userid=$('#userid').val();
+      $.getJSON(ApiUrl+'/index.php?act=member_money&op=findname',{userid:userid,key:key},function(result){
+        // alert(result.datas.member_name);
+        $('#member_name').html('用户名：'+result.datas.member_name);
+        $("#bankname").html('姓名:'+result.datas.member_bankname);
+      });
+    }
+</script> 
+</body>
+</html>

@@ -1,0 +1,22 @@
+/*20171026潘丙福添加开始*/
+.footnav { min-width:320px; background:#fff; border-top: 1px solid #d5d5d5; bottom: 0; font-size: 0.28rem; height: 3.5rem; position: fixed; width: 100%; z-index: 6;}
+.footnav ul { font-size: 0;}
+.footnav ul li { vertical-align: top; display: inline-block; text-align: center; width: 20%; padding: 0.2rem 0 0.2rem 0;}
+.footnav ul li a { display: block; position: relative;}
+.footnav ul li a em { background-color: #ED5564; width: 0.3rem; height: 0.3rem; border-radius: 100%; position: absolute; top: -0.15rem; right: 0.85rem;}
+.footnav ul li i { vertical-align: top; display: inline-block; width: 1.8rem; height: 1.8rem; margin: 0 auto 0.2rem auto;}
+i.home { background-image: url(https://www.ytbwdtl.com/wap/images/wan_f1.png); background-size: cover; opacity: 0.5;}
+i.categroy { background-image: url(https://www.ytbwdtl.com/wap/images/wan_f3.png); background-size: cover; opacity: 0.5;}
+i.search { background-image: url(https://www.ytbwdtl.com/wap/images/wan_f5.png); background-size: cover; opacity: 0.5;}
+i.cart { background-image: url(https://www.ytbwdtl.com/wap/images/wan_f7.png); background-size: cover; opacity: 0.5;}
+i.member { background-image: url(https://www.ytbwdtl.com/wap/images/wan_f9.png); background-size: cover; opacity: 0.5;}
+/*加红*/
+i.home2 { background-image: url(https://www.ytbwdtl.com/wap/images/wan_f2.png); background-size: cover; opacity: 1;}
+i.categroy2 { background-image: url(https://www.ytbwdtl.com/wap/images/wan_f4.png); background-size: cover;opacity: 1;}
+i.search2 { background-image: url(https://www.ytbwdtl.com/wap/images/wan_f6.png); background-size: cover;opacity: 1;}
+i.cart2 { background-image: url(https://www.ytbwdtl.com/wap/images/wan_f8.png); background-size: cover;opacity: 1;}
+i.member2 { background-image: url(https://www.ytbwdtl.com/wap/images/wan_f10.png); background-size: cover;opacity: 1;}
+
+.footnav ul li p { font-size: 0.8rem; color: #888; line-height: 1.1rem; height: 1.1rem;}
+.footnav ul li sup {position:absolute; top:-8px; right:calc(50% - 25px);color:#F00; border-radius: 10px;padding: 2px 5px;background-color:#f00;color:#fff;line-height: 10px;font-size:10px;}
+.footnav ul li a.current p {color: #BB8F3C;}

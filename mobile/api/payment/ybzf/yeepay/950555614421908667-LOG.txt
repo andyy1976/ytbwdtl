@@ -1,0 +1,27 @@
+Array
+(
+    [orderid] => 950555614421908667
+    [transtime] => 1502270427
+    [currency] => 156
+    [amount] => 63000
+    [cardno] => 
+    [idcardtype] => 
+    [idcard] => 
+    [owner] => 
+    [productcatalog] => 7
+    [productname] => 【会员尊享】华林纳米技术抗菌舒眠成人枕
+    [productdesc] => 
+    [identityid] => 224667
+    [orderexpdate] => 60
+    [identitytype] => 2
+    [terminaltype] => 1
+    [terminalid] => 44-45-53-54-00-00
+    [userip] => 117.136.75.142
+    [paytool] => 
+    [directpaytype] => 0
+    [userua] => Mozilla/5.0 (Linux; Android 4.4.4; N5207 Build/KTU84P; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/53.0.2785.49 Mobile UCBrowser/6.2 TBS/043305 Safari/537.36
+    [callbackurl] => https://wandiantonglian.com/mobile/api/payment/ybzf/notify_real_order.php
+    [fcallbackurl] => https://wandiantonglian.com/mobile/api/payment/ybzf/return_url.php
+    [paytypes] => 
+    [version] => 0
+)

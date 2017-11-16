@@ -1,0 +1,27 @@
+Array
+(
+    [orderid] => 430555614119677929
+    [transtime] => 1502270126
+    [currency] => 156
+    [amount] => 100000
+    [cardno] => 
+    [idcardtype] => 
+    [idcard] => 
+    [owner] => 
+    [productcatalog] => 1
+    [productname] => 购买云豆
+    [productdesc] => 
+    [identityid] => 136929
+    [orderexpdate] => 60
+    [identitytype] => 2
+    [terminaltype] => 1
+    [terminalid] => 44-45-53-54-00-00
+    [userip] => 171.110.248.63
+    [paytool] => 
+    [directpaytype] => 0
+    [userua] => Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_3 like Mac OS X) AppleWebKit/603.3.8 (KHTML, like Gecko) Mobile/14G60
+    [callbackurl] => https://wandiantonglian.com/mobile/api/payment/ybzf/notify_pd_order.php
+    [fcallbackurl] => https://wandiantonglian.com/mobile/api/payment/ybzf/return_url.php
+    [paytypes] => 
+    [version] => 0
+)

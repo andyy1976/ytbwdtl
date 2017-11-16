@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="format-detection" content="telephone=no"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1" />
+<title>绑定银行卡</title>
+<link rel="stylesheet" type="text/css" href="../../css/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/nctouch_member.css">
+</head>
+<body>
+<header id="header">
+	<div class="header-wrap">
+		<div class="header-l">
+			<a href="member_account.html">
+				<i class="back"></i>
+			</a>
+		</div>
+		<div class="header-title">
+			<h1>绑定/更改银行卡</h1>
+		</div>
+	</div>
+</header>
+<div class="nctouch-main-layout">
+<div class="register-mobile-tip">农业银行卡号为19位有效数字</div>
+  <div class="nctouch-inp-con">    
+    <ul class="form-box">
+      <li class="form-item">
+        <h4>银行卡号</h4>
+        <div class="input-box">
+          <input type="text" id="bankcard" name="bankcard" maxlength="19" size="10" class="inp" autocomplete="off" placeholder="输入农业银行卡号" oninput="writeClear($(this));"/>
+        </div>
+      </li>
+     <li class="form-item" id="aaaa">
+        <h4>开户姓名</h4>
+        <div class="input-box">
+          <input type="text" id="name" name="name" maxlength="50" size="10" class="inp"  value="" placeholder="输入开户人姓名" oninput="writeClear($(this));"/>
+        </div>
+      </li>
+    </ul>
+    <div class="error-tips"></div>
+    <div class="form-btn"><a href="javascript:void(0);" class="btn" id="nextform" style="background-color: #bb8f3c;color:#FFFBF3;">提交</a></div>
+    <div class="form-btn" style="text-align:left;font-size: 0.6rem;line-height:1.2rem;padding: 0.6rem 1rem;color: #888;">温馨提示：<br />（1）为保障会员帐号数据安全，开户人姓名填写时请确认无误，填写完毕后开户人姓名将无法更改！<br/>
+    （2）只能绑定农业银行卡，且银行卡号只能更改三次！<br/>
+    （3）如需更改姓名必须提供原银行卡本人手持身份证清晰照片以及原卡号本人身份证和银行卡合照，两者同时提交至云托邦公众号，客服审核通过清空姓名后会员重新登陆可重新填写！</div>
+  </div>
+</div>
+<footer id="footer" class="bottom"></footer>
+<script> var navigate_id ="5";</script>
+<script type="text/javascript" src="../../js/config.js"></script> 
+<script type="text/javascript" src="../../js/zepto.min.js"></script> 
+<script type="text/javascript" src="../../js/template.js"></script> 
+<script type="text/javascript" src="../../js/common.js"></script> 
+<script type="text/javascript" src="../../js/simple-plugin.js"></script> 
+<script type="text/javascript" src="../../js/tmpl/footer.js"></script>
+<script>
+$(function(){
+    var key = getCookie('key'); 
+    if (!key) {
+        window.location.href = WapSiteUrl + '/tmpl/member/login.html';
+        return;
+    }
+    $.post(ApiUrl + '/index.php?act=member_money&op=getcard',{key:key},function(result){
+    		if(result){
+    			$('#bankcard').val(result);    			 
+    		}
+    })
+    $.post(ApiUrl + '/index.php?act=member_money&op=nameget',{key:key},function(result){
+    		if(result!=0 && result!=''){
+    			$('#name').val(result);
+    			$('#name').attr("disabled",true); 
+    		}
+    })
+    $('#nextform').click(function(){
+    	var bankcard=$('#bankcard').val(); 
+    	var name=$('#name').val();
+    	if(isNaN(bankcard)){
+            alert('银行卡号必须是数字');
+			exit();
+        }
+		if(bankcard.length!=19){
+			alert('农业银行银行卡号必须是19位数字');
+			exit();
+		}		
+    	$.post(ApiUrl + '/index.php?act=member_money&op=blind_card',{name:name,bankcard:bankcard,key:key},function(result){
+    		if(result==1){alert('设置失败！');}
+            if(result==2){alert('您修改次数已达三次，无法重新修改！');}
+            if(result==3){alert('您的银行卡已存在，请重新绑定！');}
+            if(result==4){alert('设置成功！');location.href=WapSiteUrl+'/tmpl/member/member.html';}    		
+    	})
+    })    
+});
+</script>
+</body>
+</html>

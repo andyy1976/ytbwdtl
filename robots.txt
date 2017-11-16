@@ -1,0 +1,13 @@
+User-agent: *
+Disallow:
+Disallow: /cgi-bin/
+Disallow: /store/   //分离的商家后台目录
+Disallow: /@)!&wdwl2017WDWL/
+Disallow: /wxadmin/
+Disallow: /member/
+Disallow: /chat/
+Disallow: /delivery/
+Disallow: /core/
+Disallow: /chain/
+Disallow: /mobile/
+Disallow: /microshop/

@@ -1,0 +1,262 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>线下商城</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<!--<link href="/wap/css/base.css" rel="stylesheet" type="text/css"/>-->
+<link href="/wap/dmtmpl/css/style.css" rel="stylesheet" type="text/css"/>
+</head>
+<script src="/wap/dmtmpl/js/jquery-1.11.3.js"></script> 
+<style>
+body {
+	background: #fff;
+}
+.ysselect{
+	background: #f2f2f2 none repeat scroll 0 0;
+    border-radius: 20px;
+    float: left;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    margin-top: 0.5rem;
+    text-align: center;
+    width: 100%;
+	
+	}
+.selectka{ 
+background: #f3cc39  none repeat scroll 0 0;
+    border-radius: 20px;
+    float: left;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    margin-top: 0.5rem;
+    text-align: center;
+    width: 100%;
+}
+.input-box{height:40px; text-align:center; width:100%; margin-left:auto; margin-right:auto; border-bottom: 1px solid #dcdcdc;
+    border-top: 1px solid #dcdcdc;}
+.input-box ul li{ list-style:none; float:left; display:inline;}
+.input-box label {
+    border: 0 none;
+    border-radius: 0;
+    color: #555;
+    display: inline-block;
+    font-size: 0.7rem;
+    height: 1.95rem;
+    line-height: 1.95rem;
+    margin: 0;
+    padding: 0;
+}
+.input-box label.checked {
+    background-color: transparent;
+    color: #555;
+    padding: 0;
+}
+.input-box label input[type="checkbox"] {
+   display: none;
+}
+.input-box label .power {
+    border: 1px solid #ddd;
+    border-radius: 1.5rem;
+    display: inline-block;
+    height: 1.9rem;
+    margin: 0 0.2rem;
+    position: relative;
+    vertical-align: middle;
+    width: 3.6rem;
+    z-index: 1;
+}
+.input-box label .power i {
+    background-color: #fff;
+    border-radius: 100%;
+    box-shadow: 1px 0.1rem 0.25rem rgba(0, 0, 0, 0.3);
+    height: 1.9rem;
+    left: 0rem;
+    position: absolute;
+    top: 0rem;
+    width: 1.9rem;
+    z-index: 1;
+}
+.input-box label.checked .power {
+    background-color: #48cfae;
+    border-color: #48cfae;
+}
+.input-box label.checked .power i {
+    box-shadow: -1px 0.1rem 0.25rem rgba(0, 0, 0, 0.3);
+    left: auto;
+    right: 0;
+}
+.addit{ border:solid #FFCC66 5px; border-radius:20px}
+</style>
+<body>
+<div id='goods_details'>
+  <script type="text/html" id="goods_details-script">
+  
+<div class="yp_top">
+  <dl>
+    <dt><a href="dmgoods_details.html?goods_id=<%=datas.goods_id%>"><img src='/wap/dmtmpl/img/yp_fh.png'/></a></dt>
+    <dd><%=datas.goods_name%></dd>
+  </dl>
+</div>
+<div class="dm_ddan">
+  <dl>
+    <dt><img src="<%=datas.goods_image%>"></dt>
+    <dd>
+      <p><%=datas.store_name%></p>
+      <p>营业时间 周一到周日</p>
+      <p><img src="/wap/dmtmpl/img/dm_j.png"/><u>随时退</u><img src="/wap/dmtmpl/img/dm_j.png"/><u>有效期内退</u></p>
+    </dd>
+  </dl>
+</div>
+<div class="dm_dlist">
+  <ul>
+    <li><em>数量</em>
+      <p><img src="/wap/dmtmpl/img/dm_jia.png" id='jia' onclick="return jiafun()" />
+        <input type="text" value="1" class="num">
+        <img src="/wap/dmtmpl/img/dm_jian.png"  id='jian'  onclick="return jianfun()"/></p>
+    </li>
+    <li><em>小计</em><u>¥ <i class='xiaoji'><%=datas.goods_price%></i></u></li>
+    <li><em>抵用券</em><select id=djq><% if(datas.djq.length==0){%><option value='0'>暂无可用</option><% }else{
+		for(i==0; i < datas.djq.length; i++){
+		%> 
+	  <option value='<%=datas.djq[i].voucher_t_id%>'><%=datas.djq[i].voucher_t_price%></option>
+	<% }} %></select></li>
+	<input type='hidden' class='price' value=<%=datas.goods_price%>/>
+	<input type='hidden' class='yundou1' value=<%=datas.yundou%>/>
+	<input type ='hidden' id='flag' value=""/>
+	<input type='hidden'  id='pay_name' value="online"/>
+	<input type='hidden' id='total' value="<%=datas.goods_price%>"/>
+	<input type='hidden' id='offpay_hash' value=''/>
+	<input type='hidden' id='offpay_hash_batch' value=''/>
+	<input type='hidden'  id='pay_sn' value=''/>
+	<input type='hidden'   id = 'act' value=''/>
+    <li><em>实付金额</em><span>¥ <b class='xiaoji'><%=datas.goods_price%></b></span></li>
+	<% if(datas.goods_points==0){ %>
+    <li><em>送云豆</em><u>+ <i class='yundou'> <%=datas.yundou%></i></u></li>
+	<%}else{%>
+	<li><em>消费云豆</em><u>-<i class='yundou'> <%=datas.goods_points%></i></u></li>
+	<%}%>
+    <li><em>手机号</em><u><%=datas.member_mobile%></u></li>
+  </ul>
+</div>
+</script>
+
+  </div>
+<div class="dm_fanh dm_dtj" id="ToBuyStep1">确认订单</div>
+<div class="dm_fanh dm_dtj" id="ToBuyStep2" style="display:none;">提交订单</div>
+<div id="goodcover"></div>
+<!--第一步选择支付方式-->
+ <div  id="step1" style="display:none;">
+  <div class="dm_pay01"><a href="#"><img src="/wap/dmtmpl/img/fh.png"/></a><a onClick="return cclose(1);"><img src="/wap/dmtmpl/img/gb.png"/></a></div>
+  <div class="dm_pay02">本次交易需在线支付<em class="kyye"></em>元</div>
+ <div class="input-box">
+      <ul>
+      <li style="padding-top:10px; padding-left:3em;">
+      云豆余额支付:
+      </li>
+      <li style="padding-left:20px;">
+              <label>
+                <input type="checkbox" class="checkbox" id="usePOpay1" value="1" autocomplete="off" />
+              <span class="power"><i></i></span></label>
+              </li>
+              <li style="text-align:right; padding-top:10px; padding-left:20px;">可用余额 ¥<b>893.27</b></span></li>
+              </ul>
+            </div>
+            <div id='yundostep1' style="display:none;">
+        <div class="dm_pay10"><input type="password" placeholder="输入安全密码" id='safetypass'><a href="#">忘记密码？</a></div>
+  <div class="dm_fanh" id="toPay" onClick="return toPayyundou();">确定</div>
+  </div>
+
+<div id='xfstep1' >
+  <div class="dm_pay03"><span>在线支付方式</span></div>
+  <div class="dm_pay04">
+    <ul>
+      <li id="ylwtz"  payment_code="ylwtz"><a onClick="return nextit('ylwtz');" ><img src="/wap/dmtmpl/img/sxf.png"/ id='ylwtzimg'></a></li>
+      <li id="vbill" payment_code="vbill" ><a onClick="return nextit('vbill');"><img src="/wap/dmtmpl/img/zgyy.png" id='vbillimg' /></a></li>
+    </ul>
+  </div>
+</div>
+</div>
+<!--第二步没有银行卡则输入银行卡-->
+<div  id="step2" style="display:none;">
+ <div class="dm_pay01"><a onClick="return backstep()"><img src="/wap/dmtmpl/img/fh.png"/></a><a onClick="return cclose(2);"><img src="/wap/dmtmpl/img/gb.png"/></a></div>
+  <div class="dm_pay02">本次交易需在线支付<em class='kyye'></em>元</div>
+  <div class="dm_pay03 dm_pay033"><span>在线支付方式</span></div>
+  
+  <div class="dm_pay05">
+    <ul>
+      <li>
+        <input type="text" placeholder="请输入银行卡号" name="bankcard">
+      </li>
+      <li>
+        <input type="text" placeholder="请输入开户姓名" name="bankname">
+      </li>
+      <li>
+        <input type="text" placeholder="请输入身份证号" name="identity">
+      </li>
+      <li>
+        <input type="text" placeholder="请输入预留手机号" name="mobile">
+      </li>
+    </ul>
+  </div>
+  <div class="dm_fanh" id="maidan1">确定添加</div>
+</div>
+<!--第三步银行卡列表-->
+<div  id="step3" style="display:none;">
+ <div class="dm_pay01"><a href="#"><img src="/wap/dmtmpl/img/fh.png"/></a><a onClick="return cclose(3);"><img src="/wap/dmtmpl/img/gb.png"/></a></div>
+  <div class="dm_pay02">本次交易需在线支付<em class="kyye"></em>元</div>
+  <div class="dm_pay03 dm_pay033"><span>在线支付方式</span></div>
+  <div class="dm_pay06">
+    <ul id='banklist-div'>
+    <script type="text/html" id="banklist-script">
+  <% for (var i=0; i<datas.length; i++) { %>
+      <li class="ysselect" id="ysselect<%=i%>" onclick="return jyselect(<%=i%>)"><%=datas[i].bankname_li%><em>IC借记卡</em><span><%=datas[i].acc_no1%></span></li>
+	   <% } %>
+  </script>
+    </ul>
+  </div>
+  <div class="dm_pay07"><a onClick="return tianjia()">添加新的银行卡<img src="/wap/dmtmpl/img/dm_y.png"/></a></div>
+  <div class="dm_pay08" id="dm_payc8">确认支付</div>
+</div>
+
+<!--第五步输入输入手机验证码-->
+<div  id="step5" style="display:none;">
+  <div class="dm_pay01"><a onClick="return cclose(5);"><img src="/wap/dmtmpl/img/fh.png"/></a><a onClick="return cclose(5);"><img src="/wap/dmtmpl/img/gb.png"/></a></div>
+<div class="dm_pay02">本次交易需在线支付<em class="kyye"></em>元</div>
+  <div class="dm_pay03 dm_pay033"><span>在线支付方式</span></div>
+  <div class="dm_pay05">
+    <ul>
+      <li>
+        <input type="text" placeholder="请输入收到的短信验证码">
+      </li>
+    </ul>
+  </div>
+  <div class="dm_fanh" id="maidany">确定</div>
+</div>
+</body>
+</html>
+<script type="text/javascript" src="../../js/zepto.min.js"></script> 
+<script type="text/javascript" src="../../js/config.js"></script> 
+<script type="text/javascript" src="../../js/template.js"></script> 
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/dm/dmpayment_common.js"></script>
+<script type="text/javascript" src="../../js/dm/dm_addBank.js"></script>
+<script type="text/javascript">
+   (function(win,doc){
+            // 列表元素
+            var ul = document.getElementById('banklist-div')
+			var items = ul.children
+			var activeClassName = 'selectka'
+			ul.onclick = function(e){
+                for (var i = 0; i < items.length; i++) {
+                    items[i].classList.remove(activeClassName)
+                }
+				e.target.classList.add(activeClassName)
+			}
+			
+        })(this,document)
+		
+		
+            
+</script>

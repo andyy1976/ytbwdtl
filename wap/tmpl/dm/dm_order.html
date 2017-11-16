@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>线下商城</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<link href="/wap/dmtmpl/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="../../css/pan_footer.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+body{ background:#fff;}
+.btn {
+    vertical-align: top;
+    display: inline-block !important;
+    height: 1.1rem;
+    padding: 0 0.3rem;
+    margin: 0 auto;
+    font-size: 0.6rem;
+    color: #555 !important;
+    line-height: 1.1rem;
+    text-align: center;
+    background-color: #FFF;
+    border: solid 1px #CCC;
+    border-radius: 0.15rem;
+}
+</style>
+</head>
+
+<body>
+<div class="order_t">
+	<ul>
+  
+    	<li><a href="/wap/tmpl/member/order_list.html">云品订单</a></li>
+        <li><a href="dm_order.html" class="h_on">云店订单</a></li>
+    </ul>
+</div>
+<div class="order_box" id='member-evaluation-div'>
+ <script type="text/html" id="member-evaluation-script">
+	  <% for (var i=0; i<datas.length; i++) { %>
+        <dl>
+		<% if (datas[i].goods_id==0){%>
+		 <dt><a href="dmstore_details.html?store_id=<%=datas[i].store_id%>"><img src="<%=datas[i].store_avatar%>"/></a></dt>
+		<% }else{%>
+            <dt><a href="dmgoods_details.html?goods_id=<%=datas[i].goods_id%>"><img src="<%=datas[i].goods_image%>"/></a></dt>
+			<% } %>
+            <dd>
+                <p><b><%=datas[i].goods_name%></b><em style="width:80px"><%=datas[i].order_state%></em></p>
+                <p>下单时间：<%=datas[i].add_time%></p>
+                <p>数量：<%=datas[i].goods_num%></p>
+                <p>总价：<%=datas[i].order_amount%><a href="dmstore_details.html?store_id=<%=datas[i].store_id%>" class="ckjm">查看劵码</a>
+				<%if(datas[i].order_state=='待确认消费'){%>
+				   <p style='padding-top:10px'><a  class="ckjm" style='background:red; color:white' onclick='return confirmit(<%=datas[i].order_id%>)'>确认消费</a></p>
+				 
+				<%}else if(datas[i].order_state=='已完成'){%>
+					  <p style='padding-top:10px'><a href='/wap/tmpl/member/member_evaluation.html?order_id=<%=datas[i].order_id%>' class='alj'>评价</a>
+				   <!--<a href='dmstore_details.html?store_id=<%=datas[i].store_id%>' class='alj'>再来一单</a>-->
+				   <a href='dmgoods_details.html?goods_id=<%=datas[i].goods_id%>' class='alj'>再来一单</a>
+				   </p>
+					<%}else if(datas[i].order_state=='已付款'){%>
+					 <%if(datas[i].lock_state>0){%>
+						  <p style='padding-top:10px'><a  class='alj'>退款处理中</a></p>
+						<% }else{ %>
+					 <p style='padding-top:10px'><a href='/wap/tmpl/member/refund_all.html?order_id=<%=datas[i].order_id%>&flag=1' class='alj'>申请退款</a></p>
+					<%}}else if(datas[i].order_state=='未付款'){%>
+					<a href='/wap/tmpl/dm/dm_order_list.html?order_id=<%=datas[i].order_id%>' class='alj'>去付款</a>
+					
+					<% } %>
+				</p>
+            </dd>
+        </dl>
+       
+        
+	<% } %>
+		</script>
+</div>
+
+<footer id="footer" class="bottom"></footer>
+<script> var navigate_id ="4";</script> 
+<script type="text/javascript" src="../../js/zepto.min.js"></script> 
+<script type="text/javascript" src="../../js/config.js"></script> 
+<script type="text/javascript" src="../../js/template.js"></script> 
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/tmpl/footer.js"></script>
+<script type="text/javascript">
+$(function(){
+    var key = getCookie('key');
+      if(!key){
+        window.location.href = WapSiteUrl + '/tmpl/member/login.html';
+      }
+
+      $.getJSON(ApiUrl + '/index.php?act=dmstore&op=dm_order',{key:key}, function(result) {
+            var data = result.datas;
+            for (var i=0;i<data.length;i++)
+            {
+				 var data = result.datas;
+				      if(data.length>0){
+					   var html = template.render('member-evaluation-script', result);
+                       }else{
+					 var html='<div style="height:20px;width:100%; padding-top:20px; margin-left:auto; margin-right:auto;text-align:center">暂无订单<div>';
+					   } 
+					  $("#member-evaluation-div").html(html);
+				  }
+	          /* var src = "<dl>"
+                       +"<dt><a href='dmgoods_details.html?goods_id="+data[i]['goods_id']+"'><img src='"+data[i]['goods_image']+"'/></a></dt>"
+                        +"<dd>"
+                            +"<p><b>"+data[i]['goods_name']+"</b><em>"+data[i]['order_state']+"</em></p>"
+                            +"<p>下单时间："+data[i]['add_time']+"</p>"
+                            +"<p>数量："+data[i]['goods_num']+"</p>"
+                            +"<p>总价："+data[i]['order_amount']+"<a href='dmstore_details.html?store_id="+data[i]['store_id']+"' class='ckjm'>查看劵码</a><a href='#' class='alj'>评价</a><a href='#' class='alj'>申请退款</a><a href='dmstore_details.html?store_id="+data[i]['store_id']+"' class='alj'>再来一单</a></p>"
+                        +"</dd>"
+                    +"</dl>";
+                $(".order_box").append(src);*/
+            
+           
+      });
+
+
+
+
+})
+function confirmit(obj){
+		 var key = getCookie('key');
+	$.getJSON(ApiUrl + '/index.php?act=dmstore&op=dm_orderupdate',{key:key,obj:obj},function(result){
+		 var data = result.datas;
+		if(data==1){
+	 var key = getCookie('key');
+	$.getJSON(ApiUrl + '/index.php?act=dmstore&op=dm_order',{key:key}, function(result) {
+            var data = result.datas;
+            for (var i=0;i<data.length;i++)
+            {
+				 var data = result.datas;
+				      if(data.length>0){
+					   var html = template.render('member-evaluation-script', result);
+                       }else{
+					 var html='<div style="height:20px;width:100%; padding-top:20px; margin-left:auto; margin-right:auto;text-align:center">暂无订单<div>';
+					   } 
+					  $("#member-evaluation-div").html(html);
+				  }
+	        });
+		}else{
+			alert('更新订单失败');
+			}
+	});
+	
+}
+</script>
+</body>
+</html>

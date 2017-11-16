@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>万店通联</title>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+<meta name="keywords" content="万店通联,PHP商城系统,万店通联商城系统,多用户商城系统,电商ERP,电商CRM,电子商务解决方案"/>
+<meta name="description" content="万店通联打造一个新经济时代的全新互联网实现共创，共赢，共享，共富。咨询电话：400-066-1366"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<link href="css/ionic.min.css" rel="stylesheet">
+<link href="css/wdbase.css" rel="stylesheet">
+<link href="css/index.css" rel="stylesheet">
+<script src="js/ionic.bundle.min.js"></script>
+<script type="text/javascript">
+angular.module('ionicApp', ['ionic'])
+.controller('SlideController', function($scope) {
+$scope.bannerSlide = 0;
+$scope.rushSlide = 0;
+$scope.floneSlide = 0;
+$scope.fltwoSlide = 0;
+$scope.flthereSlide = 0;
+})
+</script>
+</head>
+
+<body ng-app="ionicApp" animation="slide-left-right-ios7" ng-controller="SlideController" style="background:#f7f7f7;">
+<div class="bar bar-header bar-assertive item-input-inset wd-header">
+  <a class="button button-icon icon ion-navicon" href='tmpl/product_first_categroy.html'></a>
+  <label class="item-input-wrapper"> <i class="icon ion-ios-search placeholder-icon"></i>
+      <a href="tmpl/search.html">
+    <input type="search" placeholder="休闲/运动鞋">
+    </a>
+  </label>
+  <a class="button button-icon icon ion-ios-chatbubble-outline" href="tmpl/member/chat_list.html"></a>
+</div>
+<div class="scroll-content has-header has-footer overflow-scroll">
+  <div class="adv_list" id="main-container1"></div>
+  <!--   <div class="wd-banner">
+      <ion-slide-box active-slide="bannerSlide" does-continue="true" auto-play="true" slide-interval="3000">
+        <ion-slide><a href="#"><img src="images/b_01.jpg"/></a></ion-slide>
+        <ion-slide><a href="#"><img src="images/b_02.jpg"/></a></ion-slide>
+        <ion-slide><a href="#"><img src="images/b_03.jpg"/></a></ion-slide>
+        <ion-slide><a href="#"><img src="images/b_04.jpg"/></a></ion-slide>
+      </ion-slide-box>
+    </div> -->
+  <div class="wd-meun">
+      <ul>
+        <li><a href="/wap/special.html?special_id=2"><img src="images/m_011.png"/><span>每周新品</span></a></li>
+        <li><a href="/wap/tmpl/province.html"><img src="images/m_022.png"/><span>省旗舰店</span></a></li>
+        <li><a onclick="check();"><img src="images/m_03.png"/><span>限时抢购</span></a></li>
+        <li><a href="tmpl/product_first_categroy.html"><img src="images/m_04.png"/><span>全部分类</span></a></li>
+        <li><a href="/wap/special.html?special_id=1"><img src="images/m_05.png"/><span>新人礼包</span></a></li>
+        <li><a href="/wap/tmpl/product_list.html?gc_id=10351"><img src="images/m_06.png"/><span>会员专享</span></a></li>
+        <li><a href="/wap/tmpl/invitation.html"><img src="images/m_07.png"/><span>邀请好友</span></a></li>
+        <li><a href="/wap/tmpl/member/member_asset.html"><img src="images/m_08.png"/><span>个人理财</span></a></li>
+      </ul>
+  </div>
+   <div class="nctouch-home-layout" id="main-container2"></div>
+
+
+<script type="text/html" id="adv_list">
+		<div class="swipe-wrap">
+		<% for (var i in item) { %>
+			<div class="item" style='float:left'>
+				<a href="<%= item[i].url %>">
+					<img style='width:100%' src="<%= item[i].image %>" alt="">
+				</a>
+			</div>
+		<% } %>
+		</div>
+</script>
+<script type="text/html" id="home1">
+  <div class="wd-rush">
+  <% if (title) { %>
+    <div class="tit-bar"><%= title %></div>
+  <% } %>
+    <div class="item-pic">
+      <a href="<%= url %>">
+        <img src="<%= image %>" alt="">
+      </a>
+    </div>
+  </div>
+</script> 
+<script type="text/html" id="home2">
+	<div class="wd-topline">
+	<p><img src="images/topline.png"/>每日10点、15点上新</p>
+	<% if (title) { %>
+		<div class="tit-bar"><%= title %></div>
+	<% } %>
+		<ul >
+			<li>
+				<a href="<%= square_url %>"><img src="<%= square_image %>" alt="" ></a>
+			</li>
+			<li>
+				<a href="<%= rectangle1_url %>"><img src="<%= rectangle1_image %>" alt="" ></a>
+			</li>
+			<li>
+				<a href="<%= rectangle2_url %>"><img src="<%= rectangle2_image %>" alt="" ></a>
+			</li>
+		</ul>
+	</div>
+</script>
+
+<script type="text/html" id="home3">
+  <div class="wd-choice">
+ 
+    <h3>&bull; 每日精选 &bull;</h3>
+    <ul>
+    <% for (var i in item) { %>
+      <li>
+        <a href="<%= item[i].url %>"><img src="<%= item[i].image %>" alt=""></a>
+      </li>
+    <% } %>
+    </ul>
+  </div>
+</script> 
+<script type="text/html" id="home4">
+  <div class="nctouch-home-block">
+  <% if (title) { %>
+    <div class="tit-bar"><%= title %></div>
+  <% } %>
+    <ul class="item-pic-l2-r1">
+      <li>
+        <a href="<%= rectangle1_url %>"><img src="<%= rectangle1_image %>" alt=""></a>
+      </li>
+      <li>
+        <a href="<%= rectangle2_url %>"><img src="<%= rectangle2_image %>" alt=""></a>
+      </li>
+      <li>
+        <a href="<%= square_url %>"><img src="<%= square_image %>" alt=""></a>
+      </li>
+    </ul>
+  </div>
+</script>
+ 
+<script type="text/html" id="goods">
+  <div class="wd-rush">
+  <ion-slide-box active-slide="floneSlide" does-continue="true" auto-play="true" slide-interval="6000" show-pager="false">
+      <ion-slide>
+        <ul>
+        <% for (var i in item) { %>
+          <li>
+            <a href="tmpl/product_detail.html?goods_id=<%= item[i].goods_id %>">
+              <img src="<%= item[i].goods_image %>" alt="">
+              <span><%= item[i].goods_name %></span>
+              <p>￥<em><%= item[i].goods_promotion_price %></em></em>+<i class="icon ion-heart"></i>520</p>
+              
+            </a>
+          </li>
+        <% } %>
+    </ul>
+   </ion-slide>
+  </ion-slide-box>
+  </div> 
+</script> 
+<script type="text/html" id="goods1">
+  <div class="nctouch-home-block item-goods">
+  <% if (title) { %>
+    <div class="tit-bar"><%= title %></div>
+  <% } %>
+    <ul class="goods-list">
+    <% for (var i in item) { %>
+      <li>
+      <i><div>打折</div></i>
+      <a href="tmpl/product_detail.html?goods_id=<%= item[i].goods_id %>">
+      <div class="goods-pic"><img src="<%= item[i].goods_image %>" alt=""></div>
+          <dl class="goods-info">
+            <dt class="goods-name"><%= item[i].goods_name %></dt>
+            <dd class="goods-price">￥<em><%= item[i].goods_promotion_price %></em><i class="list-price">￥<%= item[i].goods_price %></i></dd>
+          </dl>
+      </a>
+        </li>
+      
+    <% } %>
+    </ul>
+  </div>
+</script>
+
+<script type="text/html" id="goods2">
+  <div class="wd-rush">
+      <h3>&bull; 限时抢购专区 &bull;</h3>
+    <ion-slide-box active-slide="rushSlide" does-continue="true" auto-play="true" slide-interval="6000" show-pager="false">
+      <ion-slide>
+        <ul>
+    <% for (var i in item) { %>
+      <li>
+      <div><b>12:00</b><small>即将开始</small></div>
+      <a href="tmpl/product_detail.html?goods_id=<%= item[i].goods_id %>"><img src="<%= item[i].goods_image %>" alt="">
+      <span><%= item[i].goods_name %></span>
+            <p>￥<em><%= item[i].goods_promotion_price %></em></p>
+      </a>
+        </li>
+      
+    <% } %>
+    </ul>
+  </div>
+</script>
+</div>
+<!-- <div class="fix-block-r"> <a href="javascript:void(0);" class="gotop-btn gotop hide" id="goTopBtn"><i></i></a> </div> -->
+<!-- <footer id="footer"></footer> -->
+<!-- <div id="footer" class="bar bar-footer bar-assertive wd-footer"></div> -->
+<div class="bar bar-footer bar-assertive wd-footer">
+  <dl>
+    <dt><a href="/wap"><img src="images/f_01.png"><span>首页</span></a></dt>
+    <dt><a href="tmpl/product_first_categroy.html"><img src="images/f_02.png"><span>分类</span></a></dt>
+    <dd><a href="tmpl/member/member.html"><img src="images/f_logo.png"></a></dd>
+    <dt><a href="/wap/tmpl/cart_list.html"><img src="images/f_03.png"><span>购物车</span></a></dt>
+    <dt><a href="/wap/tmpl/member/order_list.html?data-state=state_new"><img src="images/f_04.png"><span>订单</span></a></dt>
+  </dl>
+</div>
+<script type='text/javascript'>
+ function check(){
+   alert('暂未开放！！！');
+ }
+</script>
+<script type="text/javascript" src="js/config.js"></script> 
+<script type="text/javascript" src="js/zepto.min.js"></script> 
+<script type="text/javascript" src="js/template.js"></script> 
+<script type="text/javascript" src="js/common.js"></script> 
+<script type="text/javascript" src="js/swipe.js"></script> 
+<script type="text/javascript" src="js/index.js"></script> 
+<script type="text/javascript" src="js/tmpl/footer.js"></script> 
+<script type="text/javascript" src="js/addtohomescreen.js"></script> 
+
+</body>
+</html>

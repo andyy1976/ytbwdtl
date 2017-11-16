@@ -1,0 +1,28 @@
+﻿div:after{ content: ""; display: block; clear: both;}
+div:before{ content: ""; display: table;}
+img{ vertical-align:middle;}
+a{ text-decoration:none;}
+
+/*首页头部*/
+.wd-header{ padding:0px;}
+.wd-header .placeholder-icon{ padding-right:0; font-size:1rem;}
+.wd-header .item-input-wrapper~.button{ margin-left:0;}
+.wd-header img{ width:1.7rem; float:right; margin:0 10px;}
+.bar-light{ border-bottom:1px solid #d8d8d8;}
+.bar-stable{ border-bottom:1px solid #c1c1c1;}
+.wd-header .button.button-clear{ font-size:14px;}
+
+/*banner*/
+.wd-banner img,.wd-topline li img,.wd-rush img,.wd-choice img,.wd-ad img,.wd-recommend dt img,.wd-guide-b img,.wd-login li,.wd-licai img,.wd-licai-ad img,.wd-huiy dt,.wd-huiy img,.wd-twoji img{ width:100%; float:left;}
+
+/*底部*/
+.wd-footer dl{ width:100%; margin-bottom:0;}
+.wd-footer dt{ width:12.7%; float:left; margin:0 1% 0 5%;}
+.wd-footer dt img { width:80%; float:left; margin-left:10%;}
+.wd-footer dt a{ color:#fff;}
+.wd-footer dt span{ width:100%; float:left; font-size:.7rem; font-weight:normal; text-align:center;}
+.wd-footer dd{ width:14%; float:left; margin:0 3% 0 8%;}
+.wd-footer dd img { width:90%; float:left; margin-left:5%;}
+
+.error-tips { display: none; background-color: rgba(255,255,255,0.95); border: solid 1px #CCC; padding: 0.8rem 0.6rem; text-align: center; border-radius: 0.2rem; position: fixed; z-index: 9999; top: 40%; left: 25%; right: 25%; color: #333; font-size: 0.7rem; line-height: 1rem; box-shadow: 0 0 1rem rgba(0,0,0,0.15);}
+.error-tips p { font-size: 0.7rem; line-height: 1rem; color: #333; }

@@ -1,0 +1,96 @@
+﻿/*分类页面*/
+.wd-recommend{ background:#fff;}
+.wd-recommend h3{ width: 100%; float: left; text-align:center; line-height:4rem; font-weight:bold; font-size:1.2rem; margin:0;letter-spacing:1px;}
+.wd-recommend ul{ width: 100%; float: left;}
+.wd-recommend li{ width:33%; float:left; border-right:1px solid #efefef; border-bottom:1px solid #efefef;}
+.wd-recommend a{ color:#333;}
+.wd-recommend li img{ width:70%; float:left; margin-left:15%;}
+.wd-recommend li span{ width:100%; line-height:2rem; float:left; font-size:.9rem; text-align:center;}
+.wd-recommend dl{ width:100%; float:left; margin-bottom:13px;}
+.wd-recommend dl dd{ margin-top:3px; float:left;}
+.wd-recommend dl dd a{ padding:5px 10px; float:left; border:1px solid #d3d3d3; margin:10px 0 0 10px;}
+
+/*登录注册协议*/
+.wd-guide{ width:100%; height:100%; background:url(../images/login.jpg) no-repeat; background-size:100% 100%;}
+.wd-guide-a{width:90%; height:30%; margin:5% 5% 0 5%;}
+.wd-guide-a a{ color:#666; font-size:4rem;}
+.wd-guide-b{width:84%; height:35%; margin-left:8%;}
+.wd-guide-c{width:84%; margin-left:8%;}
+.wd-guide-c .button-assertive{ border:none;}
+.wd-guide-c .button-dark{ border:none; background:#272727;}
+
+.wd-login{ width:90%; margin:0 0 0 5%;}
+.wd-login li a{color:#bb8f3c; text-decoration:underline;}
+.wd-login .item{ border:none; border-bottom:1px solid #ddd; margin:0;}
+.wd-login .item-input{ padding:10px;}
+.wd-login .button{ border-radius:0;}
+.wd-login .item-checkbox{ font-size:14px; padding-left:40px; float:left; border-bottom:none;}
+.wd-login .checkbox input{ width:20px; height:20px; margin-top:5px;}
+ 
+.wd-agreement{ width:92%; margin:15px 4%;}
+.wd-agreement h4{ font-weight:bold; font-size:16px;}
+.wd-agreement p{ line-height:1.7rem; font-size:15px; color:#444;}
+
+/*项目列表*/
+.wd-jiemu-b img{ width:100%;}
+.wd-jiemu{ width:95%; float:left; margin-left:2%;}
+.wd-jiemu li{ width:100%; float:left; border-bottom:1px solid #eee; padding:3% 0;}
+.wd-jiemu li a{ width:100%; float:left;}
+.wd-jiemu li dl{ width:100%;}
+.wd-jiemu li dl dt{ width:40%; float:left;}
+.wd-jiemu li dl dt img{ width:100%;}
+.wd-jiemu li dl dd{ width:56%; float:right;}
+.wd-jiemu li dl dd h4{ height:1.8rem; line-height:1.8rem; font-size:.9rem; color:#333; margin:0; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.wd-jiemu li dl dd p{ height:1.5rem; line-height:1.5rem; font-size:.8rem; color:#999; margin:0; overflow:hidden;}
+.wd-jiemu li dl dd p:last-child{ color:#090; font-size:.9rem;}
+.wd-jiemu li dl dd p em{ color:#333;}
+.wd-jiemu li dl dd p i{ color:#f00;}
+.wd-jiemu li dl dd p.jiemu_red{ color:#f00; font-size:.9rem;}
+
+
+/*会员专享*/
+.wd-huiy dd{ width:100%; float:left; background:#bb8f3c; padding:.7rem 0; color:#d2af78;}
+.wd-huiy dd>a{ width:100%; float:left; text-align:center; color:#fff;}
+.wd-huiy dd>a b{ font-size:20px; line-height:30px; font-weight:normal;letter-spacing:1px;}
+.wd-huiy dd p{ width:90%; margin-left:5%; line-height:28px; font-size:16px; margin-bottom:0;}
+.wd-huiy dd p a{ float:right; background:#d2af78; color:#000; padding:0 1rem;}
+
+.wd-twoji h3{ background:#e4e4e4; color:#2f2f2f; text-align:center; line-height:2.6rem; font-weight:bold; font-size:1rem; letter-spacing:1px; margin:0;}
+.wd-twoji li{ width:49%; float:left; border-right:1px solid #e8e8e8; border-top:1px solid #e8e8e8;}
+.wd-twoji li a{ width:90%; color:#333; float:left; text-align:center; font-size:.8rem; margin:5% 5% 3%;}
+.wd-twoji li img{ width:7rem; height:7rem;float:none;}
+.wd-twoji li span{ width:100%; height:1.5rem; line-height:1.5rem; float:left; overflow:hidden;}
+.wd-twoji li p{ width:100%; height:1.2rem; float:left; color:#bb8f3c; overflow:hidden;}
+
+/*新人礼包*/
+.wd-sanji h3{color:#333; text-align:center; line-height:2.6rem; font-weight:bold; font-size:1rem; letter-spacing:1px; margin:0;}
+.wd-sanji dl{ width:100%; height:auto; float:left; border-top:1px solid #e8e8e8; padding:4% 0; margin-bottom:0;}
+.wd-sanji dl a{ color:#333; font-size:.8rem;}
+.wd-sanji dt{ width:40%; float:left;}
+.wd-sanji dt img{ width:80%; float:left; margin-left:10%;}
+.wd-sanji dd{ width:55%; float:right; margin-right:5%;}
+.wd-sanji dd span{ width:100%; height:1.5rem; line-height:1.5rem; font-size:1rem; float:left; overflow:hidden;}
+.wd-sanji dd em{width:100%; height:1.5rem; line-height:1.5rem; float:left; color:#999; overflow:hidden;}
+.wd-sanji dd p{ width:100%; height:1.5rem; float:left; color:#bb8f3c; font-size:1rem; overflow:hidden; margin-bottom:0;}
+.wd-sanji dd small{line-height:1.5rem; float:left; font-size:.8rem; color:#fff; background:#bb8f3c; padding:0 .8rem; border-radius:13px;}
+
+/*邀请好友*/
+.wd-yaoqing h3{color:#555; text-align:center; line-height:3rem;font-size:1rem; letter-spacing:1px; margin:0;}
+.wd-yaoqing span{ width:40%; line-height:2.5rem; background:#efefef; text-align:center; color:#000; font-size:1.5rem; float:left; margin-left:30%;}
+.wd-yaoqing p{ width:80%; float:left; margin:1.2rem 0 0 10%; color:#666;}
+.wd-yaoqing p a{ width:100%; float:left; line-height:3rem; text-align:center; color:#fff; font-size:1.4rem; background:#bb8f3c;letter-spacing:2px;}
+
+/*今日头条列表页面样式*/
+.line_tj{ border-bottom:1px solid #efefef;}
+.line_tj dl{ width:94%; float:left; margin:0 3% 3% 3%;}
+.line_tj dl a{ color:#333;}
+.line_tj dl dt{ width:100%; height:40px; font-size:15px; line-height:40px; float:left; overflow:hidden; font-weight:normal;}
+.line_tj dl dd{ width:100%; float:left;}
+.line_tj dl dd img{ width:100%; float:left;}
+
+.line_list{ border-bottom:1px solid #efefef;}
+.line_list dl{ width:100%; float:left; padding:3%; border-bottom:1px solid #efefef; box-sizing:border-box; margin:0;}
+.line_list dl a{ color:#333;}
+.line_list dl dt{ width:65%; height:66px; line-height:22px; float:left; font-weight:normal; font-size:15px; overflow:hidden;}
+.line_list dl dd{ width:32%; float:right;}
+.line_list dl dd img{ width:100%; height:66px; float:left;}

@@ -1,0 +1,409 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="format-detection" content="telephone=no"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1" />
+<title>我的商城</title>
+<link rel="stylesheet" type="text/css" href="../../css/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/pan_footer1.css">
+<link rel="stylesheet" type="text/css" href="../../css/nctouch_member.css">
+<style type="text/css">
+  i.cc-06 { background-image: url(../../images/xin_3333.png); background-size: cover;}
+  i.cc-07 { background-image: url(../../images/xin_4444.png); background-size: cover;}
+  i.cc-10 { background-image: url(../../images/xin_1111.png); background-size: cover;}
+/* css 重置 */
+/*  body, p, input, h1, h2, h3, h4, h5, h6, ul, li, dl, dt, dd, form { margin: 0; padding: 0; list-style: none; vertical-align: middle; font-weight:normal; }
+  img { border:0; margin: 0; padding: 0;   }
+  body { color: #000; -webkit-user-select: none; -webkit-text-size-adjust: none; font:normal 16px/150% "微软雅黑", helvetica, arial; text-align:left;   }
+  header, section, footer { display: block; margin: 0; padding: 0 }
+  a{text-decoration:none;color:#000;}
+  
+  body{ background:#f4f4f4;  }*/
+  /* 头部 */
+/*  header{  background:#F5AB38; padding-bottom:10px; border-bottom:3px solid #CF7F21;  }
+  header .logo{ padding:10px 0 5px 10px;  color:#fff;  font-style:italic; font-weight:bold; text-shadow:1px 1px 1px #965e18; font-size:12px; }
+  header .logo a{ font-size:30px; line-height:30px; color:#fff;  }*/
+
+  /* 尾部 */
+/*  footer{ text-align:center; padding:10px 0; line-height:18px; font-size:14px; }*/
+
+  /* 内容 */
+  #content{ padding:10px 0; background:#fff;  }
+  .path{ padding:0 0 5px 5px;   }
+
+  /* 效果导航 */
+  .effectNav{ margin-top:10px;  border-top:1px solid #666; background:#999; padding-bottom:10px;  }
+  .effectNav h3{ padding:0 10px; background:#ddd; background:#333; color:#fff;  }
+  .effectNav ul{ font-size:0;  }
+  .effectNav li{ display:inline-block; font-size:12px; padding:0 10px; margin:10px 0 0 10px;  background:#cdcdcd;  }
+  .effectNav li.new{ background:#fce8cd;  }
+
+
+  /* 本例子css -------------------------------------- */
+  .slideBox{ position:relative; overflow:hidden; margin:10px auto;  max-width:560px;/* 设置焦点图最大宽度 */ }
+  .slideBox .hd{ position:absolute; height:28px; line-height:28px; bottom:0; right:0; z-index:1; }
+  .slideBox .hd li{ display:inline-block; width:5px; height:5px; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px; background:#333; text-indent:-9999px; overflow:hidden; margin:0 6px;   }
+  .slideBox .hd li.on{ background:#fff;  }
+  .slideBox .bd{ position:relative; z-index:0; }
+  .slideBox .bd li{ position:relative; text-align:center;  }
+  .slideBox .bd li img{ background:url(images/loading.gif) center center no-repeat;  vertical-align:top; width:100%;/* 图片宽度100%，达到自适应效果 */}
+  .slideBox .bd li a{ -webkit-tap-highlight-color:rgba(0,0,0,0);  }  /* 去掉链接触摸高亮 */
+  .slideBox .bd li .tit{ display:block; width:100%;  position:absolute; bottom:0; text-indent:10px; height:28px; line-height:28px; background:url(images/focusBg.png) repeat-x; color:#fff;  text-align:left;  }
+  .ul-main img{
+    width: 560px;
+
+  }
+.dm_my{ background:#fff; padding:1rem 0;}
+.dm_my dt{ width:100%; text-align:center; float:left;}
+.dm_my dt img{ width:4rem; height:4rem; border-radius:50%;}
+.dm_my dd{ width:100%; text-align:center; float:left; color:#666; font-size: .75rem;}
+.dm_my dd.my_01{ background:url(/wap/images/jxhy.png) no-repeat center center; background-size:95px 22px; color:#bb8f3c; line-height:22px; margin-top:.5rem;}
+.dm_my dd.my_02{ color:#333; font-weight:bold; height:1.2rem; margin-top:.4rem;}
+</style>
+</head>
+<body>
+<header id="header" class="transparent">
+  <div class="header-wrap">
+    <div class="header-l"> <a href="member_account.html"> <i class="set"></i> </a> </div>
+    <div class="header-title">
+      <h1>我的商城</h1>
+    </div>
+    <div class="header-r"> <a id="header-nav" href="javascript:void(0);"><i class="more"></i><sup></sup></a> </div>
+  </div>
+  <div class="nctouch-nav-layout">
+    <div class="nctouch-nav-menu"> <span class="arrow"></span>
+      <ul>
+        <li><a href="../product_first_categroy.html"><i class="fl"></i>分类</a></li>
+        
+         <li><a href="../search.html"><i class="search"></i>搜索</a></li>
+         <li><a href="member_feedback.html"><i class="kf"></i>客服</a></li>
+        <li><a href="../article_list.html?ac_id=2"><i class="help"></i>帮助<sup></sup></a></li>
+        <li><a id="logoutbtn" href="javascript:void(0);"><i class="tc"></i>退出</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+<div class="scroller-body">
+  <div class="scroller-box">
+    <div class="member-top"></div>
+    <div class="member-center">
+      <dl class="mt5">
+        <dt><a href="/wap/tmpl/cart_list.html">
+          <h3><i class="mc-11"></i>我的购物车<input type="hidden" id="map_id" value=""/></h3>
+          <h5>查看全部<i class="arrow-r"></i></h5>
+          </a></dt>
+        <dd>
+          
+        </dd>
+      </dl>
+      <dl class="mt5">
+        <dt><a href="order_list.html">
+          <h3><i class="mc-01"></i>我的订单<input type="hidden" id="map_id" value=""/></h3>
+          <h5>查看全部订单<i class="arrow-r"></i></h5>
+          </a></dt>
+        <dd>
+          <ul id="order_ul">
+          </ul>
+        </dd>
+      </dl>
+      <!-- <dl class="mt5 oo"> -->
+      <div id="slideBox" class="slideBox">
+          <div class="bd">
+            <ul class="ul-main">
+            </ul>
+          </div>
+          <div class="hd">
+          <ul></ul>
+        </div>
+      </div>
+      <!-- </dl> -->
+      <dl class="mt5" style="margin-top: 370px">
+        <dt><a href="member_asset.html">
+          <h3><i class="mc-02"></i>个人理财</h3>
+          <h5>查看全部财产<i class="arrow-r"></i></h5>
+          </a></dt>
+        <dd>
+          <ul id="asset_ul">
+          </ul>
+        </dd>
+      </dl>
+      <dl class="mt5">
+        <dt><a>
+          <h3><i class="mc-08"></i>我的团队</h3>        
+          </a></dt>
+        <dd>
+          <ul id="team_ul">
+          </ul>
+        </dd>
+      </dl>
+      <dl class="mt5">
+        <dt><a>
+          <h3><i class="mc-13"></i>我的收藏</h3>        
+          </a></dt>
+        <dd>
+          <ul id="shoucan_ul">
+          </ul>
+        </dd>
+      </dl>
+      <dl class="mt5">
+        <dt><a href="pointorder_list.html">
+          <h3><i class="mc-05"></i>礼品兑换记录</h3>
+          <h5><i class="arrow-r"></i></h5>
+          </a></dt>
+      </dl>
+      <dl class="mt5">
+        <dt><a href="sweepstakesorder_list.html">
+          <h3><i class="mc-05"></i>中奖列表记录</h3>
+          <h5><i class="arrow-r"></i></h5>
+          </a></dt>
+      </dl>
+      <dl class="mt5" id="cs1" style="display: none;">
+        <dt><a href="sign_online_step1.html">
+          <h3><i class="mc-10"></i>会员内推升级</h3>
+          <h5><i class="arrow-r"></i></h5>
+          </a></dt>
+      </dl>
+      <dl class="mt5" id="cs2" style="display: none;">
+        <dt><a href="sign_online_list.html">
+          <h3><i class="mc-09"></i>会员内推升级结果查询</h3>
+          <h5><i class="arrow-r"></i></h5>
+          </a></dt>
+      </dl>
+<!--       <dl class="mt5">
+        <dt><a href="member_invite.html">
+          <h3><i class="mc-05"></i>云豆兑换</h3>
+          <h5>直接兑换云豆，省去提现环节<i class="arrow-r"></i></h5>
+          </a></dt>
+      </dl> -->
+      <dl class="mt5">
+
+        <dt><a href="free_register.html">
+
+          <h3><i class="mc-06"></i>免费注册</h3>
+
+          <h5><i class="arrow-r"></i></h5>
+
+          </a></dt>
+
+      </dl>
+      <dl class="mt5">
+
+        <dt><a href="member_registerfx.html">
+
+          <h3><i class="mc-07"></i>分销奖金注册会员</h3>
+
+          <h5><i class="arrow-r"></i></h5>
+
+          </a></dt>
+
+      </dl> 
+<!--       <dl class="mt5">
+
+        <dt><a href="give_point.html">
+
+          <h3><i class="mc-05"></i>云豆互转</h3>
+
+          <h5>直接转账给好友，方便快捷<i class="arrow-r"></i></h5>
+
+          </a></dt>
+
+      </dl> -->
+      <dl class="mt5" id='points' style="display:none;">
+
+        <dt><a href="give_port.html">
+
+          <h3><i class="mc-05"></i>云豆互转</h3>
+
+          <h5>直接转账给好友，方便快捷<i class="arrow-r"></i></h5>
+
+          </a></dt>
+
+      </dl>
+    <!--   <dl class="mt5">
+
+        <dt><a href="member_give_frend.html">
+
+          <h3><i class="mc-06"></i>站内转账</h3>
+
+          <h5>直接转账给好友，方便快捷<i class="arrow-r"></i></h5>
+
+          </a></dt>
+
+      </dl> -->
+   
+      <dl class="mt5">
+        <dt><a href="member_tixian.html">
+          <h3><i class="mc-12"></i>余额提现</h3>
+          <h5><i class="arrow-r"></i></h5>
+          </a></dt>
+      </dl>
+
+        <dl class="mt5" id='dm' style="display:none">
+        <dt><a href="dimian_store_list.html">
+          <h3><i class="mc-05"></i>地面商家消费记录</h3>
+          <h5><i class="arrow-r"></i></h5>
+          </a></dt>
+      </dl>      
+       <dl class="mt5">
+        <dt><a href="member_account.html">
+          <h3><i class="mc-13"></i>用户设置</h3>
+          <h5><i class="arrow-r"></i></h5>
+          </a></dt>
+      </dl>
+      <dl class="mt5">
+        <dt><a href="address_list.html">
+          <h3><i class="mc-03"></i>收货地址管理</h3>
+          <h5><i class="arrow-r"></i></h5>
+          </a></dt>
+      </dl>
+    </div>
+  </div>
+  <footer id="footer"></footer>
+</div>
+
+
+  <style type="text/css">
+  #memberAvatarWrap {
+    display: none;
+  }
+  .goodtxt, .goodtxt .backdrop {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  }
+  .goodtxt {
+     z-index: 100;
+  }
+  .goodtxt .backdrop {
+    background:#e9ebf1; opacity: .87;
+    z-index: -1;
+  }
+  .goodtxt ul{
+    width:100%; margin: 30% 0 0; padding:0; padding-bottom:15px; overflow: hidden;
+    
+  }
+  .goodtxt ul li{ width:20%; float:left; margin:1rem 0 0 4%; list-style:none;}
+  .goodtxt ul li img{ width:100%; float:left; border-radius:50%; border:2px solid #fff; box-sizing:border-box;}
+  .goodtxt ul img.tx_cur { border:2px solid #aa374a;}
+  .goodtxt span{ width:100%; float:left;}
+  .goodtxt span a{
+    width:80%; 
+    float:left; 
+    margin:1.2rem 0 0 10%;
+    color:#fff; 
+    font-size:1rem; 
+    text-decoration:none; 
+    border-radius:5px; 
+    line-height:2.2rem; 
+    background:#aa374a;
+    text-align:center;
+  }
+  </style>
+
+  <div id="memberAvatarWrap" class="goodtxt">
+    <ul id="memberAvatarList">
+      <li><a href="javascript:"><img v="1" src="/data/upload/shop/avatar/tx_01.jpg"/></a></li>
+      <li><a href="javascript:"><img v="2" src="/data/upload/shop/avatar/tx_02.jpg"/></a></li>
+      <li><a href="javascript:"><img v="3" src="/data/upload/shop/avatar/tx_03.jpg"/></a></li>
+      <li><a href="javascript:"><img v="4" src="/data/upload/shop/avatar/tx_04.jpg"/></a></li>
+      <li><a href="javascript:"><img v="5" src="/data/upload/shop/avatar/tx_05.jpg"/></a></li>
+      <li><a href="javascript:"><img v="6" src="/data/upload/shop/avatar/tx_06.jpg"/></a></li>
+      <li><a href="javascript:"><img v="7" src="/data/upload/shop/avatar/tx_07.jpg"/></a></li>
+      <li><a href="javascript:"><img v="8" src="/data/upload/shop/avatar/tx_08.jpg"/></a></li>
+    </ul>
+    <!-- <span><a id="avatarSubmitBtn" href="javascript:">确定头像</a></span> -->
+    <div class="backdrop"></div>
+  </div>
+<script> var navigate_id ="5";</script>
+<script type="text/javascript" src="../../js/config.js"></script> 
+<script type="text/javascript" src="../../js/zepto.min.js"></script> 
+<script type="text/javascript" src="../../js/common.js"></script> 
+<script type="text/javascript" src="../../js/tmpl/footer.js"></script> 
+<script type="text/javascript" src="../../js/tmpl/member.js?123"></script>
+<script type="text/javascript" src="../../js/tmpl/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="../../js/TouchSlide.1.1.js"></script>
+<script type="text/javascript">
+;(function(doc){ var avatarWrap = doc.getElementById('memberAvatarWrap')
+  var avatarList = doc.getElementById('memberAvatarList')
+
+  $.getJSON(ApiUrl + '/index.php?act=index&op=rec&rec_id=5', function(result) {
+      var data =result.datas;
+      if(data){
+        for(var i=0;i<data.body.length;i++){
+           var  src="<li>"
+                  +"<a class='pic' href='"+data.body[i]['url']+"'><img src='../../../data/upload/"+data.body[i]['title']+"' /></a>"
+                  // +"<a class='tit' href=''>墨西哥教师罢工 与警察激烈冲突</a>"
+                  +"</li>";
+          $(".ul-main").append(src);
+        }
+
+        TouchSlide({ 
+          slideCell:"#slideBox",
+          titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+          mainCell:".bd ul", 
+          effect:"leftLoop", 
+          autoPage:true,//自动分页
+          autoPlay:true //自动播放
+        });
+
+        $(".hd ul").hide();
+
+      }
+  });
+  avatarList.onclick = function(e){
+
+    e = e || win.event
+    var el = e.target||e.srcElement
+
+    if (el.tagName.toLowerCase()==='img') {
+      
+      $('#memberAvatarList img').removeClass('tx_cur')
+      el.className = 'tx_cur'
+
+      var number = el.getAttribute('v')
+      var img = 'tx_0'+number+'.jpg'
+      var url = '/mobile/index.php?act=member_avatar&op=index&mobile=1&img=' + img
+
+      var avatarImg = doc.getElementById('user-avatar-img')
+      avatarImg.setAttribute('src', '/data/upload/shop/avatar/' + img)
+      avatarWrap.style.display = 'none'
+
+
+      if (getQueryString('key') != '') {
+          var key = getQueryString('key');
+          var username = getQueryString('username');
+          addCookie('key', key);
+          addCookie('username', username);
+      } else {
+          var key = getCookie('key');
+      }
+
+      $.ajax({
+          type:'post',
+          url: url,
+          data:{key:key},
+          success: function(txt){
+            console.log(txt)
+          }
+      });
+
+      return false
+    }
+  }
+
+})(document)
+
+function showAvatarList(imgElem){
+  // var wrap = doc.getElementById('memberAvatarWrap')
+  $('#memberAvatarWrap').show()
+}
+
+</script>
+
+</body>
+</html>

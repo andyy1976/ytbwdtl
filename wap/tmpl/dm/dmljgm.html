@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>线下商城</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<link href="/wap/dmtmpl/css/style.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="/wap/dmtmpl/js/jquery-1.11.3.js"></script>
+<script src="/wap/dmtmpl/js/meishi.js"/></script>
+<script src="/wap/dmtmpl/js/TouchSlide.1.1.js"></script>
+<script type="text/javascript" src="/wap/js/bsl.js"></script>
+</head>
+
+<body>
+<div id='allmessage'>
+<script type="text/html" id="allmessage-script">
+<div class="dm_pu_top">
+	<div class="dm_pu_tb">
+    	<dl>
+        	<dt><img src="/wap/dmtmpl/img/dm_tb4_h.png"/></dt>
+            <dd><img src="/wap/dmtmpl/img/dm_tb2_h.png" id="fenxiang"/><img src="/wap/dmtmpl/img/dm_tb3_h.png"/></dd>
+        </dl>
+    </div>
+    <div class="lj_yis"><span>已售 <%=datas.count%></span></div>
+    <div class="lj_b" id='lj_b'><img src="<%=datas.goods_image_url%>"/></div>
+</div>
+<div class="lj_maid">
+	<ul>
+    	<li><span><%=datas.goods_name%></span><a href="dm_addBank.html?goods_id=<%=datas.goods_id%>">立即购买</a></li>
+        <li><small>¥</small><b><%=datas.goods_price%></b><img src="/wap/dmtmpl/img/dm_s.png"/><%=datas.yundou%>云豆</li>
+        <li><img src="/wap/dmtmpl/img/dm_j.png"/><u>随时退</u><img src="/wap/dmtmpl/img/dm_j.png"/><u>有效期内退</u></li>
+    </ul>
+</div>
+<div class="lj_add"><a href="dmstore_details.html?store_id=<%=datas.store_id%>"><%=datas.store_name%>：<span><%=datas.address%></span></a></div>
+
+</div>
+<div class="lj_pingj">
+	<dl>
+    	<dt>
+        <% if(datas.comment.good_star==5){%>
+        <img src="/wap/dmtmpl/img/x_l.png"/><img src="/wap/dmtmpl/img/x_l.png"/><img src="/wap/dmtmpl/img/x_l.png"/><img src="/wap/dmtmpl/img/x_l.png"/><img src="/wap/dmtmpl/img/x_l.png"/><%}else if(datas.comment.good_star==4){%>
+         <img src="/wap/dmtmpl/img/x_l.png"/><img src="/wap/dmtmpl/img/x_l.png"/><img src="/wap/dmtmpl/img/x_l.png"/><img src="/wap/dmtmpl/img/x_l.png"/><img src="/wap/dmtmpl/img/x_h.png"/>
+         <%}else if(datas.comment.good_star==3){%>
+         <img src="/wap/dmtmpl/img/x_l.png"/><img src="/wap/dmtmpl/img/x_l.png"/><img src="/wap/dmtmpl/img/x_l.png"/><img src="/wap/dmtmpl/img/x_h.png"/><img src="/wap/dmtmpl/img/x_h.png"/>
+         <%}else if(datas.comment.good_star==2){%>
+          <img src="/wap/dmtmpl/img/x_l.png"/><img src="/wap/dmtmpl/img/x_l.png"/><img src="/wap/dmtmpl/img/x_h.png"/><img src="/wap/dmtmpl/img/x_h.png"/><img src="/wap/dmtmpl/img/x_h.png"/>
+          <%}else if(datas.comment.good_star==1){%>
+           <img src="/wap/dmtmpl/img/x_h.png"/><img src="/wap/dmtmpl/img/x_h.png"/><img src="/wap/dmtmpl/img/x_h.png"/><img src="/wap/dmtmpl/img/x_h.png"/><img src="/wap/dmtmpl/img/x_h.png"/>
+         <%}%>
+        <%=datas.comment.good_star %>分</dt>
+        <dd><a href="#"><%=datas.comment.all %>人评价<img src="/wap/dmtmpl/img/dm_y.png"/></a></dd>
+    </dl>
+    <p>
+	<% if(datas.ncomment.length>0){%>
+	<% for(var i = 0; i< datas.ncomment.length; i++){ %>
+	<a><%=datas.ncomment[i].geval_content %></a>
+	<% }} %>
+	</p>
+</div>
+</script>
+</div>
+<div class="dm_suanb dm_suanb2">
+	<h3>其他推荐</h3>
+    <ul id='otherdz'>
+    <script type="text/html" id="otherdz-script">
+	 <% if(datas.length>0){%>
+	   <% for(var i=0; i<datas.length; i++){%>
+	   <li><a href="dmgoods_details.html?goods_id=<%=datas[i].goods_id %>"><img src="<%=datas[i].goods_image_url %>"/><span><%=datas[i].goods_name %></span><span>&yen;<b><%=datas[i].goods_price %></b></span></a></li>
+	   <% } %>
+	 <% }else{ %>
+	 <li><a>暂无推荐产品</a></li>
+	 <% } %>
+      </script>
+    </ul>
+</div>
+<div class="lj_spxq" id='ljspxq'></div>
+<div id="goodcover"></div>
+<div id="dm_fenx">
+	<h3>—————<span>分享到</span>—————</h3>
+	<ul>
+    	<li><a href="#"><img src="/wap/dmtmpl/img/dm_fx1.png"/><span>微信</span></a></li>
+        <li><a href="#"><img src="/wap/dmtmpl/img/dm_fx2.png"/><span>朋友圈</span></a></li>
+        <li><a href="#"><img src="/wap/dmtmpl/img/dm_fx3.png"/><span>QQ好友</span></a></li>
+        <li><a href="#"><img src="/wap/dmtmpl/img/dm_fx4.png"/><span>QQ空间</span></a></li>
+        <li><a href="#"><img src="/wap/dmtmpl/img/dm_fx5.png"/><span>短信</span></a></li>
+        <li><a href="#"><img src="/wap/dmtmpl/img/dm_fx6.png"/><span>新浪微博</span></a></li>
+        <li><a href="#"><img src="/wap/dmtmpl/img/dm_fx7.png"/><span>复制</span></a></li>
+        <li><a href="#"><img src="/wap/dmtmpl/img/dm_fx8.png"/><span>更多</span></a></li>
+    </ul>
+</div>
+
+</body>
+</html>
+<script type="text/javascript" src="../../js/zepto.min.js"></script> 
+<script type="text/javascript" src="../../js/template.js"></script> 
+<script type="text/javascript" src="../../js/config.js"></script> 
+<script type="text/javascript" src="../../js/common.js"></script> 
+<script type="text/javascript" src="../../js/dm/dmljgm.js"></script>

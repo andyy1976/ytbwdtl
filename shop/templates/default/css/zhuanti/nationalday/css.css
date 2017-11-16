@@ -1,0 +1,25 @@
+@charset "utf-8";
+body{font-family:"microsoft yahei", Arial; color:#000; margin:0; padding:0; border:0;}
+ul, ol, li, p, h1, h2, h3, h4, h5, h6, dl, dt, dd{ margin:0px; padding:0px; list-style:none;}
+a{ color:#000; text-decoration:none;}
+img{vertical-align:middle;}
+i,em{ font-style:normal;}
+div:after{ content:""; display:block; clear:both;}
+div:before{ content:""; display:table;}
+
+.zqj_b1{ width:100%; height:235px; background:url(../../../images/zhuanti/nationalday/img/bt_01.jpg) no-repeat center top;}
+.zqj_b2{ width:100%; height:235px; background:url(../../../images/zhuanti/nationalday/img/bt_02.jpg) no-repeat center top;}
+.zqj_b3{ width:100%; height:235px; background:url(../../../images/zhuanti/nationalday/img/bt_03.jpg) no-repeat center top;}
+.zqj_b4{ width:100%; height:235px; background:url(../../../images/zhuanti/nationalday/img/bt_04.jpg) no-repeat center top;}
+.zqj_b5{ width:100%; height:235px; background:url(../../../images/zhuanti/nationalday/img/bt_05.jpg) no-repeat center top;}
+.zqj_b6{ width:100%; height:235px; background:url(../../../images/zhuanti/nationalday/img/bt_06.jpg) no-repeat center top;}
+.zqj_b7{ width:100%; height:235px; background:url(../../../images/zhuanti/nationalday/img/bt_07.jpg) no-repeat center top;}
+.zqj_b8{ width:100%; height:235px; background:url(../../../images/zhuanti/nationalday/img/bt_08.jpg) no-repeat center top;}
+.zqj_box{ width:100%; height:6472px; float:left; background:url(../../../images/zhuanti/nationalday/img/bg.jpg) no-repeat center top;}
+.zqj_main{ width:1148px; margin:0 auto;}
+.zqj_cp2 li{ width:574px; float:left; margin-top:14px;}
+.zqj_cp2 li:nth-child(3),.zqj_cp2 li:nth-child(4){ margin-top:19px;}
+.zqj_cp3 li{ width:569px; float:left; margin-top:20px;}
+.zqj_cp3 li:nth-child(2),.zqj_cp3 li:nth-child(4),.zqj_cp3 li:nth-child(6){ float:right;}
+.zqj_cp4 li:nth-child(1),.zqj_cp4 li:nth-child(2){ margin-top:0;}
+.zqj_cp6 li:nth-child(1),.zqj_cp6 li:nth-child(2){ margin-top:0;}

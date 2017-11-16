@@ -1,0 +1,73 @@
+@charset "utf-8";
+/*通用*/
+/*多分辨率设定rem设定*/
+html { font-size : 14px; }
+body{ font-family: "microsoft yahei", Arial; color: #333; margin: 0px; padding: 0px;}
+ul, ol, li, p, h1, h2, h3, h4, h5, h6, dl, dt, dd{ margin: 0px; padding: 0px; list-style: none;}
+a{ color: #333; text-decoration: none;}
+a:hover{ text-decoration: none;}
+img{ width:100%; vertical-align: middle;}
+i,em{ font-style: normal;}
+input,select{font-family: "microsoft yahei";}
+div:after{ content: ""; display: block; clear: both;}
+div:before{ content: ""; display: table;}
+
+.wan_top{ width:92%; padding:1rem 4%; background:#bb8f3c;}
+.wan_logo dl{ width:100%; float:left;}
+.wan_logo dt{ width:20%; float:left; text-align:left;}
+.wan_logo dt:last-child{ text-align:right;}
+.wan_logo dt img{ width:1.2rem; padding-right:.3rem;}
+.wan_logo dt a{ color:#fff; line-height:1.5rem; font-weight:bold; font-size:1rem;}
+.wan_logo dd{ width:60%; float:left; text-align:center;}
+.wan_logo dd img{width:7rem;}
+.wan_soso{ margin-top:1rem;}
+.wan_top_text{ width:95%; height:2.2rem; line-height:2.2rem; background:url(../images/wan_soso.png) no-repeat 94% center #fff; background-size:18px 18px; padding:0; border-radius:20px; padding-left:5%; border:0; outline:0; font-size:.85rem;}
+
+.wan_meun{ width:96%; padding:1rem 2% .1rem;}
+.wan_meun li{ width:20%; float:left;}
+.wan_meun li a{ width:100%; color:#666; float:left; text-align:center;}
+.wan_meun li img{ width:72%;}
+.wan_meun li p{ height:2rem; line-height:1.2rem; font-size:.9rem;}
+
+.wan_tj{ width:92%; padding:0 4% 1.5rem; border-top:.5rem solid #f2f2f2;}
+.tj_t{ height:3rem; line-height:3rem; background:url(../images/wan_you.png) no-repeat right center; background-size:10px 16px;}
+.tj_t a{ width:100%; float:left;}
+.tj_t img{ width:5.2rem;}
+.focus{ max-width:560px; margin:0 auto; position:relative; overflow:hidden;}
+.focus .hd{ width:100%; height:11px; position:absolute; z-index:1; bottom:5px; text-align:center;}
+.focus .hd ul{ display:inline-block;}
+.focus .hd ul li{ display:inline-block; width:8px; height:8px; border-radius:5px; background:#fff; color:#fff; margin:0 3px; vertical-align:top; overflow:hidden;}
+.focus .hd ul .on{ background:#aa853e; color:#aa853e;}
+.focus .bd{ position:relative; z-index:0;}
+.focus .bd li a{-webkit-tap-highlight-color:rgba(0, 0, 0, 0); /* 取消链接高亮 */ }
+
+.wan_miao{background:#f3cc39; padding-bottom:1rem;}
+.miao_t{ width:92%; height:3rem; line-height:3rem; padding:0 4%;}
+.miao_t a{ width:100%; float:left; font-size:1.1rem; letter-spacing:1px; font-weight:bold; background:url(../images/wan_you.png) no-repeat right center; background-size:10px 16px;}
+.miao_t b{ float:left; font-size:1.1rem; letter-spacing:1px;}
+.miao_t span{ float:right; font-size:.95rem; color:#fff; font-weight:bold; background:url(../images/wan_shi.png) no-repeat left center; background-size:19px 19px; padding-left:24px;}
+.miao_t img{ width:1.3rem;}
+.miao_list{ width:93%; padding:0 4% 0 3%;}
+.miao_list dl{ width:26.3%; float:left; background:#fff; padding:3% 3% .1rem; margin:0 0 1% 1%;}
+.miao_list dt{ width:100%; text-align:center; float:left; padding-bottom:.4rem;}
+.miao_list dd{ width:100%; height:1.2rem; line-height:1.2rem; text-align:center; font-size:.75rem; float:left; color:#EE782B; overflow:hidden;}
+.miao_list dd em{ font-size:.9rem;}
+.miao_list dd span{ color:#9b9b9b; font-size:.85rem; text-decoration:line-through;}
+
+.wan_dui{ margin-top:.5rem;}
+.wan_jing{ border-top:.5rem solid #f2f2f2;}
+.dui_t{ width:96%; padding-right:4%; background:url(../images/dui_t.png) no-repeat left center; background-size:4px 18px;}
+.jing_t{ background:url(../images/jing_t.png) no-repeat left center; background-size:4px 18px;}
+.hui_t{ background:url(../images/hui_t.png) no-repeat left center; background-size:4px 18px;}
+.dui_t a{ width:96%; height:3rem; line-height:3rem; font-size:1.2rem; float:left; background:url(../images/wan_you.png) no-repeat right center; background-size:8px 13px; padding-left:4%;}
+.dui_b{ padding-bottom:.9rem;}
+.dui_list li{ width:44%; float:left; margin:0 0 .9rem 4%;}
+.haopu_list{ width:92%; padding:0 4% 4rem;}
+.haopu_list li{ width:100%; float:left; margin-bottom:.5rem;}
+
+.wan_footer{ background:#fff; border-top:1px solid #dbdbdb; padding:6px 0 4px; position:fixed; left:0; bottom:0;}
+.wan_footer li{ width:20%; float:left; text-align:center;}
+.wan_footer li.footer_red a{ color:#BB8F3C;}
+.wan_footer li a{ color:#9b9b9b; float:left;}
+.wan_footer li img{ width:45%;}
+.wan_footer li span{ width:100%; float:left; font-size:.8rem;}

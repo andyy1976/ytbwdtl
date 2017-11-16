@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>线下商城</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+body {
+	background: #fff;
+}
+</style>
+</head>
+
+<body>
+<div class="dm_pu_top">
+  <div class="dm_pu_tb">
+    <dl>
+      <dt><img src="img/dm_tb4.png"/></dt>
+      <dd><img src="img/dm_sc.png" alt=""/><img src="img/dm_tb2.png" id="fenxiang"/><img src="img/dm_tb3.png"/></dd>
+    </dl>
+  </div>
+  <div class="gengd_tc">
+  	<ul>
+    	<li><a href="#"><img src="img/dm_bai_01.png"/>云品</a></li>
+        <li><a href="#"><img src="img/dm_bai_02.png"/>云店</a></li>
+        <li><a href="#"><img src="img/dm_bai_03.png"/>搜索</a></li>
+        <li><a href="#"><img src="img/dm_bai_04.png"/>我的订单</a></li>
+        <li><a href="#"><img src="img/dm_bai_05.png"/>我的</a></li>
+    </ul>
+  </div>
+  <div id="focus" class="focus">
+    <div class="hd">
+      <ul>
+      </ul>
+    </div>
+    <div class="bd">
+      <ul>
+        <li><a href="#"><img src="img/dp_b.jpg"/></a></li>
+        <li><a href="#"><img src="img/dp_b.jpg"/></a></li>
+        <li><a href="#"><img src="img/dp_b.jpg"/></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="dm_maid">
+  <dl>
+    <dt>
+      <p>喜茶（花城汇店）</p>
+      <p><img src="img/dm_sc.png"/>109人收藏</p>
+    </dt>
+    <dd><a href="#">买单</a></dd>
+  </dl>
+</div>
+<div class="dm_suanb">
+  <h3>全部商品<em>(5)</em></h3>
+  <ul>
+    <li><a href="#"><img src="img/dm_k1.png" alt=""/><span>喜茶-AA茶</span><span>&yen;<b>260</b></span></a></li>
+    <li><a href="#"><img src="img/dm_k1.png" alt=""/><span>喜茶-AA茶</span><span>&yen;<b>260</b></span></a></li>
+    <li><a href="#"><img src="img/dm_k1.png" alt=""/><span>喜茶-AA茶</span><span>&yen;<b>260</b></span></a></li>
+    <li><a href="#"><img src="img/dm_k1.png" alt=""/><span>喜茶-AA茶</span><span>&yen;<b>260</b></span></a></li>
+    <li><a href="#"><img src="img/dm_k1.png" alt=""/><span>喜茶-AA茶</span><span>&yen;<b>260</b></span></a></li>
+    <li><a href="#"><img src="img/dm_k1.png" alt=""/><span>喜茶-AA茶</span><span>&yen;<b>260</b></span></a></li>
+    <li><a href="#"><img src="img/dm_k1.png" alt=""/><span>喜茶-AA茶</span><span>&yen;<b>260</b></span></a></li>
+    <li><a href="#"><img src="img/dm_k1.png" alt=""/><span>喜茶-AA茶</span><span>&yen;<b>260</b></span></a></li>
+  </ul>
+</div>
+<div class="dm_jies">
+  <h3>店铺介绍</h3>
+  <ul>
+    <li>店铺类型<span>美食</span></li>
+    <li>店铺名称<span>喜茶（花城汇店）</span></li>
+    <li>店铺地址<span>广州市天河区华夏路30号1510</span></li>
+  </ul>
+</div>
+<div class="dm_jies dm_huod">
+  <h3>店铺活动</h3>
+  <ul>
+    <li><img src="img/dm_huod1.png"/>店内任意消费均赠送消费额50%的云豆</li>
+    <li><img src="img/dm_huod2.png"/>店内任意消费均赠送消费额50%的云豆</li>
+  </ul>
+</div>
+<div class="dm_lianx">联系商家<span>156 7375 5659</span><img src="img/dm_phone.png"/></div>
+<div class="dm_tsjy"><a href="#">投诉建议</a></div>
+<div id="goodcover"></div>
+<div id="dm_fenx">
+	<h3><span>分享到</span></h3>
+	<ul>
+    	<li><a href="#"><img src="img/dm_fx1.png"/><span>微信</span></a></li>
+        <li><a href="#"><img src="img/dm_fx2.png"/><span>朋友圈</span></a></li>
+        <li><a href="#"><img src="img/dm_fx3.png"/><span>QQ好友</span></a></li>
+        <li><a href="#"><img src="img/dm_fx4.png"/><span>QQ空间</span></a></li>
+        <li><a href="#"><img src="img/dm_fx5.png"/><span>短信</span></a></li>
+        <li><a href="#"><img src="img/dm_fx6.png"/><span>新浪微博</span></a></li>
+        <li><a href="#"><img src="img/dm_fx7.png"/><span>复制</span></a></li>
+        <li><a href="#"><img src="img/dm_fx8.png"/><span>更多</span></a></li>
+    </ul>
+</div>
+<script src="js/TouchSlide.1.1.js"></script>
+<script src="js/jquery-1.11.3.js"/></script>
+<script src="js/fenxiang.js"/></script>
+<script type="text/javascript">
+TouchSlide({ 
+slideCell:"#focus",
+titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+mainCell:".bd ul", 
+effect:"leftLoop", //左循环滚动
+autoPlay:true,//自动播放
+autoPage:true, //自动分页
+});
+</script>
+</body>
+</html>

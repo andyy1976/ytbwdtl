@@ -1,0 +1,90 @@
+<?php defined('In33hao') or exit('Access Invalid!');?>
+<div class="wrap">
+  <div class="tabmenu">
+    <?php include template('layout/submenu');?>
+  </div>
+  <div class="ncm-default-form">
+    <div class="ncm-notes">
+  	<!-- <h4 style='color:red'>现增加新的支付方式，为避免出现数据问题，暂时关闭站内转账</h4> -->
+    <h4>应广大会员要求，为了方便会员间的资金流通，开通站内转账功能，转账时请务必填写正确对方ID号，如果ID错误资金可能无法归还，由于错误填写造成的资金损失，本站概不负责！！！！</h4>
+    <p>站内转账无需手续费</p><br>
+  </div>
+	  转账金额：<input type="number" id='money' onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onafterpaste="this.value=this.value.replace(/[^0-9]/g," /><br><br>
+	  收款人ID：<input type="number" id='member_id'/> <span id='membername' style="color: #f00;"></span><br><br>
+	  收款人银行卡姓名：<input type="text" id='member_bankname'/> <span id='bankname' style="color: #f00;"></span><br><br>
+	  支付密码：<input type="password" id='pwd' /><br><br>
+	 <button id='go' style="width: 80px;height:27px;background-color: #48CFAE; color: #FFF;">确定</button>
+  </div>
+</div>
+<script type="text/javascript">
+function trim(str) {
+  return str.replace(/(^\s+)|(\s+$)/g, "");
+}
+$(function(){
+  $('#go').click(function(){
+			var money=$('#money').val();
+			var memberid=$('#member_id').val();
+			var pwd=$('#pwd').val();
+			var id=<?php echo $_SESSION['member_id'] ;?>;
+			if(memberid==id){
+				showDialog('不能给自己转账！', 'error','','','','','','','','',3);	
+				exit();
+			}
+			if(money==0 || money=='' ||money<0){
+				showDialog('请输入有效数字金额！', 'error','','','','','','','','',3);	
+				exit();
+			}
+			if(money>20000){
+				showDialog('每日最高转账限额两万元！', 'error','','','','','','','','',3);	
+				exit();
+			}
+			if(memberid==0 || memberid=='' || memberid<0){
+				showDialog('请输入收款人ID ！', 'error','','','','','','','','',3);	
+				exit();
+			}
+			if(pwd==''){
+				showDialog('请输入支付密码！', 'error','','','','','','','','',3);	
+				exit();
+			}
+			var bank_name=$('#member_bankname').val();
+			bank_name=trim(bank_name);
+      if(bank_name==''){
+        showDialog('请输入对方银行卡姓名！', 'error','','','','','','','','',3);  
+        exit();
+      }
+		  $.post('index.php?act=predeposit&op=tofrent',{money:money,pwd:pwd,memberid:memberid,bank_name:bank_name},function(result){
+		      if(result==1){
+		          showDialog('转账成功', 'succ','','','','','','','','',3);	
+		          <?php //sleep(3) ;?>				    
+			        location.reload() ;
+			    }else if(result==0){
+			   	    showDialog('转账失败', 'error','','','','','','','','',3);	
+			    }else if(result==3){
+			   	    showDialog('支付密码错误！', 'error','','','','','','','','',3);	
+			    }else if(result==4){
+			   	    showDialog('您填写的收款人ID不存在！', 'error','','','','','','','','',3);	
+			    }else if(result==5){
+			   	    showDialog('收款人银行卡姓名不正确！', 'error','','','','','','','','',3);	
+			    }else if(result==6){
+			    	  showDialog('今日转账已达两万元, 无法继续转账', 'error','','','','','','','','',3);
+			    }else if(result==11){
+			    	  showDialog('充值余额异常，无法转账', 'error','','','','','','','','',3);
+			    }else{
+			    	  showDialog('余额不足！请充值', 'error','','','','','','','','',3);
+			    }
+			});
+	})
+	//失去焦点
+  $('#member_id').blur(function(){
+   	  var memberid=$('#member_id').val();
+   	  //alert(memberid);exit;
+      $.post('index.php?act=predeposit&op=getname',{memberid:memberid},function(result){
+		     if(result){
+		     	  var result = JSON.parse(result); 
+	              $('#membername').text('收款人：'+result.member_name);
+	              $("#bankname").text('收款人银行卡姓名:'+result.member_bankname);
+		     }
+			}); 
+  });  
+});
+</script>

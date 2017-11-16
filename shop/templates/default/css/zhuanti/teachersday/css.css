@@ -1,0 +1,24 @@
+@charset "utf-8";
+body{ font-family:"microsoft yahei", Arial; color:#000; margin:0; padding:0; border:0;}
+ul, ol, li, p, h1, h2, h3, h4, h5, h6, dl, dt, dd{ margin:0px; padding:0px; list-style:none;}
+a{ color:#000; text-decoration:none;}
+img{ vertical-align:middle;}
+i,em{ font-style:normal;}
+div:after{ content:""; display:block; clear:both;}
+div:before{ content:""; display:table;}
+
+.jsj_banner{ width:100%; float:left; overflow:hidden;}
+.jsj_banner img{ position:relative; left:50%; margin-left:-960px;}
+.jsj_box{ width:100%; height:1867px; float:left; background:url(../../../images/zhuanti/teachersday/img/bg.jpg) no-repeat center top;}
+.jsj_main{ width:856px; margin:0 auto; padding-top:90px;}
+.jsj_main dl{ width:427px; height:463px; float:left; overflow:hidden; padding:40px 0; border-right:1px dotted #7c7c7c; border-bottom:1px dotted #7c7c7c;}
+.jsj_main dl.dl_no{ border-right:none;}
+.jsj_main dl.dl_h{ border-bottom:none; padding:40px 0 0;}
+.jsj_main dl.dl_q{ padding:0 0 40px;}
+.jsj_main dl a{ width:427px; float:left;}
+.jsj_main dl dt{ width:427px; height:325px; text-align:center; float:left;}
+.jsj_main dl dt img{ width:370px; height:325px;}
+.jsj_main dl dd{ width:427px; font-size:21px; text-align:center; float:left;}
+.jsj_main dl dd i{font-size:38px; color:#377b32;}
+.jsj_main dl dd em{ line-height:43px;}
+.jsj_main dl dd span{ width:230px; line-height:45px; text-align:center; margin-left:98px; background:#fcbd0d; color:#5c2c0b; float:left; font-size:22px;}

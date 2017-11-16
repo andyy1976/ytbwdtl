@@ -1,0 +1,13 @@
+
+GET
+Array
+(
+    [_t] => 11111111
+)
+
+POST
+Array
+(
+)
+
+php://input

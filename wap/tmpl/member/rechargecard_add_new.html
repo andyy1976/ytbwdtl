@@ -1,0 +1,267 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="format-detection" content="telephone=no"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1" />
+<title>充值</title>
+<link rel="stylesheet" type="text/css" href="../../css/base.css">
+<link rel="stylesheet" type="text/css" href="../../css/nctouch_member.css">
+<link rel="stylesheet" type="text/css" href="../../css/nctouch_common.css">
+<style type='text/css'>
+.ncc-payment-list li:hover{ border: solid 2px #52A452; margin: 10px;}
+.ncc-payment-list li { vertical-align: top; letter-spacing: normal; word-spacing: normal; text-align: center; display: inline-block; width: 120px; padding: 10px 30px; margin: 11px; border: solid 1px #E6E6E6; border-radius: 4px; position: relative; z-index: 1;}
+.ncc-payment-list li.using { border: solid 2px #52A452; margin: 10px;}
+
+
+#mb_card_list_back,
+#new_card_add_panel h4 {
+  font-size: 14px;
+  padding: 10px 0;
+  color: #444;
+  border-bottom: 1px solid #c1c1c1;
+  margin-top: -20px;
+}
+
+.card-item , #add_new_card {
+  padding: 10px;
+  line-height: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+
+.card-item.checked {
+  background-color: #FFFFDF;
+  border-top-color: #FFEFBF;
+  border-bottom-color: #FFEFBF;
+}
+
+
+#new_card_add_panel,
+#new_card_add_panel input,
+.myform input {
+  font-size: 14px;
+}
+#new_card_add_panel p,
+.myform p {
+  border-bottom: 1px solid #c1c1c1;
+}
+#new_card_add_panel label,
+#new_card_add_panel input,
+.myform label,
+.myform input {
+  font-size: 14px;
+  border: none;
+  padding: 12px;
+}
+
+#do_add_card {
+  margin-top: 20px;
+}
+
+</style>
+
+</head>
+<body>
+<header id="header">
+  <div class="header-wrap">
+    <div class="header-l"><a href="member.html"><i class="back"></i></a></div>
+    <div class="header-tab"> <a href="rechargecardlog_list.html">充值记录</a> <a href="javascript:void(0);" class="cur">充值</a><a href="recharge_pdcash.html">提现记录</a> </div>
+    <div class="header-r"><a id="header-nav" href="javascript:void(0);"><i class="more"></i><sup></sup></a> </div>
+  </div>
+  <div class="nctouch-nav-layout">
+    <div class="nctouch-nav-menu"> <span class="arrow"></span>
+      <ul>
+        <li><a href="../../index.html"><i class="home"></i>云品</a></li>
+        <li><a href="#"><i class="search"></i>云店</a></li>
+         <li><a href="../search.html"><i class="categroy"></i>搜索</a></li>
+        <li><a href="../cart_list.html"><i class="cart"></i>我的订单<sup></sup></a></li>
+        <li><a href="../member/member.html"><i class="member"></i>我的</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+<div class="nctouch-main-layout">
+  <div class="nctouch-asset-info">
+    <div class="container rcard"> <i class="icon"></i>
+      <dl class="rule">
+        <dd></dd>
+        <dd></dd>
+      </dl>
+    </div>
+  </div>
+  <div class="nctouch-inp-con">
+  <!--  <h3  style="text-align:center;">&nbsp;由于手机支付系统升级暂时关闭手机充值系统，如需充值请登陆电脑端充值(万店通联.中国)，手机微信支付正在测试中，近期开放</h3> -->
+     <form action="" method ="">
+      <ul class="form-box">
+        <li class="form-item">
+          <h4>充值金额</h4>
+                <div class="input-box">           
+              <input type="text" id="rc_sn" name="rc_sn" class="inp" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onafterpaste="this.value=this.value.replace(/[^0-9]/g," maxlength="100" placeholder="请输入充值金额" oninput="writeClear($(this));" onfocus="writeClear($(this));"/>
+              <span class="input-del"></span> </div      
+        </li>
+      </ul>
+      <div class="error-tips"></div>
+      <div class="form-btn"><a href="javascript:void(0);" class="btn" style='background: #ed5564 none repeat scroll 0 0;
+    color: #fff !important;' id="saveform">确认提交</a></div>
+      <h3 style="text-align:left;font-size: 0.6rem;line-height:1rem;padding: 0.6rem 1rem;color: #888;">注：会员充值请尽量避开在高峰时间段进行充值（17：00-23：00）</h3>
+      <h3 style="text-align:left;font-size: 0.6rem;line-height:1rem;padding: 0.6rem 1rem;color: #888;">（1）充值说明：单笔充值不能低于1千，每日累计充值限额100万。和购买云豆同步。<br/>（2）当日账户充值和兑换消费云豆合计2万以下的（含2万）按5%收取。<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当日账户充值和兑换消费云豆合计超出2万部分按8%的服务费收取。</h3>
+        <div class="nctouch-bottom-mask">
+    <div class="nctouch-bottom-mask-bg"></div>
+    <div class="nctouch-bottom-mask-block">
+
+      <div id="e__mask" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #fff; opacity: .7; z-index: 10; display: none;">
+        <p style="position: absolute; top: 50%; left: 0; right: 0; height: 20px; margin-top: -10px; text-align: center;">
+          请稍后...
+        </p>
+      </div>
+
+      <div class="nctouch-bottom-mask-tip"><i></i>点击此处返回</div>
+      <div class="nctouch-bottom-mask-top">
+        <p style="font-size: 18px; text-align: center;" class="nctouch-cart-num">本次交易需在线支付<em style="padding: 0 5px;" id="onlineTotal">0.00</em>元</p>
+        <p style="font-size: 14px; text-align: center;color: #777; padding-top: 10px;">提示：充值金额会随机加1-10元，<br>您将获得 “实际支付金额对应的云豆”</p>
+        <p style="display:none" id="isPayed"></p>
+        <a href="javascript:void(0);" class="nctouch-bottom-mask-close"><i></i></a> </div>
+      <div class="nctouch-inp-con nctouch-inp-cart">
+
+        <div class="nctouch-pay">
+        
+          
+          <input type="hidden" name='pdr_sn' id='pdr_sn' value=''>
+          <input type="hidden" name='payment_code' id='payment_code' value=''>
+          <input type="hidden" name='accNo' id='ipt_accNo' value=''>
+          <input type="hidden" name='phone' id='ipt_phone' value=''>
+
+          <div class="pay-sel" style="padding: 20px 0;">
+              
+            <div id="payment_list_wrapper">
+
+              <div class="spacing-div"><span>在线支付方式</span></div>
+
+              <ul id="el_payment_list" class="ncc-payment-list" style="text-align: center;">
+
+                <!-- <li payment_code="ybzf"  id="ybzf"
+                  style='margin: 4px; display: inline-block; min-height: auto; height: 30px; width: 100px; padding: 4px;'>
+                  <label for="pay_ybzf" id='ybzf'>
+                    <i></i>
+                    <div class="logo" for="pay_7">
+                    <img style="width: 100px;" src="/shop/templates/default/images/payment/ybzf_logo.gif">
+                    </div>
+                    <div class="predeposit" nc_type="predeposit" style="display:none">
+                    </div>
+                  </label>
+                </li> -->
+
+                <li payment_code="ylwtz" id="ylwtz"
+                  style='margin: 4px; display: inline-block; min-height: auto; height: 30px; width: 100px; padding: 4px;'>
+                  <label for="pay_ylwtz" id='ylwtz'>
+                    <i></i>
+                    <div class="logo" for="pay_7">
+                    <img style="width: 100px;" src="/shop/templates/default/images/payment/unionpay_logo.gif">
+                    </div>
+                    <div class="predeposit" nc_type="predeposit" style="display:none">
+                    </div>
+                  </label>
+                </li>
+
+                <li payment_code="vbill" id="vbill"
+                  style='margin: 4px; display: none; min-height: auto; height: 30px; width: 100px; padding: 4px;'>
+                  <label for="pay_vbill" id='vbill'>
+                    <i></i>
+                    <div class="logo" for="pay_7">
+                    <img style="width: 100px;" src="/shop/templates/default/images/payment/sxf.jpg">
+                    </div>
+                    <div class="predeposit" nc_type="predeposit" style="display:none">
+                    </div>
+                  </label>
+                </li>
+
+              </ul>
+
+              <!-- <div class="pay-btn">
+                <a href="javascript:void(0);" id="toPay" class="btn-l" >确认支付</a>
+              </div> -->
+
+            </div>
+
+
+              <div id="member_bank_card_list_box" style="display: none">
+                <h4 id="mb_card_list_back">< 返回</h4>
+                <div id="mb_card_list_box">
+                  <ul id="member_bank_card_list"></ul>
+                  <ul><li id="add_new_card"> + 添加新的银行卡</li></ul>
+                  <div id="to_card_pay" class="btn-l">下一步</div>
+                </div>
+              </div>
+
+
+              <div id="new_card_add_panel" style="display: none">
+                <h4 id="back_to_cart_list">< 返回卡列表</h4>
+
+                <p><label>银行卡号</label><input id="card_accNo" type="text" name="accNo" 
+                placeholder="请输入银行卡号" value=""></p>
+
+                <p><label>姓名</label><input id="card_name" type="text" name="card_name" 
+                placeholder="请输入开户姓名" value=""></p>
+
+                 <p><label>身份证号</label><input id="certif_id" type="text" name="certif_id" 
+                placeholder="请输入身份证号" value=""></p>
+
+                <p><label>手机号码</label><input id="card_phone" type="text" name="phone" 
+                placeholder="请输入预留手机号" value=""></p>
+
+                <div><span id="do_add_card" class="btn-l" href="">确定添加</span></div>
+              </div>
+
+
+              <div id="input_smscode_panel" style="display: none">
+                <h4 id="sms_back_to_cart_list">< 返回</h4>
+                <div class="myform" id="smsCodeSubmit" action="">
+                  <input id="e__orderNo" type="hidden" name="orderNo" value="">
+                  <input id="e__sendSeqId" type="hidden" name="sendSeqId" value="">
+                  <input id="e__sign" type="hidden" name="sign" value="">
+                  <input id="e__amt" type="hidden" name="amt" value="">
+                  <p><label>验证码</label><input  id="e__smsCode" type="text" name="smsCode" 
+                  placeholder="请输入收到的短信验证码" value=""></p>
+                  <div id="doConfirmPay" class="btn-l" style="margin-top: 20px;">确定</div>
+                </div>
+              </div>
+
+          </div>
+
+        
+      </div>
+    </div>
+  </div>
+    </form>
+  </div>
+</div>
+
+<footer id="footer" class="bottom"></footer>
+
+<script type="text/javascript" src="../../js/config.js"></script> 
+<script type="text/javascript" src="../../js/zepto.min.js"></script> 
+<script type="text/javascript" src="../../js/template.js"></script> 
+<script type="text/javascript" src="../../js/common.js"></script> 
+<script type="text/javascript" src="../../js/simple-plugin.js"></script> 
+<script type="text/javascript" src="../../js/tmpl/rechargecard_add_ylwtz.js"></script>   
+<script type="text/javascript" src="../../js/tmpl/footer.js"></script>
+<script type="text/javascript">
+(function(){
+  var username = getCookie('username');
+  if ( username == '测试155' || username == '18975810567') {
+    document.getElementById('vbill')
+      .style.display = 'inline-block'
+  }
+})()
+</script>
+</body>
+</html>

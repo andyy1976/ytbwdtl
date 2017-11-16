@@ -1,0 +1,55 @@
+@charset "utf-8";
+/*通用*/
+body{ font-size: 14px; font-family: "microsoft yahei", Arial; color: #333; margin: 0px; padding: 0px;}
+ul, ol, li, p, h1, h2, h3, h4, h5, h6, dl, dt, dd{ margin: 0px; padding: 0px; list-style: none;}
+a{ color: #333; text-decoration: none;}
+a:hover{ text-decoration: none;}
+img{ width:100%; vertical-align: middle;}
+i,em{ font-style: normal;}
+input,select{font-family: "microsoft yahei";}
+div:after{ content: ""; display: block; clear: both;}
+div:before{ content: ""; display: table;}
+
+/*秒杀*/
+.seck_top{ width:100%; float:left; position:fixed; left:0; top:0; z-index:999; padding:10px 0; background:#FAE86B;}
+.seck_top dl{ width:93%; float:left; padding:0 4% .2rem 3%;}
+.seck_top dt{ width:30%; float:left; text-align:right;}
+.seck_top dt img{ width:1.3rem; float:left;}
+.seck_top dt a{font-size:1rem; color:#BB8F3C;}
+.seck_top dt:last-child img{ float:right; margin-left:.7rem;}
+.seck_top dd{ width:40%; float:left; font-size:1rem; text-align:center;}
+.seck_top dd em{ color:#9b9b9b; padding-left:5px;}
+
+.seck_box{ width:100%; float:left; margin-top:6.8rem;}
+.seckBox .hd{ width:100%; height:4rem; position:fixed; left:0; top:2.8rem; z-index:999; overflow:hidden;}
+.seckBox .hd ul li{ width:20%; float:left;}
+.seckBox .hd ul li a{ width:100%; height:2.6rem; float:left; text-align:center; line-height:1.3rem; font-size:.75rem; padding:.5rem 0; background: linear-gradient(180deg, #FAE86B,#F3CC39);}
+.seckBox .hd ul li a p{ font-size:1rem;}
+.seckBox .hd ul .on{ height:4rem; background:url(../img/yuyu.png) no-repeat center bottom; background-size:.6rem .4rem;}
+.seckBox .hd ul .on a{ display:block; color:#fff; /* 修复Android 4.0.x 默认浏览器当前样色无效果bug */background:#EE782B;}
+.seckBox .bd,.seckBox .bd_list{ width:100%; float:left;}
+.seckBox .bd_list dl{ width:92%; border-bottom:1px solid #d8d8d8; float:left; overflow:hidden; padding:.8rem 4%;}
+.seckBox .bd_list dl a{ -webkit-tap-highlight-color:rgba(0,0,0,0); }  /* 去掉链接触摸高亮 */
+.seckBox .bd_list dt{ width:28%; float:left; border:1px solid #d8d8d8; text-align:center; padding:.3rem 0; position:relative; left:0; top:0;}
+.seckBox .bd_list dt img{ width:5rem; height:5rem;}
+.seckBox .bd_list dt span{ width:100%; height:1.4rem; line-height:1.4rem; float:left; position:absolute; color:#f3cc39; left:0; bottom:0; z-index:99; background:#323334;font-size:.8rem;}
+.seckBox .bd_list dd{ width:67%; float:right;}
+.seckBox .bd_list dd h5{ width:100%; float:left; height:2.4rem; line-height:1.2rem; overflow:hidden; font-size:.85rem;}
+.seckBox .bd_list dd span{ width:100%; float:left; height:1.5rem; line-height:1.5rem; overflow:hidden; font-size:.75rem; color:#9b9b9b;}
+.seckBox .bd_list dd p{ width:100%; float:left; height:1.7rem; line-height:1.7rem; margin-top:.2rem; overflow:hidden; font-size:.75rem; color:#2a2a2a;}
+.seckBox .bd_list dd p em{ color:#EE782B;}
+.seckBox .bd_list dd p i{ color:#EE782B; font-size:1rem; padding:0 8px 0 3px;}
+.seckBox .bd_list dd p a { float:right; height:1.7rem; line-height:1.7rem; padding:0 .8rem; border-radius:20px; font-size:.85rem; background: linear-gradient(to bottom,#fae76a,#f3cc3a); color:#000;}
+.seckBox .bd_list dd p a.qgle{background:none; padding:0; font-weight:bold; color:#666;}
+.bd_add{ width:100%; float:left;}
+
+/*分享*/
+#goodcover{ width:100%; height:100%; display:none; position:fixed; top:0%; left:0%; background:#000; z-index:9999999; -moz-opacity: 0.8; opacity: 0.5; filter: alpha(opacity=80);}
+#dm_fenx{ width:100%; background: #fff; position: fixed; display: none; left:0; bottom:0; z-index:999999999;}
+#dm_fenx h3{ width:86%; float:left; text-align:center; line-height:5rem; background:url(../img/dm_pay03_bg.jpg) repeat-x left center; font-weight:normal; margin:0 7%;}
+#dm_fenx h3 span{ color:#666; background:#fff; padding:0 .5rem;}
+#dm_fenx ul{width:96%; float:left; padding:0 2% 1.5rem;}
+#dm_fenx li{ width:25%; float:left; margin-bottom:.8rem;}
+#dm_fenx li a{ color:#9b9b9b; float:left;}
+#dm_fenx li img{ width:52%; margin-left:24%;}
+#dm_fenx li span{ width:100%; float:left; line-height:1.5rem; font-size:.85rem; text-align:center;}

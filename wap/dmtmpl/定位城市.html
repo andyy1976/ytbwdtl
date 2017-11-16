@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>线下商城</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+<div class="yp_top">
+  <dl>
+    <dt><a href="#"><img src="img/yp_fh.png"/></a></dt>
+    <dd>
+      <input type="text" class="dm_top_text yp_top_text" placeholder="城市名 / 拼音"/>
+    </dd>
+  </dl>
+</div>
+<div class="city_box">
+  <div class="city_box_l">
+    <div id="dm_city">当前：<b>长沙全城</b><span>切换区县<em></em></span>
+      <div style="display:block" class="city_qie"><a href="#" class="qie_on">全城</a><a href="#">株洲</a><a href="#">常德</a><a href="#">益阳</a><a href="#">衡阳</a><a href="#">深圳</a><a href="#">湘潭</a><a href="#">广州</a><a href="#">邵阳</a></div>
+    </div>
+    <div class="city_hot">
+      <dl>
+        <dt>最近访问</dt>
+        <dd><a href="#" class="hot_on">长沙</a><a href="#">益阳</a></dd>
+      </dl>
+      <dl>
+        <dt>热门城市</dt>
+        <dd><a href="#">岳阳</a><a href="#">株洲</a><a href="#">常德</a><a href="#">益阳</a><a href="#">衡阳</a><a href="#">深圳</a><a href="#">湘潭</a><a href="#">广州</a><a href="#">邵阳</a></dd>
+      </dl>
+    </div>
+    <div class="city_list">
+      <dl>
+        <dt>A</dt>
+        <dd><a href="#">鞍山</a></dd>
+        <dd><a href="#">安庆</a></dd>
+      </dl>
+      <dl>
+        <dt>B</dt>
+        <dd><a href="#">鞍山</a></dd>
+        <dd><a href="#">安庆</a></dd>
+      </dl>
+      <dl>
+        <dt>C</dt>
+        <dd><a href="#">鞍山</a></dd>
+        <dd><a href="#">安庆</a></dd>
+      </dl>
+    </div>
+  </div>
+  <div class="city_box_r">
+    <ul>
+      <li>A</li>
+      <li>B</li>
+      <li>C</li>
+      <li>D</li>
+      <li>E</li>
+      <li>F</li>
+      <li>G</li>
+      <li>H</li>
+      <li>I</li>
+      <li>J</li>
+      <li>K</li>
+      <li>L</li>
+      <li>M</li>
+      <li>N</li>
+      <li>O</li>
+      <li>P</li>
+      <li>Q</li>
+      <li>R</li>
+      <li>S</li>
+      <li>T</li>
+      <li>U</li>
+      <li>V</li>
+      <li>W</li>
+      <li>X</li>
+      <li>Y</li>
+      <li>Z</li>
+    </ul>
+  </div>
+</div>
+<script src="js/jquery-1.11.3.js"></script> 
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#dm_city .city_qie:eq(0)").hide();
+	$("#dm_city span").click(function(){
+		$(this).addClass("current").next("div.city_qie").slideToggle(100).siblings("div.city_qie").slideUp("slow");
+		$(this).siblings().removeClass("current");
+	});
+});
+</script>
+</body>
+</html>
